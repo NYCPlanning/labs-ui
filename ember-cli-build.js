@@ -7,6 +7,9 @@ module.exports = function(defaults) {
     'ember-font-awesome': {
       includeFontFiles: false,
     },
+    'ember-cli-foundation-6-sass': {
+      'foundationJs': 'all'
+    },
   });
 
   /*
