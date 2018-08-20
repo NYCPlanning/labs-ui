@@ -7,9 +7,9 @@ import { classNames } from '@ember-decorators/component';
 import layout from '../../templates/components/labs-ui/layer-menu-item';
 
 @classNames('layer-menu-item')
-export default class LayerMenuItemComponent extends Component {
-  constructor() {
-    super();
+export default class LabsUILayerMenuItemComponent extends Component {
+  constructor(...args) {
+    super(...args);
     this.get('didInit')(this);
   }
 
