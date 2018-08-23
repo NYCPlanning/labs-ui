@@ -10,6 +10,9 @@ module.exports = function(defaults) {
     'ember-cli-foundation-6-sass': {
       'foundationJs': 'all'
     },
+    'ember-cli-tooltipster': {
+      importTooltipsterDefaultStyles: false,
+    },
   });
 
   /*
