@@ -12,29 +12,29 @@ ember install labs-ui
 2. Install Ember CLI Foundation 6 SASS: 
 ```
 ember install ember-cli-foundation-6-sass
-``` 
+```
 
 3. Run the Foundation generator: 
 ```
 ember g ember-cli-foundation-6-sass
 ```
- Either let the generator add the app.scss file, or import/include Foundation your existing one 
+Either let the generator add the app.scss file, or import/include Foundation your existing one 
 
 4. Add the Foundation options to ember–cli-build.js: 
-`` `
- 'ember-cli-foundation-6-sass': { 
+```
+'ember-cli-foundation-6-sass': { 
   'foundationJs': 'all' 
-}, 
-``` 
+},
+```
 
 5. Import Labs UI Sass settings at the top of app.scss:
-`` `
+```
 @import 'labs-ui/variables';
 ```
- This file includes Labs-specific colors like DCP’s orange (`$dcp-orange`) and Land Use colors (`$lu-[color] `) 
+This file includes Labs-specific colors like DCP’s orange (`$dcp-orange`) and Land Use colors (`$lu-[color] `) 
 
 6. Import Labs UI Sass modules after Foundation in app.scss: 
-`` `
+```
 @import 'labs-ui/modules’;
 ```
 
