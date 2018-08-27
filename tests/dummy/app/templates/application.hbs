@@ -4,4 +4,21 @@
 
 <p>Here is an info tooltip next to some text. {{labs-ui/icon-tooltip tip="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}}</p>
 
+{{#labs-map id='map' as |map|}}
+  {{map.labs-layers layerGroups=model.layerGroups}}
+{{/labs-map}}
+
+{{#labs-ui/accordion-menu
+  title='Accordion menu'
+  as |menu|
+}}
+  {{#menu.menu-item
+    title=model.layerGroupsObject.citymap.legend.label
+    active=true
+  }}
+    {{!-- {{labs-ui/legend-icon}} --}}
+    {{labs-ui/legend-items items=model.layerGroupsObject.citymap.legend.items}}
+  {{/menu.menu-item}}
+{{/labs-ui/accordion-menu}}
+
 {{outlet}}
