@@ -20,15 +20,15 @@
   ```
   If `app.scss` doesn't exist, let the generator add it.
 
-1. Edit `app.scss` to `@import`/`@include` files in this order:
+1. Edit `app.scss` and `@import`/`@include` files in this order:
 
-  - **Labs UI variables** — sets vars for colors (e.g. DCP’s orange, Land Use colors, planning standard colors), imports Foundation utilities, sets Foundation vars
+  1. **Labs UI variables** — sets vars for colors (e.g. DCP’s orange, Land Use colors, planning standard colors), imports Foundation utilities, sets Foundation vars
 
-  - **Foundation** — imports 'foundation-sites/foundation', includes foundation-everything;
+  - **Foundation** — import `foundation-sites/foundation` and include `foundation-everything`;
 
-  - **Labs UI Modules** —
+  - **Labs UI modules** — import all modules (`@import 'labs-ui/all-modules'`) or a subset of modules (`@import 'labs-ui/modules/_m-tooltipster'`)
 
-  - **Custom App Modules** — 
+  - **Custom styles** — application-specific styles and overrides
 
   The consuming app's `app.scss` should look something like this:
 
@@ -40,12 +40,15 @@
   @import 'foundation-sites/foundation';
   @include foundation-everything;
 
-  // Labs UI Modules
-  @import 'labs-ui/modules';
+  // Labs UI modules (import all or some)
+  @import 'labs-ui/all-modules';
 
-  // Custom App Modules
+  // Custom app modules and styles
   @import 'layouts/_l-default';
-  @import 'base/_typography';
+
+  .peanut-butter {
+    color: $orange-muted;
+  }
   ```
 
 1. Add the Foundation options to ember–cli-build.js: 
