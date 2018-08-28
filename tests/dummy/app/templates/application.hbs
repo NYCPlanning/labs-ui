@@ -12,13 +12,12 @@
   title='Accordion menu'
   as |menu|
 }}
-  {{#menu.menu-item
+  {{#menu.layer-group-toggle
     title=model.layerGroupsObject.citymap.legend.label
     active=true
   }}
-    {{!-- {{labs-ui/legend-icon}} --}}
     {{labs-ui/legend-items items=model.layerGroupsObject.citymap.legend.items}}
-  {{/menu.menu-item}}
+  {{/menu.layer-group-toggle}}
 {{/labs-ui/accordion-menu}}
 
 {{outlet}}

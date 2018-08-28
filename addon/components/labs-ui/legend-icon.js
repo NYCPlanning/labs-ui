@@ -9,30 +9,31 @@ import layout from '../../templates/components/labs-ui/legend-icon';
 export default class LegendIconComponent extends Component {
   layout = layout;
 
-  @computed('legendColor')
+  @computed('icon')
   get legendColorStyle() {
-    const color = this.get('legendColor');
+    const color = this.get('icon.options.color');
     return `color: ${color};`;
   }
 
-  @computed('legendColor')
+  @computed('icon')
   get legendBackgroundColorStyle() {
-    const color = this.get('legendColor');
+    const color = this.get('icon.options.color');
     return `background-color: ${color};`;
   }
 
-  @computed('legendColor')
+  @computed('icon')
   get legendBorderColorStyle() {
-    const color = this.get('legendColor');
+    const color = this.get('icon.options.color');
+    return `border-color: ${color};`;
+  }
+
+  @computed('icon')
+  get legendIconType() {
+    const color = this.get('icon.type');
     return `border-color: ${color};`;
   }
 
   @argument
-  @type('string')
-  legendIcon = '';
-
-  @argument
-  @type('string')
-  legendColor = '';
+  @type('object')
+  icon = {};
 }
-

@@ -1,10 +1,8 @@
-{{#if (eq legendIcon 'line')}}
-  <span class="line" style={{legendColorStyle}}>
-    {{fa-icon 'minus'}}
-  </span>
+{{#if (eq icon.type 'line')}}
+  {{labs-ui/icons/line options=icon.options}}
 {{/if}}
 
-{{#if (eq legendIcon 'polygon')}}
+{{!-- {{#if (eq legendIcon 'polygon')}}
   <span class="polygon" style={{legendColorStyle}}>
     {{fa-icon 'square'}}
   </span>
@@ -40,6 +38,6 @@
   <span class="point" style={{legendColorStyle}}>
     {{fa-icon 'align-justify' style="transform:rotate(90deg);"}}
   </span>
-{{/if}}
+{{/if}} --}}
 
 {{!-- {{yield}} --}}

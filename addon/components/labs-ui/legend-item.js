@@ -3,14 +3,14 @@ import { argument } from '@ember-decorators/argument';
 import { type } from '@ember-decorators/argument/type';
 import { required } from '@ember-decorators/argument/validation';
 import { classNames } from '@ember-decorators/component';
-import layout from '../../templates/components/labs-ui/legend-items';
+import layout from '../../templates/components/labs-ui/legend-item';
 
-@classNames('legend-items')
-export default class LabsUILegendItemsComponent extends Component {
+@classNames('legend-item')
+export default class LabsUILegendItemComponent extends Component {
   @required
   @argument
   @type('object')
-  items;
+  item;
 
   layout = layout;
 }

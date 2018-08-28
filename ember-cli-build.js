@@ -8,7 +8,7 @@ module.exports = function(defaults) {
       includeFontFiles: false,
     },
     'ember-cli-foundation-6-sass': {
-      'foundationJs': 'all'
+      'foundationJs': 'all',
     },
     'ember-cli-tooltipster': {
       importTooltipsterDefaultStyles: false,
