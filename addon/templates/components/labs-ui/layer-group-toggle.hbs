@@ -1,4 +1,4 @@
-<div class="layer-group-toggle-header layer-{{dasherize title}}">
+<div class="layer-group-toggle-header layer-{{dasherize label}}">
   <div class="switch tiny float-left">
     <input class="switch-input" type="checkbox" checked={{if active 'checked'}}>
     <label {{action 'toggle'}} class="switch-paddle">
@@ -6,15 +6,15 @@
     </label>
   </div>
   <span {{action 'toggle'}} class="layer-group-toggle-label" role="button">
-    {{#if tooltip}}
+    {{!-- {{#if tooltip}}
       {{labs-ui/icon-tooltip tip=tooltip}}
-    {{/if}}
+    {{/if}} --}}
 
-    {{title}}
+    {{label}}
 
     {{#if active}}
-      {{#if (and legendColor legendIcon)}}
-        {{labs-ui/legend-icon legendColor=legendColor legendIcon=legendIcon}}
+      {{#if icon}}
+        {{labs-ui/legend-icon icon=icon}}
       {{/if}}
     {{/if}}
 

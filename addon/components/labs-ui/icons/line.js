@@ -5,7 +5,7 @@ import { tagName, classNames, attribute } from '@ember-decorators/component';
 import layout from '../../../templates/components/labs-ui/icons/line';
 
 @tagName('svg')
-@classNames('legend-icon', 'legend-icon--line')
+@classNames('legend-icon-layer', 'line')
 export default class LabsLegendIconLineComponent extends Component {
   layout = layout;
 
@@ -16,8 +16,7 @@ export default class LabsLegendIconLineComponent extends Component {
       fill: 'none',
     };
     const options = this.get('options');
-console.log(defaultOptions, options);
-console.log(Object.assign(defaultOptions, options));
+
     return Object.assign(defaultOptions, options);
   }
 

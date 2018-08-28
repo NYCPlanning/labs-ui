@@ -18,13 +18,10 @@ export default class LabsUILayerMenuItemComponent extends Component {
   @required
   @argument
   @type('string')
-  title;
+  label;
 
   @argument
-  legendIcon = '';
-
-  @argument
-  legendColor = '';
+  icon = [];
 
   @argument
   @type('string')

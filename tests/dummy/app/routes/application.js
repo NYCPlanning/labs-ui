@@ -5,6 +5,9 @@ export default Route.extend({
     const layerGroups = await this.store.query('layer-group', {
       'layer-groups': [
         { id: 'citymap', visible: true },
+        { id: 'pierhead-bulkhead-lines', visible: true },
+        { id: 'community-districts', visible: true },
+        { id: 'floodplain-pfirm2015', visible: true },
       ],
     });
 

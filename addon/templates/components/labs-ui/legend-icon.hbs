@@ -1,43 +1,54 @@
-{{#if (eq icon.type 'line')}}
-  {{labs-ui/icons/line options=icon.options}}
-{{/if}}
+{{#each icon as |icon-layer|}}
 
-{{!-- {{#if (eq legendIcon 'polygon')}}
-  <span class="polygon" style={{legendColorStyle}}>
-    {{fa-icon 'square'}}
-  </span>
-{{/if}}
+  {{#if (eq icon-layer.type 'line')}}
+    {{labs-ui/icons/line options=icon-layer.options}}
+  {{/if}}
 
-{{#if (eq legendIcon 'polygon-stacked')}}
-  <span class="polygon-stacked" style={{legendColorStyle}}>
-    {{fa-icon 'square'}}
-    {{fa-icon 'square'}}
-  </span>
-{{/if}}
+  {{#if (eq icon-layer.type 'fa-icon')}}
+    {{labs-ui/icons/fa-icon options=icon-layer.options}}
+  {{/if}}
 
-{{#if (eq legendIcon 'polygon-line')}}
-  <span class="polygon-line" style={{legendColorStyle}}>
-    {{fa-icon 'square-o'}}
-  </span>
-{{/if}}
+{{/each}}
 
-{{#if (eq legendIcon 'polygon-fill-dash')}}
-  <span class="polygon-fill-dash">
-    <span class="fill" style={{legendBackgroundColorStyle}}></span>
-    <span class="dash" style={{legendBorderColorStyle}}></span>
-  </span>
-{{/if}}
 
-{{#if (eq legendIcon 'point')}}
-  <span class="point" style={{legendColorStyle}}>
-    {{fa-icon 'circle' style="transform:scale(0.6);"}}
-  </span>
-{{/if}}
 
-{{#if (eq legendIcon 'four-vertical-lines')}}
-  <span class="point" style={{legendColorStyle}}>
-    {{fa-icon 'align-justify' style="transform:rotate(90deg);"}}
-  </span>
-{{/if}} --}}
 
-{{!-- {{yield}} --}}
+  {{!-- {{#if (eq legendIcon 'polygon')}}
+    <span class="polygon" style={{legendColorStyle}}>
+      {{fa-icon 'square'}}
+    </span>
+  {{/if}}
+
+  {{#if (eq legendIcon 'polygon-stacked')}}
+    <span class="polygon-stacked" style={{legendColorStyle}}>
+      {{fa-icon 'square'}}
+      {{fa-icon 'square'}}
+    </span>
+  {{/if}}
+
+  {{#if (eq legendIcon 'polygon-line')}}
+    <span class="polygon-line" style={{legendColorStyle}}>
+      {{fa-icon 'square-o'}}
+    </span>
+  {{/if}}
+
+  {{#if (eq legendIcon 'polygon-fill-dash')}}
+    <span class="polygon-fill-dash">
+      <span class="fill" style={{legendBackgroundColorStyle}}></span>
+      <span class="dash" style={{legendBorderColorStyle}}></span>
+    </span>
+  {{/if}}
+
+  {{#if (eq legendIcon 'point')}}
+    <span class="point" style={{legendColorStyle}}>
+      {{fa-icon 'circle' style="transform:scale(0.6);"}}
+    </span>
+  {{/if}}
+
+  {{#if (eq legendIcon 'four-vertical-lines')}}
+    <span class="point" style={{legendColorStyle}}>
+      {{fa-icon 'align-justify' style="transform:rotate(90deg);"}}
+    </span>
+  {{/if}} --}}
+
+  {{!-- {{yield}} --}}

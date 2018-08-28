@@ -52,15 +52,28 @@
 }
 
 .legend-icon {
+  width: 2.5em;
   height: 1.5em;
-  width: auto;
   display: inline-block;
   vertical-align: top;
   margin: 0 rem-calc(2) 0 0;
+  position: relative;
+  text-align: center;
+}
 
-  &.line-array {
-    width: 2.5em;
+.legend-icon-layer {
+  display: inline-block;
+
+  & + & {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
+}
+
+svg.legend-icon-layer {
+  height: 1.5em;
+  width: 2.5em;
 }
 
 .polygon-stacked {
