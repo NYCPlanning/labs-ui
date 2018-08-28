@@ -18,17 +18,20 @@
   ```
   ember g ember-cli-foundation-6-sass
   ```
-  If `app.scss` doesn't exist, let the generator add it.
+
+  - If `app.scss` doesn't exist, let the generator add it.
+
+  - Ignore or delete the generated `_settings.scss` file.
 
 1. Edit `app.scss` and `@import`/`@include` files in this order:
 
   1. **Labs UI variables** — sets vars for colors (e.g. DCP’s orange, Land Use colors, planning standard colors), imports Foundation utilities, sets Foundation vars
 
-  - **Foundation** — import `foundation-sites/foundation` and include `foundation-everything`;
+  1. **Foundation** — import `foundation-sites/foundation` and include `foundation-everything`;
 
-  - **Labs UI modules** — import all modules (`@import 'labs-ui/all-modules'`) or a subset of modules (`@import 'labs-ui/modules/_m-tooltipster'`)
+  1. **Labs UI modules** — import all modules (`@import 'labs-ui/all-modules'`) or a subset of modules (`@import 'labs-ui/modules/_m-tooltipster'`)
 
-  - **Custom styles** — application-specific styles and overrides
+  1. **Custom styles** — application-specific styles and overrides
 
   The consuming app's `app.scss` should look something like this:
 
