@@ -11,6 +11,11 @@ export default Route.extend({
         { id: 'zoning-map-amendments', visible: true },
         { id: 'amendments', visible: true },
         { id: 'zoning-map-amendments-pending', visible: true },
+        { id: 'tax-lots', visible: true },
+        { id: 'three-d-buildings', visible: true },
+        { id: 'transit-zones', visible: true },
+        { id: 'waterfront-access-plan', visible: true },
+        { id: 'stair-streets', visible: true },
       ],
     });
 
