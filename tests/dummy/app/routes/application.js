@@ -9,6 +9,7 @@ export default Route.extend({
         { id: 'community-districts', visible: true },
         { id: 'floodplain-pfirm2015', visible: true },
         { id: 'zoning-map-amendments', visible: true },
+        { id: 'amendments', visible: true },
       ],
     });
 
