@@ -13,39 +13,18 @@
   as |menu|
 }}
 
-  {{#menu.layer-group-toggle
-    label=model.layerGroupsObject.citymap.legend.label
-    active=true
-  }}
-    {{labs-ui/legend-items items=model.layerGroupsObject.citymap.legend.items}}
-  {{/menu.layer-group-toggle}}
-
-  {{#menu.layer-group-toggle
-    label=model.layerGroupsObject.pierhead-bulkhead-lines.legend.label
-    active=true
-  }}
-    {{labs-ui/legend-items items=model.layerGroupsObject.pierhead-bulkhead-lines.legend.items}}
-  {{/menu.layer-group-toggle}}
-
-  {{menu.layer-group-toggle
-    label=model.layerGroupsObject.community-districts.legend.label
-    icon=model.layerGroupsObject.community-districts.legend.icon
-    active=true
-  }}
-
-  {{#menu.layer-group-toggle
-    label=model.layerGroupsObject.floodplain-pfirm2015.legend.label
-    active=true
-  }}
-    {{labs-ui/legend-items items=model.layerGroupsObject.floodplain-pfirm2015.legend.items}}
-  {{/menu.layer-group-toggle}}
-
-  {{menu.layer-group-toggle
-    label=model.layerGroupsObject.amendments.legend.label
-    icon=model.layerGroupsObject.amendments.legend.icon
-    active=true
-  }}
-
+  {{#each model.layerGroupsArray as | layerGroup |}}
+    {{#menu.layer-group-toggle
+      label=layerGroup.legend.label
+      tooltip=layerGroup.legend.tooltip
+      icon=layerGroup.legend.icon
+      active=true
+    }}
+      {{#if layerGroup.legend.items}}
+        {{labs-ui/legend-items items=layerGroup.legend.items}}
+      {{/if}}
+    {{/menu.layer-group-toggle}}
+  {{/each}}
 {{/labs-ui/accordion-menu}}
 
 {{outlet}}

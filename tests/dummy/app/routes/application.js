@@ -8,21 +8,22 @@ export default Route.extend({
         { id: 'pierhead-bulkhead-lines', visible: true },
         { id: 'community-districts', visible: true },
         { id: 'floodplain-pfirm2015', visible: true },
+        { id: 'zoning-map-amendments', visible: true },
         { id: 'amendments', visible: true },
+        { id: 'zoning-map-amendments-pending', visible: true },
+        { id: 'tax-lots', visible: true },
+        { id: 'three-d-buildings', visible: true },
+        { id: 'transit-zones', visible: true },
+        { id: 'waterfront-access-plan', visible: true },
+        { id: 'stair-streets', visible: true },
       ],
     });
 
-    const layerGroupsObject = layerGroups.reduce(
-      (accumulator, current) => {
-        accumulator[current.get('id')] = current;
-        return accumulator;
-      },
-      {},
-    );
+    const layerGroupsArray = layerGroups.toArray().map(d => d.toJSON())
 
     return {
       layerGroups,
-      layerGroupsObject,
+      layerGroupsArray,
     }
   }
 });
