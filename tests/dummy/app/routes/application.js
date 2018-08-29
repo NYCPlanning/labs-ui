@@ -10,20 +10,15 @@ export default Route.extend({
         { id: 'floodplain-pfirm2015', visible: true },
         { id: 'zoning-map-amendments', visible: true },
         { id: 'amendments', visible: true },
+        { id: 'zoning-map-amendments-pending', visible: true },
       ],
     });
 
-    const layerGroupsObject = layerGroups.reduce(
-      (accumulator, current) => {
-        accumulator[current.get('id')] = current;
-        return accumulator;
-      },
-      {},
-    );
+    const layerGroupsArray = layerGroups.toArray().map(d => d.toJSON())
 
     return {
       layerGroups,
-      layerGroupsObject,
+      layerGroupsArray,
     }
   }
 });

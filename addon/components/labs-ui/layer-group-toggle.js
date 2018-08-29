@@ -24,7 +24,6 @@ export default class LabsUILayerMenuItemComponent extends Component {
   icon = [];
 
   @argument
-  @type('string')
   tooltip = '';
 
   @argument
