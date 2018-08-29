@@ -8,6 +8,7 @@ export default Route.extend({
         { id: 'pierhead-bulkhead-lines', visible: true },
         { id: 'community-districts', visible: true },
         { id: 'floodplain-pfirm2015', visible: true },
+        { id: 'zoning-map-amendments', visible: true },
       ],
     });
 
