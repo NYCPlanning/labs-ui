@@ -1,11 +1,13 @@
-{{#each icon.layers as |icon-layer|}}
+<span class="{{iconType}}">
+  {{#each icon.layers as |icon-layer|}}
 
-  {{#if (eq icon.type 'line')}}
-    {{labs-ui/icons/line options=icon-layer}}
-  {{/if}}
+    {{#if (eq icon.type 'line')}}
+      {{labs-ui/icons/line options=icon-layer}}
+    {{/if}}
 
-  {{#if (eq icon.type 'fa-icon')}}
-    {{labs-ui/icons/fa-icon options=icon-layer}}
-  {{/if}}
+    {{#if (eq icon.type 'fa-icon')}}
+      {{labs-ui/icons/fa-icon options=icon-layer}}
+    {{/if}}
 
-{{/each}}
+  {{/each}}
+</span>

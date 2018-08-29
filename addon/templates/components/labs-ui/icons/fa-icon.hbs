@@ -1,1 +1,3 @@
-<span style="color:{{options.color}};">{{fa-icon options.fa-icon}}</span>
+<span style="{{if options.color (concat 'color:' options.color ';')}}">
+  {{fa-icon options.fa-icon transform=options.transform}}
+</span>

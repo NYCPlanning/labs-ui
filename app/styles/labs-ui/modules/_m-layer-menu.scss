@@ -64,7 +64,7 @@
 .legend-icon-layer {
   display: inline-block;
 
-  & + & {
+  &.line + &.line {
     position: absolute;
     top: 0;
     left: 0;
