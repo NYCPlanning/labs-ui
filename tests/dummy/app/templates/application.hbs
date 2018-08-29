@@ -40,6 +40,12 @@
     {{labs-ui/legend-items items=model.layerGroupsObject.floodplain-pfirm2015.legend.items}}
   {{/menu.layer-group-toggle}}
 
+  {{menu.layer-group-toggle
+    label=model.layerGroupsObject.amendments.legend.label
+    icon=model.layerGroupsObject.amendments.legend.icon
+    active=true
+  }}
+
 {{/labs-ui/accordion-menu}}
 
 {{outlet}}
