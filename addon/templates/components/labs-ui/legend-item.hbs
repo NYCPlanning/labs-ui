@@ -1,2 +1,6 @@
 {{labs-ui/legend-icon icon=item.icon}}
 {{item.label}}
+
+{{#if item.tooltip}}
+  {{labs-ui/icon-tooltip tip=item.tooltip}}
+{{/if}}
