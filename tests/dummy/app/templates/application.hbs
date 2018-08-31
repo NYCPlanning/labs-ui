@@ -1,40 +1,98 @@
-<h1 class="no-margin">Labs-UI</h1>
-<h2>Common UI components for Planning Labs' Ember apps</h2>
+<div class="site-header">
+  <div class="grid-container">
 
-<h3>labs-ui/icon-tooltip</h3>
-<p>Makes a tooltip with a fontawesome icon.  Default icon is 'info-circle' </p>
+    <div class="large-text-right">
+      <a class="button" href="https://github.com/NYCPlanning/labs-ui">
+        {{fa-icon 'github' prefix='fab'}}
+        <strong class="medium-down-expanded"><span class="show-for-large">github.com/</span>NYCPlanning/labs-ui</strong>
+      </a>
+    </div>
 
-<p>Here is an info tooltip next to some text. {{labs-ui/icon-tooltip tip="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}}</p>
+      <h1 class="no-margin">Labs UI</h1>
+      <h2 class="header-xlarge dark-gray text-weight-normal">NYC Planning Labs Ember Components</h2>
 
-<div class="grid-x">
-  <div class="cell medium-7">
-
-    {{#labs-map id='map' mapLoaded=(action 'handleMapLoad') as |map|}}
-      {{map.labs-layers layerGroups=model.layerGroups}}
-    {{/labs-map}}
+      <p class="lead">This addon contains common Ember components and Sass variables used across multiple Planning Labs applications.</p>
 
   </div>
-  <div class="cell medium-5">
+</div>
 
-    {{#labs-ui/accordion-menu
-      title='Accordion menu'
-      as |menu|
-    }}
+<div class="grid-container">
 
-      {{#each model.layerGroupsArray as | layerGroup |}}
-        {{#menu.layer-group-toggle
-          label=layerGroup.legend.label
-          tooltip=layerGroup.legend.tooltip
-          icon=layerGroup.legend.icon
-          active=true
-        }}
-          {{#if layerGroup.legend.items}}
-            {{labs-ui/legend-items items=layerGroup.legend.items}}
-          {{/if}}
-        {{/menu.layer-group-toggle}}
-      {{/each}}
-    {{/labs-ui/accordion-menu}}
+  <h3 class="no-margin">Accordion Menu</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/icon-tooltip</h4>
 
+  <div class="grid-x">
+    <div class="cell medium-7">
+      <p>Description</p>
+    </div>
+    <div class="cell medium-5">
+      <pre><code>Example</code></pre>
+    </div>
+  </div>
+
+  <hr />
+
+  <h3 class="no-margin">Layer Group Toggle</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/layer-group-toggle</h4>
+
+  <hr />
+
+  <h3 class="no-margin">Legend Items</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/legend-items</h4>
+
+  <hr />
+
+  <h3 class="no-margin">Legend Item</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/legend-item</h4>
+
+  <hr />
+
+  <h3 class="no-margin">Legend Icon</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/legend-icon</h4>
+
+  <hr />
+
+  <h3 class="no-margin">Icon Tooltip</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/icon-tooltip</h4>
+
+  <p>Makes a tooltip with a fontawesome icon.  Default icon is 'info-circle' </p>
+
+  <p>Here is an info tooltip next to some text. {{labs-ui/icon-tooltip tip="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}}</p>
+
+  <hr />
+
+  <div class="grid-x">
+    <div class="cell medium-7">
+
+      {{#labs-map id='map' mapLoaded=(action 'handleMapLoad') as |map|}}
+        {{map.labs-layers layerGroups=model.layerGroups}}
+      {{/labs-map}}
+
+      {{log model.layerGroups}}
+
+    </div>
+    <div class="cell medium-5">
+
+      {{#labs-ui/accordion-menu
+        title='Accordion menu'
+        as |menu|
+      }}
+
+        {{#each model.layerGroupsArray as | layerGroup |}}
+          {{#menu.layer-group-toggle
+            label=layerGroup.legend.label
+            tooltip=layerGroup.legend.tooltip
+            icon=layerGroup.legend.icon
+            active=true
+          }}
+            {{#if layerGroup.legend.items}}
+              {{labs-ui/legend-items items=layerGroup.legend.items}}
+            {{/if}}
+          {{/menu.layer-group-toggle}}
+        {{/each}}
+      {{/labs-ui/accordion-menu}}
+
+    </div>
   </div>
 </div>
 

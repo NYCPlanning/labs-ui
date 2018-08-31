@@ -1,9 +1,14 @@
-@import "labs-ui/variables";
+//
+// Labs UI variables
+// --------------------------------------------------
+
+@import 'labs-ui/variables';
+
 
 //
 // Foundation
 // --------------------------------------------------
-@import "settings";
+
 @import 'foundation-sites/foundation';
 // @include foundation-everything;
 
@@ -48,12 +53,32 @@
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
-//
-// Modules
-// --------------------------------------------------
-@import 'labs-ui/modules';
 
+//
+// Labs UI modules (import all or some)
+// --------------------------------------------------
+
+@import 'labs-ui/all-modules';
+
+
+//
+// Custom app modules and styles
+// --------------------------------------------------
+
+.site-header {
+  background-color: $white-smoke;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
 
 #map {
   height: 100%;
+}
+
+pre code {
+  // display: block;
+  // overflow-x: auto;
+  // padding: 1rem;
+  // padding-right: 4rem;
+  // margin-bottom: $global-margin;
 }
