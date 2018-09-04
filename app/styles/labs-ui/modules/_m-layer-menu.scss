@@ -18,10 +18,6 @@
     padding: rem-calc(6);
     display: block;
     padding-left: rem-calc(30); // switch's width (20) + margin (10)
-
-    .tooltip {
-      margin-left: rem-calc(6);
-    }
   }
 
   .switch {
@@ -48,6 +44,7 @@
 }
 
 .legend-item {
+  font-size: rem-calc(12);
   padding: 0 rem-calc(6);
 }
 
@@ -108,5 +105,16 @@ svg.legend-icon-layer {
   .dash {
     border-width: 2px;
     border-style: dotted;
+  }
+}
+
+
+// Tooltips
+.layer-group-toggle-label,
+.legend-item {
+  .icon-tooltip {
+    float: right;
+    margin-right: rem-calc(3);
+    margin-left: rem-calc(6);
   }
 }

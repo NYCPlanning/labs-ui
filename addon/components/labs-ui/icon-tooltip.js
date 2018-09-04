@@ -7,6 +7,8 @@ import layout from '../../templates/components/labs-ui/icon-tooltip';
 export default class InfoTooltip extends Component {
   layout = layout
 
+  classNames=['icon-tooltip'];
+
   @argument
   tip = ''
 

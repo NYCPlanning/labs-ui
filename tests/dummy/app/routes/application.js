@@ -48,9 +48,40 @@ export default Route.extend({
 
     const layerGroupsArray = layerGroups.toArray().map(d => d.toJSON())
 
+
+    const exampleIcon = {
+      "type": "rectangle",
+      "layers": [{
+        "fill":"rgba(230, 50, 50, 0.2)",
+        "stroke":"rgba(230, 50, 50, 0.6)",
+        "stroke-dasharray":"1"
+      }]
+    };
+
+    const exampleItem = {
+      "label":"Legend Item Label",
+      "tooltip": "This is the legend item tooltip.",
+      "icon": {
+        "type": "line",
+        "layers": [
+          {
+            "fill":"none",
+            "stroke":"rgba(230, 50, 50, 0.3)",
+            "stroke-width": 4
+          },
+          {
+            "fill":"none",
+            "stroke":"rgba(150, 50, 50, 1)"
+          }
+        ]
+      }
+    };
+
     return {
       layerGroups,
       layerGroupsArray,
+      exampleIcon,
+      exampleItem,
     }
   }
 });
