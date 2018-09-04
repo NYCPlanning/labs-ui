@@ -384,6 +384,146 @@ in the middle of some text.
   <hr />
 
 
+  <h2 id="utils" class="header-xxlarge section-header">Utility classes</h2>
+
+
+  <h3>Headings</h3>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>Heading classes are used to give elements a particular heading style, regardless of their tag. This allows for both semantic page structure and versatile design. </p>
+      <p>For example, an <code>&lt;h2&gt;</code> is relatively large by default, and it may be the proper element choice, but need to be styled like a smaller <code>&lt;h4&gt;</code>.</p>
+      <pre><code>&lt;h6 class="header-xxlarge">XXL Heading&lt;/h6>
+&lt;h6 class="header-xlarge">XL Heading&lt;/h6>
+&lt;p class="header-large">Large Heading&lt;/p>
+&lt;p class="header-medium">Medium Heading&lt;/p>
+&lt;h1 class="header-small">Small Heading&lt;/h1>
+&lt;h1 class="header-tiny">Tiny Heading&lt;/h1></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p class="header-xxlarge">XXL Heading</p>
+      <p class="header-xlarge">XL Heading</p>
+      <p class="header-large">Large Heading</p>
+      <p class="header-medium">Medium Heading</p>
+      <p class="header-small">Small Heading</p>
+      <p class="header-tiny">Tiny Heading</p>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3>Margins</h3>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>The <code>.no-margin</code> class removes the margin from all 4 sides of an element with an <code>!important</code> rule. The <code>.small-margin-bottom</code> class sets the bottom margin on an element to 1/2 the <code>$global-margin</code>.</p>
+      <pre><code>&lt;p>This is a regular paragraph. It has margin on its bottom side.&lt;/p>
+&lt;p class="no-margin">This paragraph has no margins.&lt;/p>
+&lt;p class="small-margin-bottom">This paragraph has a small margin on its bottom side.&lt;/p>
+&lt;p>This is another regular paragraph.&lt;/p></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p>This is a regular paragraph. It has margin on its bottom side.</p>
+      <p class="no-margin">This paragraph has no margins.</p>
+      <p class="small-margin-bottom">This paragraph has a small margin on its bottom side.</p>
+      <p>This is another regular paragraph.</p>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3>Text size</h3>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>In addition to Foundation's <code>.lead</code> class (which styles a slightly-larger-than-normal block of text), Labs UI has <code>.text-small</code> and <code>.text-tiny</code>.</p>
+      <pre><code>&lt;p class="lead">This is a lead paragraph.&lt;/p>
+&lt;p>This is a regular paragraph.&lt;/p>
+&lt;p class="text-small">This is a small paragraph.&lt;/p>
+&lt;p class="text-tiny">This is a tiny paragraph.&lt;/p></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p class="lead">This is a lead paragraph.</p>
+      <p>This is a regular paragraph.</p>
+      <p class="text-small">This is a small paragraph.</p>
+      <p class="text-tiny">This is a tiny paragraph.</p>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3>Text weight</h3>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>The <code>.text-weight-normal</code> and <code>.text-weight-bold</code> classes allow you to override an element's font weight.</p>
+      <pre><code>&lt;p>This is a regular paragraph.&lt;/p>
+&lt;p class="text-weight-bold">This is a bold paragraph.&lt;/p>
+&lt;h4>This is a regular h4.&lt;/h4>
+&lt;h4 class="text-weight-normal">This is a non-bold h4.&lt;/h4></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p>This is a regular paragraph.</p>
+      <p class="text-weight-bold">This is a bold paragraph.</p>
+      <h4>This is a regular h4.</h4>
+      <h4 class="text-weight-normal">This is a non-bold h4.</h4>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3>No wrap</h3>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>The <code>.nowrap</code> class prevents elements from wrapping to multiple lines.</p>
+      <pre><code>&lt;p class="nowrap">
+  Lorem ipsum dolor sit amet, consectetur adipisicing
+  elit, sed do eiusmod tempor incididunt ut labore et
+  dolore magna aliqua. Ut enim ad minim veniam, quis
+  nostrud exercitation ullamco laboris nisi ut aliquip
+  ex ea commodo consequat.
+&lt;/p></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p class="nowrap" style="overflow:auto;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat.
+      </p>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3>Color classes</h3>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>There are <code>.[color]</code> classes for every Sass color variable, which override the color of an element's text.</p>
+      <pre><code>&lt;p class="aqua-dark">This paragraph is aqua-dark.&lt;/p>
+&lt;p class="chartreuse">This paragraph is chartreuse.&lt;/p>
+&lt;p class="fuchsia-light">This paragraph is fuchsia-light.&lt;/p>
+&lt;p class="indigo">This paragraph is indigo.&lt;/p></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p class="aqua-dark">This paragraph is aqua-dark.</p>
+      <p class="chartreuse">This paragraph is chartreuse.</p>
+      <p class="fuchsia-light">This paragraph is fuchsia-light.</p>
+      <p class="indigo">This paragraph is indigo.</p>
+    </div>
+  </div>
+
+
+  <hr />
+
+
   <h2 class="header-xxlarge section-header">Sample map + layer group accordion</h2>
 
   <div class="grid-x">
