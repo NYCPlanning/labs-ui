@@ -54,7 +54,8 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.locationType = 'hash';
     ENV.rootURL = '/labs-ui/';
-    // here you can enable a production-specific feature
+    ENV.host = 'https://layers.planninglabs.nyc/';
+    ENV['mapbox-gl'].map.style = 'https://layers.planninglabs.nyc/v1/base/style.json';
   }
 
   return ENV;
