@@ -133,7 +133,7 @@ in the middle of some text.
           </tr>
           <tr>
             <td><strong><pre>icon</pre></strong></td>
-            <td>data</td>
+            <td>object</td>
             <td>null</td>
             <td>Structured data, renders a legend icon</td>
           </tr>
@@ -188,7 +188,7 @@ in the middle of some text.
         <tbody>
           <tr>
             <td><strong><pre>items</pre></strong></td>
-            <td>data</td>
+            <td>object</td>
             <td>null</td>
             <td>Structured data, array of legend objects (required)</td>
           </tr>
@@ -221,7 +221,7 @@ in the middle of some text.
         <tbody>
           <tr>
             <td><strong><pre>item</pre></strong></td>
-            <td>data</td>
+            <td>object</td>
             <td>null</td>
             <td>Structured data, legend object (required)</td>
           </tr>
@@ -242,7 +242,7 @@ in the middle of some text.
   <h4 class="dark-gray text-weight-normal">labs-ui/legend-icon</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
-      <p>The <code>legend-icon</code> component is optionally called by the <code>legend-item</code> component. From the structured data passed into <code>legend-item</code>, it renders a layered SVG or Font Awesome icon, depending on each layer's <code>type</code>.</p>
+      <p>The <code>legend-icon</code> component renders a layered stack of icons. The <code>icon.type</code> can be <code>line</code>, <code>rectangle</code>, or <code>fa-icon</code>, and determines if the layers are made of SVGs or Font Awesome icons. The <code>icon.layers</code> array of objects describes each of the layers in the stack &mdash; e.g. a dark red line over a thicker transparent pink line. </p>
       <table class="text-small">
         <thead>
           <tr>
@@ -255,7 +255,7 @@ in the middle of some text.
         <tbody>
           <tr>
             <td><strong><pre>icon</pre></strong></td>
-            <td>data</td>
+            <td>object</td>
             <td>null</td>
             <td>Structured data,  (required)</td>
           </tr>
