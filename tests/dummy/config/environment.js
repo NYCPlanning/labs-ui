@@ -54,8 +54,8 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.locationType = 'hash';
     ENV.rootURL = '/labs-ui/';
-    ENV.host = 'https://layers.planninglabs.nyc';
-    ENV['mapbox-gl'].map.style = 'https://layers.planninglabs.nyc/v1/base/style.json';
+    ENV.host = 'https://layers-api.planninglabs.nyc';
+    ENV['mapbox-gl'].map.style = 'https://layers-api.planninglabs.nyc/v1/base/style.json';
   }
 
   return ENV;
