@@ -4,6 +4,12 @@ This addon contains common Ember components and Sass variables and utility class
 
 ---
 
+### Documentation (using the addon)
+
+http://nycplanning.github.io/labs-ui 
+
+---
+
 ### Installing the addon
 
 1. Install the addon:
@@ -62,12 +68,6 @@ This addon contains common Ember components and Sass variables and utility class
   'foundationJs': 'all' 
 },
 ```
-
----
-
-### Using the addon
-
-[link to docs site]
 
 ---
 
