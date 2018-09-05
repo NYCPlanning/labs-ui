@@ -6,7 +6,7 @@ This addon contains common Ember components and Sass variables and utility class
 
 ### Documentation (using the addon)
 
-http://nycplanning.github.io/labs-ui 
+http://nycplanning.github.io/labs-ui
 
 ---
 
@@ -96,3 +96,7 @@ http://nycplanning.github.io/labs-ui
 * Visit the dummy application at [http://localhost:4200](http://localhost:4200)
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+
+### Deploying the dummy application (docs) to GitHub Pages
+
+* Use `ember-cli-github-pages` to build the docs and deploy them to gh-pages:  https://github.com/poetic/ember-cli-github-pages#usage
