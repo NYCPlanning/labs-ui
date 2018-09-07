@@ -9,30 +9,13 @@ import layout from '../../templates/components/labs-ui/legend-icon';
 export default class LegendIconComponent extends Component {
   layout = layout;
 
-  @computed('legendColor')
-  get legendColorStyle() {
-    const color = this.get('legendColor');
-    return `color: ${color};`;
-  }
-
-  @computed('legendColor')
-  get legendBackgroundColorStyle() {
-    const color = this.get('legendColor');
-    return `background-color: ${color};`;
-  }
-
-  @computed('legendColor')
-  get legendBorderColorStyle() {
-    const color = this.get('legendColor');
-    return `border-color: ${color};`;
+  @computed
+  get iconType() {
+    const type = this.get('icon.type');
+    return (type === 'fa-icon') ? 'fa-layers' : type;
   }
 
   @argument
-  @type('string')
-  legendIcon = '';
-
-  @argument
-  @type('string')
-  legendColor = '';
+  @type('object')
+  icon = {};
 }
-

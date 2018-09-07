@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    host: '/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -15,6 +16,13 @@ module.exports = function(environment) {
         // Prevent Ember Data from overriding Date.parse.
         Date: false
       }
+    },
+
+    'mapbox-gl': {
+      accessToken: '',
+      map: {
+        style: '/v1/base/style.json',
+      },
     },
 
     APP: {
@@ -44,7 +52,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV.locationType = 'hash';
+    ENV.rootURL = '/labs-ui/';
   }
 
   return ENV;

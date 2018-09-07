@@ -1,6 +1,14 @@
 # Labs UI
+## NYC Planning Labs Ember Components
+This addon contains common Ember components and Sass variables and utility classes used across multiple Planning Labs applications.
 
-[Short description of the addon.]
+---
+
+### Documentation (using the addon)
+
+http://nycplanning.github.io/labs-ui
+
+---
 
 ### Installing the addon
 
@@ -61,10 +69,6 @@
 },
 ```
 
-### Using the addon
-
-[Longer description of how to use the addon in apps.]
-
 ---
 
 # Contributing
@@ -92,3 +96,7 @@
 * Visit the dummy application at [http://localhost:4200](http://localhost:4200)
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+
+### Deploying the dummy application (docs) to GitHub Pages
+
+* Use `ember-cli-github-pages` to build the docs and deploy them to gh-pages:  https://github.com/poetic/ember-cli-github-pages#usage

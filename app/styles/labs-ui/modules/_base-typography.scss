@@ -38,7 +38,7 @@ button {
   margin: 0 !important;
 }
 .small-margin-bottom {
-  margin-bottom: rem-calc(5);
+  margin-bottom: $global-margin / 2;
 }
 
 .text-small {

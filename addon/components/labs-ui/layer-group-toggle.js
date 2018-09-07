@@ -4,9 +4,9 @@ import { action } from '@ember-decorators/object';
 import { type } from '@ember-decorators/argument/type';
 import { required } from '@ember-decorators/argument/validation';
 import { classNames } from '@ember-decorators/component';
-import layout from '../../templates/components/labs-ui/layer-menu-item';
+import layout from '../../templates/components/labs-ui/layer-group-toggle';
 
-@classNames('layer-menu-item')
+@classNames('layer-group-toggle')
 export default class LabsUILayerMenuItemComponent extends Component {
   constructor(...args) {
     super(...args);
@@ -18,16 +18,12 @@ export default class LabsUILayerMenuItemComponent extends Component {
   @required
   @argument
   @type('string')
-  title;
+  label;
 
   @argument
-  legendIcon = '';
+  icon = [];
 
   @argument
-  legendColor = '';
-
-  @argument
-  @type('string')
   tooltip = '';
 
   @argument
@@ -49,4 +45,3 @@ export default class LabsUILayerMenuItemComponent extends Component {
     this.toggleProperty('active');
   }
 }
-
