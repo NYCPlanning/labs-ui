@@ -6,7 +6,7 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
-    host: 'http://localhost:3000',
+    host: '/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -21,7 +21,7 @@ module.exports = function(environment) {
     'mapbox-gl': {
       accessToken: '',
       map: {
-        style: 'http://localhost:3000/v1/base/style.json',
+        style: '/v1/base/style.json',
       },
     },
 
@@ -54,8 +54,6 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.locationType = 'hash';
     ENV.rootURL = '/labs-ui/';
-    ENV.host = 'https://layers-api.planninglabs.nyc';
-    ENV['mapbox-gl'].map.style = 'https://layers-api.planninglabs.nyc/v1/base/style.json';
   }
 
   return ENV;

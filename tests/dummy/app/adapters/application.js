@@ -7,16 +7,11 @@ const { JSONAPIAdapter } = DS;
 
 export default class ApplicationAdapter extends JSONAPIAdapter {
   host = host;
-  namespace = 'v1';
 
-  async query(store, type, query = {}) {
-    const URL = this.buildURL(type.modelName);
+  async query(store, type) {
+    const URL = `${this.buildURL(type.modelName)}.json`;
      return fetch(`${URL}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-      },
-      body: JSON.stringify(query),
+      method: 'GET',
     }).then(blob => blob.json());
   }
 }
