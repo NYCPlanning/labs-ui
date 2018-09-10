@@ -10,17 +10,8 @@ module('Integration | Component | labs-ui/icon-tooltip', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{labs-ui/icon-tooltip}}`);
+    await render(hbs`{{labs-ui/icon-tooltip icon='map-marked-alt' tip='This is the tooltip text.'}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#labs-ui/icon-tooltip}}
-        template block text
-      {{/labs-ui/icon-tooltip}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

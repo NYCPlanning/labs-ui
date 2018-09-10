@@ -13,14 +13,5 @@ module('Integration | Component | labs-ui/icons/rectangle', function(hooks) {
     await render(hbs`{{labs-ui/icons/rectangle}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#labs-ui/icons/rectangle}}
-        template block text
-      {{/labs-ui/icons/rectangle}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

@@ -13,14 +13,5 @@ module('Integration | Component | labs-ui/icons/fa-icon', function(hooks) {
     await render(hbs`{{labs-ui/icons/fa-icon}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#labs-ui/icons/fa-icon}}
-        template block text
-      {{/labs-ui/icons/fa-icon}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
