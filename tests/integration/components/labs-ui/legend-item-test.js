@@ -10,17 +10,27 @@ module('Integration | Component | labs-ui/legend-item', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{labs-ui/legend-item}}`);
+    this.set('item', {
+      "label":"Legend Item Label",
+      "tooltip": "This is the legend item tooltip.",
+      "icon": {
+        "type": "line",
+        "layers": [
+          {
+            "fill":"none",
+            "stroke":"rgba(230, 50, 50, 0.3)",
+            "stroke-width": 4
+          },
+          {
+            "fill":"none",
+            "stroke":"rgba(150, 50, 50, 1)"
+          }
+        ]
+      }
+    });
 
-    assert.equal(this.element.textContent.trim(), '');
+    await render(hbs`{{labs-ui/legend-item item=item}}`);
 
-    // Template block usage:
-    await render(hbs`
-      {{#labs-ui/legend-item}}
-        template block text
-      {{/labs-ui/legend-item}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'Legend Item Label');
   });
 });

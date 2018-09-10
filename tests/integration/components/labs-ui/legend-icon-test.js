@@ -6,42 +6,25 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | legend-icon', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders a line icon', async function(assert) {
-    await render(hbs`{{labs-ui/legend-icon legendColor='#ff0000' legendIcon='line'}}`);
-    const icon = await find('.fa-minus');
+  test('it renders an icon with two stacked SVG lines', async function(assert) {
+
+    this.set('icon', {
+      "type": "line",
+      "layers": [
+        {
+          "fill":"none",
+          "stroke":"rgba(230, 50, 50, 0.3)",
+          "stroke-width": 4
+        },
+        {
+          "fill":"none",
+          "stroke":"rgba(150, 50, 50, 1)"
+        }
+      ]
+    });
+
+    await render(hbs`{{labs-ui/legend-icon icon=icon}}`);
+    const icon = await find('svg + svg');
     assert.equal(!!icon, true);
   });
-
-  test('it renders a polygon icon', async function(assert) {
-    await render(hbs`{{labs-ui/legend-icon legendColor='#ff0000' legendIcon='polygon'}}`);
-    const icon = await find('.fa-square');
-    assert.equal(!!icon, true);
-  });
-
-  test('it renders a polygon-stacked icon', async function(assert) {
-    await render(hbs`{{labs-ui/legend-icon legendColor='#ff0000' legendIcon='polygon-stacked'}}`);
-    const icon = await find('.fa-square');
-    assert.equal(!!icon, true);
-  });
-
-  test('it renders a polygon-line icon', async function(assert) {
-    await render(hbs`{{labs-ui/legend-icon legendColor='#ff0000' legendIcon='polygon-line'}}`);
-    const icon = await find('.fa-square-o');
-    assert.equal(!!icon, true);
-  });
-
-  test('it renders a polygon-fill-dash icon', async function(assert) {
-    await render(hbs`{{labs-ui/legend-icon legendColor='#ff0000' legendIcon='polygon-fill-dash'}}`);
-    const fill = await find('.polygon-fill-dash .fill');
-    assert.equal(!!fill, true);
-    const dash = await find('.polygon-fill-dash .dash');
-    assert.equal(!!dash, true);
-  });
-
-  test('it renders a point icon', async function(assert) {
-    await render(hbs`{{labs-ui/legend-icon legendColor='#ff0000' legendIcon='point'}}`);
-    const icon = await find('.fa-circle');
-    assert.equal(!!icon, true);
-  });
-
 });

@@ -13,14 +13,5 @@ module('Integration | Component | labs-ui/icons/line', function(hooks) {
     await render(hbs`{{labs-ui/icons/line}}`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#labs-ui/icons/line}}
-        template block text
-      {{/labs-ui/icons/line}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
