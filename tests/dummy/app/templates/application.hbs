@@ -25,8 +25,8 @@
   <h4 class="dark-gray text-weight-normal">labs-ui/accordion-menu</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
-      <p>The <code>accordion-menu</code> component is always used in block form. Its <code>title</code> block param renders a clickable title which toggles the visibility of its yielded content.</p>
-      <table class="text-small">
+      <p>This component is always used in block form. Its <code>title</code> param renders a clickable title which toggles the visibility of its yielded content.</p>
+      <table>
         <thead>
           <tr>
             <td>Param</td>
@@ -65,7 +65,7 @@
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
       <p>Renders a Font Awesome icon with Tooltipster tooltip.</p>
-      <table class="text-small">
+      <table>
         <thead>
           <tr>
             <td>Param</td>
@@ -76,7 +76,13 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong><pre>title</pre></strong></td>
+            <td><strong><pre>tip</pre></strong></td>
+            <td>string</td>
+            <td>null</td>
+            <td>Tooltip text</td>
+          </tr>
+          <tr>
+            <td><strong><pre>icon</pre></strong></td>
             <td>string</td>
             <td><pre>info-circle</pre></td>
             <td>Font Awesome icon name</td>
@@ -87,14 +93,15 @@
     <div class="cell large-7">
       <pre><code>Here is an info tooltip on a "map-marked-alt" icon
   &#123;{labs-ui/icon-tooltip
-    tip="This is the tooltip text."
+    tip='This is the tooltip text.'
+    icon='map-marked-alt'
   }}
 in the middle of some text.
 </code></pre>
       Here is an info tooltip on a "map-marked-alt" icon
         {{labs-ui/icon-tooltip
-          icon='map-marked-alt'
           tip='This is the tooltip text.'
+          icon='map-marked-alt'
         }}
       in the middle of some text.
     </div>
@@ -108,8 +115,13 @@ in the middle of some text.
   <h4 class="dark-gray text-weight-normal">labs-ui/layer-group-toggle</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
-      <p>The <code>layer-group-toggle</code> component is always used in block form. The <code>label</code> block param renders a clickable switch and label which toggle the visibility of the component's yielded content and layers on the map.</p>
-      <table class="text-small">
+      <p>This component is always used in block form. The <code>label</code> param renders a clickable label and switch. When either are clicked, the <code>active</code> boolean is reversed and the visibility of the component's yielded content is toggled.</p>
+      <p>Optional tooltip parameters can be passed:</p>
+      <ul>
+        <li><p>Typically used to show meta info, <code>tooltip</code> renders a dark blue info circle icon that is always visible, regardless of the active state. Override the icon with <code>tooltipIcon</code>.</p></li>
+        <li><p>Typically used to indicate a warning, <code>activeTooltip</code> renders an orange exclamation triangle icon that is only visible when the active state is true. Override the icon with <code>activeTooltipIcon</code>. </p></li>
+      </ul>
+      <table>
         <thead>
           <tr>
             <td>Param</td>
@@ -126,10 +138,10 @@ in the middle of some text.
             <td>Clickable label text (required)</td>
           </tr>
           <tr>
-            <td><strong><pre>tooltip</pre></strong></td>
-            <td>string</td>
-            <td>null</td>
-            <td>Tooltip text</td>
+            <td><strong><pre>active</pre></strong></td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>Sets default state of component</td>
           </tr>
           <tr>
             <td><strong><pre>icon</pre></strong></td>
@@ -138,10 +150,28 @@ in the middle of some text.
             <td>Structured data, renders a legend icon</td>
           </tr>
           <tr>
-            <td><strong><pre>active</pre></strong></td>
-            <td>boolean</td>
-            <td>true</td>
-            <td>Sets default state of component</td>
+            <td><strong><pre>tooltip</pre></strong></td>
+            <td>string</td>
+            <td>null</td>
+            <td>Adds a tooltip that's always visible</td>
+          </tr>
+          <tr>
+            <td><strong><pre>tooltipIcon</pre></strong></td>
+            <td>string</td>
+            <td><pre>info-circle</pre></td>
+            <td>Font Awesome icon</td>
+          </tr>
+          <tr>
+            <td><strong><pre>activeTooltip</pre></strong></td>
+            <td>string</td>
+            <td>null</td>
+            <td>Tooltip text</td>
+          </tr>
+          <tr>
+            <td><strong><pre>activeTooltipIcon</pre></strong></td>
+            <td>string</td>
+            <td><pre>exclamation-triangle</pre></td>
+            <td>Font Awesome icon</td>
           </tr>
         </tbody>
       </table>
@@ -150,17 +180,41 @@ in the middle of some text.
     <div class="cell large-7">
       <pre><code>&#123;{#labs-ui/layer-group-toggle
   label='Layer Group Label'
+  active=true
   tooltip='This is the layer group tooltip'
   icon=model.exampleIcon
-  active=true
+  activeTooltip="This is the layer group warning message"
+}}
+  yielded content goes here
+&#123;{/labs-ui/layer-group-toggle}}
+
+&#123;{#labs-ui/layer-group-toggle
+  label='Layer Group Label'
+  active=false
+  tooltip='I show up regardless of the active state.'
+  tooltipIcon='tree'
+  activeTooltip="I only show up when the layer group is active."
+  activeTooltipIcon='hand-peace'
 }}
   yielded content goes here
 &#123;{/labs-ui/layer-group-toggle}}</code></pre>
       {{#labs-ui/layer-group-toggle
         label='Layer Group Label'
-        tooltip='This is the layer group tooltip'
-        icon=model.exampleIcon
         active=true
+        tooltip='This is the layer group tooltip.'
+        icon=model.exampleIcon
+        activeTooltip="This is the layer group warning message."
+      }}
+        yielded content goes here
+      {{/labs-ui/layer-group-toggle}}
+
+      {{#labs-ui/layer-group-toggle
+        label='Layer Group Label'
+        active=false
+        tooltip='I show up regardless of the active state.'
+        tooltipIcon='tree'
+        activeTooltip="I only show up when the layer group is active."
+        activeTooltipIcon='hand-peace'
       }}
         yielded content goes here
       {{/labs-ui/layer-group-toggle}}
@@ -176,7 +230,7 @@ in the middle of some text.
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
       <p>The <code>legend-items</code> component does not yield any content directly. It simply loops through the array of legend objects and passes each one to the <code>labs-ui/legend-item</code> component.</p>
-      <table class="text-small">
+      <table>
         <thead>
           <tr>
             <td>Param</td>
@@ -209,7 +263,7 @@ in the middle of some text.
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
       <p>The <code>legend-item</code> component is called by the <code>each</code> loop in the <code>legend-items</code> component. It renders a label (required), tooltip, and icon.</p>
-      <table class="text-small">
+      <table>
         <thead>
           <tr>
             <td>Param</td>
@@ -243,7 +297,7 @@ in the middle of some text.
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
       <p>The <code>legend-icon</code> component renders a layered stack of icons. The <code>icon.type</code> can be <code>line</code>, <code>rectangle</code>, or <code>fa-icon</code>, and determines if the layers are made of SVGs or Font Awesome icons. The <code>icon.layers</code> array of objects describes each of the layers in the stack &mdash; e.g. a dark red line over a thicker transparent pink line. </p>
-      <table class="text-small">
+      <table>
         <thead>
           <tr>
             <td>Param</td>
@@ -278,7 +332,7 @@ in the middle of some text.
     <div class="cell large-5">
       <p>Use the <code>site-header</code> component to add a branded banner at the top of apps. It includes Planning Labs' beta notice and a logo that links to NYC Planning's main site. Its optional responsive parameters automatically add a menu button to toggle the navigation on smaller screens, and define the screen size at which that happens.</p>
       <p>To add an app name and menu items to the header, include the <code>site-title</code> and <code>site-nav</code> contextual components, using the <code>.site-title</code> and <code>.site-subtitle</code> Labs UI classes and Foundation's menu classes.</p>
-      <table class="text-small">
+      <table>
         <thead>
           <tr>
             <td>Param</td>

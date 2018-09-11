@@ -97,6 +97,14 @@ hr, .section-header {
   padding: rem-calc(10);
 }
 
+table {
+  font-size: rem-calc(11);
+
+  td + td {
+    padding-left: 0;
+  }
+}
+
 .bg-aqua { background-color: $aqua; color: color-pick-contrast($aqua, ($black, $white)); }
 .bg-aqua-light { background-color: $aqua-light; color: color-pick-contrast($aqua-light, ($black, $white)); }
 .bg-aqua-dark { background-color: $aqua-dark; color: color-pick-contrast($aqua-dark, ($black, $white)); }
