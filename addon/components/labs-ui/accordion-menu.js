@@ -11,16 +11,16 @@ export default class AccordionMenuComponent extends Component {
   constructor(...args) {
     super(...args);
 
-    this.set('layerMenuItems', A([]));
+    this.set('layerGroupToggleItems', A([]));
   }
 
   layout = layout;
 
   classNames=['accordion-menu'];
 
-  @computed('layerMenuItems.@each.active')
+  @computed('layerGroupToggleItems.@each.active')
   get numberMenuItems() {
-    const items = this.get('layerMenuItems');
+    const items = this.get('layerGroupToggleItems');
 
     const activeStates = items.mapBy('active');
 
@@ -53,14 +53,14 @@ export default class AccordionMenuComponent extends Component {
   @action
   registerChild(componentContext) {
     next(() => {
-      this.get('layerMenuItems').pushObject(componentContext);
+      this.get('layerGroupToggleItems').pushObject(componentContext);
     });
   }
 
   @action
   unregisterChild(componentContext) {
     next(() => {
-      this.get('layerMenuItems').removeObject(componentContext);
+      this.get('layerGroupToggleItems').removeObject(componentContext);
     });
   }
 }

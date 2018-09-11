@@ -7,7 +7,7 @@ import { classNames } from '@ember-decorators/component';
 import layout from '../../templates/components/labs-ui/layer-group-toggle';
 
 @classNames('layer-group-toggle')
-export default class LabsUILayerMenuItemComponent extends Component {
+export default class LabsUILayerGroupToggleComponent extends Component {
   constructor(...args) {
     super(...args);
     this.get('didInit')(this);
