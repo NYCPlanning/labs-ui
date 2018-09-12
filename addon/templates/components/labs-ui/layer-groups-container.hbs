@@ -1,5 +1,5 @@
-<div {{action 'toggleAccordion'}}
-  class="accordion-title {{unless open 'closed'}} accordion-{{dasherize title}}"
+<div {{action 'toggleLayerGroupsContainer'}}
+  class="layer-groups-container-title {{unless open 'closed'}} layer-groups-container--{{dasherize title}}"
   role="button">
   {{title}}
   {{#if (and mapIsLoading open numberMenuItems)}}
@@ -7,7 +7,7 @@
   {{/if}}
 </div>
 {{#if open}}
-  <div class="accordion-content">
+  <div class="layer-groups-container-content">
     {{yield (hash
         layer-group-toggle=(component 'labs-ui/layer-group-toggle' willDestroyHook=(action 'unregisterChild') didInit=(action 'registerChild'))
       )
