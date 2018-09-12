@@ -21,6 +21,10 @@
   "dependencies": {
     "@ember-decorators/argument": "0.8.15",
     "@ember-decorators/babel-transforms": "^2.0.0",
+    "@fortawesome/ember-fontawesome": "^0.1.5",
+    "@fortawesome/free-brands-svg-icons": "^5.2.0",
+    "@fortawesome/free-regular-svg-icons": "^5.1.0",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0",
     "ember-cli-babel": "^6.17.0",
     "ember-cli-foundation-6-sass": "^0.0.25",
     "ember-cli-htmlbars": "^2.0.1",
@@ -33,10 +37,6 @@
     "tooltipster": "4.2.5"
   },
   "devDependencies": {
-    "@fortawesome/ember-fontawesome": "^0.1.5",
-    "@fortawesome/free-brands-svg-icons": "^5.2.0",
-    "@fortawesome/free-regular-svg-icons": "^5.1.0",
-    "@fortawesome/free-solid-svg-icons": "^5.1.0",
     "babel-eslint": "^8.0.0",
     "babel-plugin-htmlbars-inline-precompile": "0.2.4",
     "broccoli-asset-rev": "^2.4.5",
