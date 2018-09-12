@@ -425,12 +425,6 @@ in the middle of some text.
     </div>
   </div>
 
-
-  <hr />
-
-
-  <h3>Colors</h3>
-
   <h4 class="dark-gray text-weight-normal">Brand color variables</h4>
   <div class="swatches grid-x medium-up-4 text-center">
     <div class="cell swatch bg-dcp-orange"><pre>$dcp-orange</pre></div>
@@ -511,7 +505,8 @@ in the middle of some text.
   <h2 id="utils" class="header-xxlarge section-header">Utility classes</h2>
 
 
-  <h3>Headings</h3>
+  <h3 class="no-margin">Headings</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_m-base-typography</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-6">
       <p>Heading classes are used to give elements a particular heading style, regardless of their tag. This allows for both semantic page structure and versatile design. </p>
@@ -537,7 +532,8 @@ in the middle of some text.
   <hr />
 
 
-  <h3>Margins</h3>
+  <h3 class="no-margin">Margins</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_m-base-typography</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-6">
       <p>The <code>.no-margin</code> class removes the margin from all 4 sides of an element with an <code>!important</code> rule. The <code>.small-margin-bottom</code> class sets the bottom margin on an element to 1/2 the <code>$global-margin</code>.</p>
@@ -558,7 +554,8 @@ in the middle of some text.
   <hr />
 
 
-  <h3>Text size</h3>
+  <h3 class="no-margin">Text size</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_m-base-typography</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-6">
       <p>In addition to Foundation's <code>.lead</code> class (which styles a slightly-larger-than-normal block of text), Labs UI has <code>.text-small</code> and <code>.text-tiny</code>.</p>
@@ -579,7 +576,8 @@ in the middle of some text.
   <hr />
 
 
-  <h3>Text weight</h3>
+  <h3 class="no-margin">Text weight</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_m-base-typography</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-6">
       <p>The <code>.text-weight-normal</code> and <code>.text-weight-bold</code> classes allow you to override an element's font weight.</p>
@@ -600,7 +598,8 @@ in the middle of some text.
   <hr />
 
 
-  <h3>No wrap</h3>
+  <h3 class="no-margin">No wrap</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_m-base-typography</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-6">
       <p>The <code>.nowrap</code> class prevents elements from wrapping to multiple lines.</p>
@@ -627,10 +626,11 @@ in the middle of some text.
   <hr />
 
 
-  <h3>Color classes</h3>
+  <h3 class="no-margin">Font color</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_m-color</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-6">
-      <p>There are <code>.[color]</code> classes for every Sass color variable, which override the color of an element's text.</p>
+      <p>There are <code>.[color]</code> classes for every Sass color variable. Use these to set an element's font color.</p>
       <pre><code>&lt;p class="aqua-dark">This paragraph is aqua-dark.&lt;/p>
 &lt;p class="chartreuse">This paragraph is chartreuse.&lt;/p>
 &lt;p class="fuchsia-light">This paragraph is fuchsia-light.&lt;/p>
@@ -641,6 +641,31 @@ in the middle of some text.
       <p class="chartreuse">This paragraph is chartreuse.</p>
       <p class="fuchsia-light">This paragraph is fuchsia-light.</p>
       <p class="indigo">This paragraph is indigo.</p>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin">Background color</h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_m-color</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>There are <code>.bg-[color]</code> classes for every Sass color variable. Use these to set an element's background color.</p>
+      <pre><code>&lt;div class="grid-y grid-padding-y">
+&lt;div class="bg-gold">gold&lt;/div>
+&lt;div class="bg-blue">blue&lt;/div>
+&lt;div class="bg-yellow-muted">yellow-muted&lt;/div>
+&lt;div class="bg-red-light">red-light&lt;/div></code></pre>
+    </div>
+    <div class="cell large-6 text-center">
+      <div class="grid-y grid-padding-y">
+        <div class="cell bg-gold">gold</div>
+        <div class="cell bg-blue">blue</div>
+        <div class="cell bg-yellow-muted">yellow-muted</div>
+        <div class="cell bg-red-light">red-light</div>
+      </div>
     </div>
   </div>
 
