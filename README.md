@@ -1,6 +1,6 @@
 # Labs UI
 ## NYC Planning Labs Ember Components
-This addon contains common Ember components and Sass variables and utility classes used across multiple Planning Labs applications.
+This Ember addon contains common components, styles/CSS, Sass variables, utility classes, and design patterns that [NYC Planning Labs](https://planninglabs.nyc/) uses across its various applications.
 
 ---
 
