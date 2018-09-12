@@ -17,12 +17,12 @@ http://nycplanning.github.io/labs-ui
   ember install labs-ui
   ```
 
-1. Install Ember CLI Foundation 6 SASS: 
+2. Install Ember CLI Foundation 6 SASS: 
   ```
   ember install ember-cli-foundation-6-sass
   ```
 
-1. Run the Foundation generator: 
+3. Run the Foundation generator: 
   ```
   ember g ember-cli-foundation-6-sass
   ```
@@ -31,15 +31,15 @@ http://nycplanning.github.io/labs-ui
 
   - Ignore or delete the generated `_settings.scss` file.
 
-1. Edit `app.scss` and `@import`/`@include` files in this order:
+4. Edit `app.scss` and `@import`/`@include` files in this order:
 
   1. **Labs UI variables** — sets vars for colors (e.g. DCP’s orange, Land Use colors, planning standard colors), imports Foundation utilities, sets Foundation vars
 
-  1. **Foundation** — import `foundation-sites/foundation` and include `foundation-everything`;
+  2. **Foundation** — import `foundation-sites/foundation` and include `foundation-everything`;
 
-  1. **Labs UI modules** — import all modules (`@import 'labs-ui/all-modules'`) or a subset of modules (`@import 'labs-ui/modules/_m-tooltipster'`)
+  3. **Labs UI modules** — import all modules (`@import 'labs-ui/all-modules'`) or a subset of modules (`@import 'labs-ui/modules/_m-tooltipster'`)
 
-  1. **Custom styles** — application-specific styles and overrides
+  4. **Custom styles** — application-specific styles and overrides
 
   The consuming app's `app.scss` should look something like this:
 
@@ -62,12 +62,27 @@ http://nycplanning.github.io/labs-ui
   }
   ```
 
-1. Add the Foundation options to ember–cli-build.js: 
-```
-'ember-cli-foundation-6-sass': { 
-  'foundationJs': 'all' 
-},
-```
+5. Add the Foundation options to ember–cli-build.js: 
+  ```
+  'ember-cli-foundation-6-sass': { 
+    'foundationJs': 'all' 
+  },
+  ```
+
+6. Add Font Awesome and its icon sets
+  - `ember install @fortawesome/ember-fontawesome`
+  - `yarn add --dev @fortawesome/free-solid-svg-icons`
+  - `yarn add --dev @fortawesome/free-regular-svg-icons`
+
+7. Add Font Awesome icons to your ENV
+  ```
+  fontawesome: {
+      icons: {
+        'free-regular-svg-icons': 'all',
+        'free-solid-svg-icons': 'all',
+      },
+    },
+  ```
 
 ---
 
