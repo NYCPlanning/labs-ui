@@ -7,7 +7,11 @@
   </div>
   <span {{action 'toggle'}} class="layer-group-toggle-label" role="button">
     {{#if tooltip}}
-      {{labs-ui/icon-tooltip tip=tooltip}}
+      {{labs-ui/icon-tooltip tip=tooltip icon=tooltipIcon}}
+    {{/if}}
+
+    {{#if (and activeTooltip active)}}
+      {{labs-ui/icon-tooltip tip=activeTooltip icon=activeTooltipIcon}}
     {{/if}}
 
     {{label}}

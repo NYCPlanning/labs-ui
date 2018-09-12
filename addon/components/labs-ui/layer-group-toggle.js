@@ -27,8 +27,17 @@ export default class LabsUILayerGroupToggleComponent extends Component {
   tooltip = '';
 
   @argument
+  tooltipIcon = 'info-circle';
+
+  @argument
   @type('boolean')
   active = true;
+
+  @argument
+  activeTooltip = '';
+
+  @argument
+  activeTooltipIcon = 'exclamation-triangle';
 
   @argument
   didInit = () => {}
