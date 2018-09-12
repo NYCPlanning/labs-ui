@@ -54,6 +54,8 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.locationType = 'hash';
     ENV.rootURL = '/labs-ui/';
+    ENV.host = '/labs-ui/';
+    ENV['mapbox-gl'].map.style = '/labs-ui/v1/base/style.json';
   }
 
   return ENV;
