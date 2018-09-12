@@ -12,77 +12,83 @@ http://nycplanning.github.io/labs-ui
 
 ### Installing the addon
 
-1. Install the addon:
-  ```
-  ember install labs-ui
-  ```
+##### A) Install the addon:
+```
+ember install labs-ui
+```
 
-2. Install Ember CLI Foundation 6 SASS: 
-  ```
-  ember install ember-cli-foundation-6-sass
-  ```
+##### B) Install Foundation: 
+```
+ember install ember-cli-foundation-6-sass
+```
+```
+ember g ember-cli-foundation-6-sass
+```
 
-3. Run the Foundation generator: 
-  ```
-  ember g ember-cli-foundation-6-sass
-  ```
+- If `app.scss` doesn't exist, let the generator add it.
 
-  - If `app.scss` doesn't exist, let the generator add it.
+- Ignore or delete the generated `_settings.scss` file.
 
-  - Ignore or delete the generated `_settings.scss` file.
+##### C) Edit `app.scss`, importing/including files in this order:
 
-4. Edit `app.scss` and `@import`/`@include` files in this order:
+1. **Labs UI variables** — sets vars for colors (e.g. DCP’s orange, Land Use colors, planning standard colors), imports Foundation utilities, sets vars found in Foundation's `_settings.scss`
 
-  1. **Labs UI variables** — sets vars for colors (e.g. DCP’s orange, Land Use colors, planning standard colors), imports Foundation utilities, sets Foundation vars
+2. **Foundation** — import `foundation-sites/foundation` then include `foundation-everything` or a subset of Foundation modules
 
-  2. **Foundation** — import `foundation-sites/foundation` and include `foundation-everything`;
+3. **Labs UI modules** — import all modules (`@import 'labs-ui/all-modules'`) or a subset of modules (`@import 'labs-ui/modules/_m-tooltipster'`)
 
-  3. **Labs UI modules** — import all modules (`@import 'labs-ui/all-modules'`) or a subset of modules (`@import 'labs-ui/modules/_m-tooltipster'`)
+4. **Custom styles** — application-specific styles and overrides
 
-  4. **Custom styles** — application-specific styles and overrides
+The consuming app's `app.scss` should look something like this:
 
-  The consuming app's `app.scss` should look something like this:
+```
+// Labs UI variables
+@import 'labs-ui/variables';
 
-  ```
-  // Labs UI variables
-  @import 'labs-ui/variables';
+// Foundation
+@import 'foundation-sites/foundation';
+@include foundation-everything;
 
-  // Foundation
-  @import 'foundation-sites/foundation';
-  @include foundation-everything;
+// Labs UI modules (import all or some)
+@import 'labs-ui/all-modules';
 
-  // Labs UI modules (import all or some)
-  @import 'labs-ui/all-modules';
+// Custom app modules and styles
+@import 'layouts/_l-default';
 
-  // Custom app modules and styles
-  @import 'layouts/_l-default';
+.peanut-butter {
+  color: $orange-muted;
+}
+```
 
-  .peanut-butter {
-    color: $orange-muted;
-  }
-  ```
+##### D) Add the Foundation options to `ember–cli-build.js`: 
 
-5. Add the Foundation options to ember–cli-build.js: 
-  ```
-  'ember-cli-foundation-6-sass': { 
-    'foundationJs': 'all' 
-  },
-  ```
+```
+'ember-cli-foundation-6-sass': { 
+  'foundationJs': 'all' 
+},
+```
 
-6. Add Font Awesome and its icon sets
-  - `ember install @fortawesome/ember-fontawesome`
-  - `yarn add --dev @fortawesome/free-solid-svg-icons`
-  - `yarn add --dev @fortawesome/free-regular-svg-icons`
+##### E) Add Font Awesome and its icon sets:
 
-7. Add Font Awesome icons to your ENV
-  ```
-  fontawesome: {
-      icons: {
-        'free-regular-svg-icons': 'all',
-        'free-solid-svg-icons': 'all',
-      },
+```
+ember install @fortawesome/ember-fontawesome
+```
+```
+yarn add --dev @fortawesome/free-solid-svg-icons
+```
+```
+yarn add --dev @fortawesome/free-regular-svg-icons
+```
+
+##### F) Add Font Awesome icons to your ENV:
+```
+fontawesome: {
+    icons: {
+      'free-regular-svg-icons': 'all',
+      'free-solid-svg-icons': 'all',
     },
-  ```
+  },
+```
 
 ---
 
