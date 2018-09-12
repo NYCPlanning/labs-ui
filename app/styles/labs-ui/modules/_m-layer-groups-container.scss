@@ -1,8 +1,8 @@
 // --------------------------------------------------
-// Module: Accordion Menu
+// Module: Layer Groups Container
 // --------------------------------------------------
 
-.accordion-menu {
+.layer-groups-container {
   border-bottom: 1px solid $silver;
 
   &:hover {
@@ -10,7 +10,7 @@
   }
 }
 
-.accordion-title {
+.layer-groups-container-title {
   font-weight: $global-weight-bold;
   padding: rem-calc(6);
   padding-right: 1em;

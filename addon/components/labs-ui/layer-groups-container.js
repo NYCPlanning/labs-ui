@@ -5,9 +5,9 @@ import { type } from '@ember-decorators/argument/type';
 import { required } from '@ember-decorators/argument/validation';
 import { next } from '@ember/runloop';
 import { A } from '@ember/array';
-import layout from '../../templates/components/labs-ui/accordion-menu';
+import layout from '../../templates/components/labs-ui/layer-groups-container';
 
-export default class AccordionMenuComponent extends Component {
+export default class LayerGroupsContainerComponent extends Component {
   constructor(...args) {
     super(...args);
 
@@ -16,7 +16,7 @@ export default class AccordionMenuComponent extends Component {
 
   layout = layout;
 
-  classNames=['accordion-menu'];
+  classNames=['layer-groups-container'];
 
   @computed('layerGroupToggleItems.@each.active')
   get numberMenuItems() {
@@ -46,7 +46,7 @@ export default class AccordionMenuComponent extends Component {
   title;
 
   @action
-  toggleAccordion() {
+  toggleLayerGroupsContainer() {
     this.toggleProperty('open');
   }
 
