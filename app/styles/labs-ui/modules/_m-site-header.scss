@@ -110,4 +110,21 @@ $logo-height-medium: rem-calc(36);
       margin: $global-margin 0;
     }
   }
+
+  nav.responsive {
+
+    .menu.medium-horizontal {
+      margin-bottom: rem-calc(10);
+      @include breakpoint(medium) {
+        margin-bottom: 0;
+      }
+    }
+
+    .menu.large-horizontal {
+      margin-bottom: rem-calc(10);
+      @include breakpoint(large) {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
