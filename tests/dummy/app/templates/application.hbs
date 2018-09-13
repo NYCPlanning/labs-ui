@@ -652,19 +652,19 @@ in the middle of some text.
   <h4 class="dark-gray text-weight-normal">labs-ui/modules/_m-color</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-6">
-      <p>There are <code>.bg-[color]</code> classes for every Sass color variable. Use these to set an element's background color.</p>
-      <pre><code>&lt;div class="grid-y grid-padding-y">
-&lt;div class="bg-gold">gold&lt;/div>
-&lt;div class="bg-blue">blue&lt;/div>
-&lt;div class="bg-yellow-muted">yellow-muted&lt;/div>
-&lt;div class="bg-red-light">red-light&lt;/div></code></pre>
+      <p>There is a <code>.bg-[color]</code> class for every Sass color variable. In addition to setting an element's background color, these classes also use Foundation's <code>color-pick-contrast()</code> Sass function to set the font color to either black or white for maximum contrast. </p>
+      <p>Background color classes can be used in combination with font color classes. Since both classes have the same specificity, and <code>.[color]</code> rules follow <code>.bg-[color]</code> rules in the cascade order, font color classes will override the font color that's set by background color classes. </p>
+      <pre><code>&lt;p class="bg-teal">.bg-teal&lt;/p>
+&lt;p class="bg-teal-dark">.bg-teal-dark&lt;/p>
+&lt;p class="bg-gold">.bg-gold&lt;/p>
+&lt;p class="bg-gold gold-light">.bg-gold + .gold-light + &lt;span class="gold-dark">.gold-dark&lt;/span>&lt;/p></code></pre>
     </div>
     <div class="cell large-6 text-center">
-      <div class="grid-y grid-padding-y">
-        <div class="cell bg-gold">gold</div>
-        <div class="cell bg-blue">blue</div>
-        <div class="cell bg-yellow-muted">yellow-muted</div>
-        <div class="cell bg-red-light">red-light</div>
+      <div class="grid-y grid-padding-y -grid-margin-y">
+        <p class="cell bg-teal">.bg-teal</p>
+        <p class="cell bg-teal-dark">.bg-teal-dark</p>
+        <p class="cell bg-gold">.bg-gold</p>
+        <p class="cell bg-gold gold-light">.bg-gold + .gold-light + <span class="gold-dark">.gold-dark</span></p>
       </div>
     </div>
   </div>
