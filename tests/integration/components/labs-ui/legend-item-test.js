@@ -31,6 +31,11 @@ module('Integration | Component | labs-ui/legend-item', function(hooks) {
 
     await render(hbs`{{labs-ui/legend-item item=item}}`);
 
-    assert.equal(this.element.textContent.trim(), 'Legend Item Label');
+    assert.equal(this.element.textContent.trim(), `This is the legend item tooltip.
+  
+
+
+
+Legend Item Label`);
   });
 });

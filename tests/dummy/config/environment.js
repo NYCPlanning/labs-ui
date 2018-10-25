@@ -18,6 +18,8 @@ module.exports = function(environment) {
       }
     },
 
+    version: require('../../../package').version,
+
     'mapbox-gl': {
       accessToken: '',
       map: {
