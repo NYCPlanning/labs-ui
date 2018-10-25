@@ -12,6 +12,6 @@ module('Integration | Component | labs-ui/icon-tooltip', function(hooks) {
 
     await render(hbs`{{labs-ui/icon-tooltip icon='map-marked-alt' tip='This is the tooltip text.'}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.textContent.trim(), 'This is the tooltip text.');
   });
 });
