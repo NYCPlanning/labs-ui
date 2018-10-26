@@ -1,2 +1,7 @@
-{{~fa-icon icon transform~}}
-{{ember-tooltip text=tip}}
+{{#tool-tipster
+  content=tip
+  tagName="span"
+}}
+  {{~fa-icon icon~}}
+{{/tool-tipster}}
+{{yield}}
