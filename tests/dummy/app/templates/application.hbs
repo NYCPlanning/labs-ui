@@ -190,7 +190,7 @@ in the middle of some text.
   <h4 class="dark-gray text-weight-normal">labs-ui/layer-groups-container</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
-      <p>A group of groups. This component is always used in block form. Its <code>title</code> param renders a clickable title which toggles the visibility of its yielded content.</p>
+      <p>A group of layer groups&hellip; <em>Set of groups?</em> A toggleable container, this component is always used in block form. Its <code>title</code> param renders a clickable title which toggles the visibility of its yielded content. When its title is clicked, the <code>open</code> boolean is reversed and the visibility of the component's yielded content is toggled.</p>
       <table>
         <thead>
           <tr>
@@ -207,15 +207,27 @@ in the middle of some text.
             <td>null</td>
             <td>Clickable title text (required)</td>
           </tr>
+          <tr>
+            <td><strong><pre>open</pre></strong></td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>Sets default state of component</td>
+          </tr>
         </tbody>
       </table>
       <p class="text-small"><em>Note:</em> Since the yielded content can be anything, its layout is unopinionated (e.g. it needs its own padding to align text with the title text).</p>
     </div>
     <div class="cell large-7">
-      <pre><code>&#123;{#labs-ui/layer-groups-container title='Layer Groups Container Title'}}
+      <pre><code>&#123;{#labs-ui/layer-groups-container
+  title='Layer Groups Container Title'
+  active=true
+}}
   yielded content goes here
 &#123;{/labs-ui/layer-groups-container}}</code></pre>
-      {{#labs-ui/layer-groups-container title='Layer Groups Container Title'}}
+      {{#labs-ui/layer-groups-container
+        title='Layer Groups Container Title'
+        open=true
+      }}
       yielded content goes here
       {{/labs-ui/layer-groups-container}}
     </div>
