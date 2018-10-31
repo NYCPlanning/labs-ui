@@ -2,9 +2,6 @@
 // Module: Ember Tooltips overrides
 // --------------------------------------------------
 
-$tooltip-background-color: #3a3c47;
-$tooltip-border-color: #3a3c47;
-
 .ember-tooltip {
   line-height: $global-lineheight;
   font-size: rem-calc(12);
