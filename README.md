@@ -35,7 +35,7 @@ ember g ember-cli-foundation-6-sass
 
 2. **Foundation** — import `foundation-sites/foundation` then include `foundation-everything` or a subset of Foundation modules
 
-3. **Labs UI modules** — import all modules (`@import 'labs-ui/all-modules'`) or a subset of modules (`@import 'labs-ui/modules/_m-tooltipster'`)
+3. **Labs UI modules** — import all modules (`@import 'labs-ui/all-modules'`) or a subset of modules (`@import 'labs-ui/modules/_m-color'`)
 
 4. **Custom styles** — application-specific styles and overrides
 
