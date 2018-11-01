@@ -48,6 +48,18 @@
             <td><pre>info-circle</pre></td>
             <td>Font Awesome icon name</td>
           </tr>
+          <tr>
+            <td><strong><pre>side</pre></strong></td>
+            <td>string</td>
+            <td><pre>top</pre></td>
+            <td>top, right, bottom, or left</td>
+          </tr>
+          <tr>
+            <td><strong><pre>transform</pre></strong></td>
+            <td>string</td>
+            <td><pre>null</pre></td>
+            <td>Font Awesome "Power Transforms"</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -56,6 +68,8 @@
   &#123;{labs-ui/icon-tooltip
     tip='This is the tooltip text.'
     icon='map-marked-alt'
+    side='bottom'
+    transform='shrink-2 up-2'
   }}
 in the middle of some text.
 </code></pre>
@@ -63,6 +77,8 @@ in the middle of some text.
         {{labs-ui/icon-tooltip
           tip='This is the tooltip text.'
           icon='map-marked-alt'
+          side='bottom'
+          transform='shrink-2 up-2'
         }}
       in the middle of some text.
     </div>
