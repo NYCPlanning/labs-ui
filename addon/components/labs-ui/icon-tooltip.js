@@ -13,7 +13,7 @@ export default class InfoTooltip extends Component {
   tip = ''
 
   @argument
-  side = ''
+  side = 'top'
 
   @argument
   icon = 'info-circle'
