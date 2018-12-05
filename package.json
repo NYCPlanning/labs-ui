@@ -30,6 +30,7 @@
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-sass": "^6.2.0",
+    "ember-cli-what-input": "^1.0.0",
     "ember-decorators": "2.3.1",
     "ember-tooltips": "3.0.0",
     "foundation-sites": "^6.3.1",
