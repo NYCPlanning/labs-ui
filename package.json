@@ -33,8 +33,7 @@
     "ember-cli-what-input": "^1.0.0",
     "ember-decorators": "2.3.1",
     "ember-tooltips": "3.0.0",
-    "foundation-sites": "^6.3.1",
-    "mapbox-gl": "^0.48.0"
+    "foundation-sites": "^6.3.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
@@ -65,7 +64,8 @@
     "ember-try": "^0.2.23",
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^5.2.1",
-    "loader.js": "^4.2.3"
+    "loader.js": "^4.2.3",
+    "mapbox-gl": "^0.48.0"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
