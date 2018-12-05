@@ -424,6 +424,46 @@ in the middle of some text.
   <hr />
 
 
+  <h3 class="no-margin">Ember Tooltips</h3>
+  <h4 class="dark-gray text-weight-normal">(dependency)</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>Labs UI depends the <a href="https://github.com/sir-dunxalot/ember-tooltips/">Ember Tooltips</a> addon for its tooltips. This addon also has Popovers. What's the difference? Tooltips are for read-only purposes, whereas Popovers can contain interactive elements. See <a href="http://sir-dunxalot.github.io/ember-tooltips/">the docs</a> for how to use Ember Tooltips.</p>
+      <p>Labs UI also has a custom Sass module which helps Ember Tooltips more closely match our styles.</p>
+    </div>
+    <div class="cell large-7">
+      <p>By default, Tooltips have a dark background and Popovers have a light background:</p>
+      <button class="button">
+        Hover me for a Tooltip
+        {{ember-tooltip text='This is just a regular tooltip.'}}
+      </button>
+      <button class="button">
+        Click me for a Popover
+        {{#ember-popover event='click' as |popover|}}
+          <h4 class="small-margin-bottom">This is a popover!</h4>
+          <p>You can <a>interact</a> with elements in a popover.</p>
+          <input type="text" />
+        {{/ember-popover}}
+      </button>
+      <p>The Popover can be given a dark background with the <code>.dark</code> class:</p>
+      <pre><code>&#123;{#ember-popover tooltipClassName='ember-popover dark' as |popover|}}
+...
+&#123;{/ember-popover}}</code></pre>
+      <button class="button">
+        Click me for a Dark Popover
+        {{#ember-popover event='click' tooltipClassName='ember-popover dark' as |popover|}}
+          <h4 class="small-margin-bottom">This is a dark popover!</h4>
+          <p>You can <a>interact</a> with elements in a popover.</p>
+          <input type="text" />
+        {{/ember-popover}}
+      </button>
+    </div>
+  </div>
+
+
+  <hr />
+
+
   <h2 id="sass-vars" class="header-xxlarge section-header">Sass variables</h2>
 
 
@@ -688,7 +728,7 @@ in the middle of some text.
 &lt;p class="bg-gold gold-light">.bg-gold + .gold-light + &lt;span class="gold-dark">.gold-dark&lt;/span>&lt;/p></code></pre>
     </div>
     <div class="cell large-6 text-center">
-      <div class="grid-y grid-padding-y -grid-margin-y">
+      <div class="grid-y grid-padding-y">
         <p class="cell bg-teal">.bg-teal</p>
         <p class="cell bg-teal-dark">.bg-teal-dark</p>
         <p class="cell bg-gold">.bg-gold</p>
