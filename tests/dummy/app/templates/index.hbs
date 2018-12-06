@@ -1,0 +1,842 @@
+{{docs-header}}
+
+<div class="grid-container large-margin-bottom">
+
+  <p class="callout secondary">Labs UI's styles extend Foundation for Sites (an advanced responsive front-end framework). Please see <a href="https://foundation.zurb.com/sites/docs/">Foundation's docs</a> for features not covered here. </p>
+
+
+  <hr />
+
+
+  <h2 data-anchor="components" class="header-xxlarge section-header">
+    Components
+    <small class="header-link">{{#link-to 'index' (query-params anchor='components')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h2>
+
+
+  <h3 class="no-margin subsection-header" data-anchor="icon-tooltip">
+    Icon Tooltip
+    <small class="header-link">{{#link-to 'index' (query-params anchor='icon-tooltip')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/icon-tooltip</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>Renders a Font Awesome icon with <a href="http://sir-dunxalot.github.io/ember-tooltips/">Ember Tooltips</a>.</p>
+      <table>
+        <thead>
+          <tr>
+            <td>Param</td>
+            <td>Type</td>
+            <td>Default</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><pre>tip</pre></strong></td>
+            <td>string</td>
+            <td>null</td>
+            <td>Tooltip text</td>
+          </tr>
+          <tr>
+            <td><strong><pre>icon</pre></strong></td>
+            <td>string</td>
+            <td><pre>info-circle</pre></td>
+            <td>Font Awesome icon name</td>
+          </tr>
+          <tr>
+            <td><strong><pre>side</pre></strong></td>
+            <td>string</td>
+            <td><pre>top</pre></td>
+            <td>top, right, bottom, or left</td>
+          </tr>
+          <tr>
+            <td><strong><pre>transform</pre></strong></td>
+            <td>string</td>
+            <td><pre>null</pre></td>
+            <td>Font Awesome "Power Transforms"</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cell large-7">
+      <pre><code>Here is an info tooltip on a "map-marked-alt" icon
+&#123;{labs-ui/icon-tooltip
+  tip='This is the tooltip text.'
+  icon='map-marked-alt'
+  side='bottom'
+  transform='shrink-2 up-2'
+}}
+in the middle of some text.
+  </code></pre>
+      Here is an info tooltip on a "map-marked-alt" icon
+        {{labs-ui/icon-tooltip
+          tip='This is the tooltip text.'
+          icon='map-marked-alt'
+          side='bottom'
+          transform='shrink-2 up-2'
+        }}
+      in the middle of some text.
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="ember-tooltips">
+    Ember Tooltips
+    <small class="header-link">{{#link-to 'index' (query-params anchor='ember-tooltips')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">(dependency)</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>Labs UI depends the <a href="https://github.com/sir-dunxalot/ember-tooltips/">Ember Tooltips</a> addon for its tooltips. This addon also has Popovers. What's the difference? Tooltips are for read-only purposes, whereas Popovers can contain interactive elements. See <a href="http://sir-dunxalot.github.io/ember-tooltips/">the docs</a> for how to use Ember Tooltips.</p>
+      <p>Labs UI also has a custom Sass module which helps Ember Tooltips more closely match our styles.</p>
+    </div>
+    <div class="cell large-7">
+      <p>By default, Tooltips have a dark background and Popovers have a light background:</p>
+      <button class="button">
+        Hover me for a Tooltip
+        {{ember-tooltip text='This is just a regular tooltip.'}}
+      </button>
+      <button class="button">
+        Click me for a Popover
+        {{#ember-popover event='click' as |popover|}}
+          <h4 class="small-margin-bottom">This is a popover!</h4>
+          <p>You can <a>interact</a> with elements in a popover.</p>
+          <input type="text" />
+        {{/ember-popover}}
+      </button>
+      <p>The Popover can be given a dark background with the <code>.dark</code> class:</p>
+      <pre><code>&#123;{#ember-popover tooltipClassName='ember-popover dark' as |popover|}}
+...
+&#123;{/ember-popover}}</code></pre>
+      <button class="button">
+        Click me for a Dark Popover
+        {{#ember-popover event='click' tooltipClassName='ember-popover dark' as |popover|}}
+          <h4 class="small-margin-bottom">This is a dark popover!</h4>
+          <p>You can <a>interact</a> with elements in a popover.</p>
+          <input type="text" />
+        {{/ember-popover}}
+      </button>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="site-header">
+    Site Header
+    <small class="header-link">{{#link-to 'index' (query-params anchor='site-header')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/site-header</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>Use the <code>site-header</code> component to add a branded banner at the top of apps. It includes Planning Labs' beta notice and a logo that links to NYC Planning's main site. Its optional responsive parameters automatically add a menu button to toggle the navigation on smaller screens, and define the screen size at which that happens.</p>
+      <p>To add an app name and menu items to the header, include the <code>site-title</code> and <code>site-nav</code> contextual components, using the <code>.site-title</code> and <code>.site-subtitle</code> Labs UI classes and Foundation's menu classes.</p>
+      <table>
+        <thead>
+          <tr>
+            <td>Param</td>
+            <td>Type</td>
+            <td>Default</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><pre>responsiveNav</pre></strong></td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Adds menu button to toggle nav</td>
+          </tr>
+          <tr>
+            <td><strong><pre>responsiveSize</pre></strong></td>
+            <td>string</td>
+            <td><pre>large</pre></td>
+            <td>Screen size at which nav is always visible</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cell large-7">
+      <pre><code>&#123;{#labs-ui/site-header
+responsiveNav=true
+responsiveSize='medium'
+as |banner|
+}}
+&#123;{#banner.title}}
+  &lt;a class='site-title'>App Name &lt;small class="site-subtitle show-for-medium">Subtitle&lt;/small>&lt;/a>
+&#123;{/banner.title}}
+&#123;{#banner.nav}}
+  &lt;ul class="menu vertical medium-horizontal">
+    &lt;li>&lt;a>One&lt;/a>&lt;/li>
+    &lt;li>&lt;a>Two&lt;/a>&lt;/li>
+    &lt;li>&lt;a>Three&lt;/a>&lt;/li>
+  &lt;/ul>
+&#123;{/banner.nav}}
+&#123;{/labs-ui/site-header}}</code></pre>
+      {{#labs-ui/site-header
+        responsiveNav=true
+        responsiveSize='medium'
+        as |banner|
+      }}
+        {{#banner.title}}
+          <a class='site-title'>App Name <small class="site-subtitle show-for-medium">Subtitle</small></a>
+        {{/banner.title}}
+        {{#banner.nav}}
+          <ul class="menu vertical medium-horizontal">
+            <li><a>One</a></li>
+            <li><a>Two</a></li>
+          </ul>
+        {{/banner.nav}}
+      {{/labs-ui/site-header}}
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="layer-group-toggle">
+    Layer Group Toggle
+    <small class="header-link">{{#link-to 'index' (query-params anchor='layer-group-toggle')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/layer-group-toggle</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>This component is always used in block form. The <code>label</code> param renders a clickable label and switch. When either are clicked, the <code>active</code> boolean is reversed and the visibility of the component's yielded content is toggled.</p>
+      <p>Optional tooltip parameters can be passed:</p>
+      <ul>
+        <li><p>Typically used to show meta info, <code>tooltip</code> renders a dark blue info circle icon that is always visible, regardless of the active state. Override the icon with <code>tooltipIcon</code>.</p></li>
+        <li><p>Typically used to indicate a warning, <code>activeTooltip</code> renders an orange exclamation triangle icon that is only visible when the active state is true. Override the icon with <code>activeTooltipIcon</code>. </p></li>
+      </ul>
+      <table>
+        <thead>
+          <tr>
+            <td>Param</td>
+            <td>Type</td>
+            <td>Default</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><pre>label</pre></strong></td>
+            <td>string</td>
+            <td>null</td>
+            <td>Clickable label text (required)</td>
+          </tr>
+          <tr>
+            <td><strong><pre>active</pre></strong></td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>Sets default state of component</td>
+          </tr>
+          <tr>
+            <td><strong><pre>icon</pre></strong></td>
+            <td>object</td>
+            <td>null</td>
+            <td>Structured data, renders a legend icon</td>
+          </tr>
+          <tr>
+            <td><strong><pre>tooltip</pre></strong></td>
+            <td>string</td>
+            <td>null</td>
+            <td>Adds a tooltip that's always visible</td>
+          </tr>
+          <tr>
+            <td><strong><pre>tooltipIcon</pre></strong></td>
+            <td>string</td>
+            <td><pre>info-circle</pre></td>
+            <td>Font Awesome icon</td>
+          </tr>
+          <tr>
+            <td><strong><pre>activeTooltip</pre></strong></td>
+            <td>string</td>
+            <td>null</td>
+            <td>Tooltip text</td>
+          </tr>
+          <tr>
+            <td><strong><pre>activeTooltipIcon</pre></strong></td>
+            <td>string</td>
+            <td><pre>exclamation-triangle</pre></td>
+            <td>Font Awesome icon</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-small"><em>Note:</em> Since the yielded content can be anything, its layout is unopinionated (e.g. it needs its own padding to align text with the label/switch).</p>
+    </div>
+    <div class="cell large-7">
+      <pre><code>&#123;{#labs-ui/layer-group-toggle
+label='Layer Group Label'
+active=true
+tooltip='This is the layer group tooltip'
+icon=model.exampleIcon
+activeTooltip="This is the layer group warning message"
+}}
+yielded content goes here
+&#123;{/labs-ui/layer-group-toggle}}
+
+&#123;{#labs-ui/layer-group-toggle
+label='Layer Group Label'
+active=false
+tooltip='I show up regardless of the active state.'
+tooltipIcon='tree'
+activeTooltip="I only show up when the layer group is active."
+activeTooltipIcon='hand-peace'
+}}
+yielded content goes here
+&#123;{/labs-ui/layer-group-toggle}}</code></pre>
+      {{#labs-ui/layer-group-toggle
+        label='Layer Group Label'
+        active=true
+        tooltip='This is the layer group tooltip.'
+        icon=model.exampleIcon
+        activeTooltip="This is the layer group warning message."
+      }}
+        yielded content goes here
+      {{/labs-ui/layer-group-toggle}}
+
+      {{#labs-ui/layer-group-toggle
+        label='Layer Group Label'
+        active=false
+        tooltip='I show up regardless of the active state.'
+        tooltipIcon='tree'
+        activeTooltip="I only show up when the layer group is active."
+        activeTooltipIcon='hand-peace'
+      }}
+        yielded content goes here
+      {{/labs-ui/layer-group-toggle}}
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="layer-groups-container">
+    Layer Groups Container
+    <small class="header-link">{{#link-to 'index' (query-params anchor='layer-groups-container')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/layer-groups-container</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>A group of layer groups&hellip; <em>Set of groups?</em> A toggleable container, this component is always used in block form. Its <code>title</code> param renders a clickable title which toggles the visibility of its yielded content. When its title is clicked, the <code>open</code> boolean is reversed and the visibility of the component's yielded content is toggled.</p>
+      <table>
+        <thead>
+          <tr>
+            <td>Param</td>
+            <td>Type</td>
+            <td>Default</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><pre>title</pre></strong></td>
+            <td>string</td>
+            <td>null</td>
+            <td>Clickable title text (required)</td>
+          </tr>
+          <tr>
+            <td><strong><pre>open</pre></strong></td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>Sets default state of component</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-small"><em>Note:</em> Since the yielded content can be anything, its layout is unopinionated (e.g. it needs its own padding to align text with the title text).</p>
+    </div>
+    <div class="cell large-7">
+      <pre><code>&#123;{#labs-ui/layer-groups-container
+title='Layer Groups Container Title'
+active=true
+}}
+yielded content goes here
+&#123;{/labs-ui/layer-groups-container}}</code></pre>
+      {{#labs-ui/layer-groups-container
+        title='Layer Groups Container Title'
+        open=true
+      }}
+      yielded content goes here
+      {{/labs-ui/layer-groups-container}}
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="legend-items">
+    Legend Items
+    <small class="header-link">{{#link-to 'index' (query-params anchor='legend-items')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/legend-items</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>The <code>legend-items</code> component does not yield any content directly. It simply loops through the array of legend objects and passes each one to the <code>labs-ui/legend-item</code> component.</p>
+      <table>
+        <thead>
+          <tr>
+            <td>Param</td>
+            <td>Type</td>
+            <td>Default</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><pre>items</pre></strong></td>
+            <td>object</td>
+            <td>null</td>
+            <td>Structured data, array of legend objects (required)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cell large-7">
+      <pre><code>&#123;{labs-ui/legend-items items=layerGroup.legend.items}}</code></pre>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="legend-item">
+    Legend Item
+    <small class="header-link">{{#link-to 'index' (query-params anchor='legend-item')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/legend-item</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>The <code>legend-item</code> component is called by the <code>each</code> loop in the <code>legend-items</code> component. It renders a label (required), tooltip, and icon.</p>
+      <table>
+        <thead>
+          <tr>
+            <td>Param</td>
+            <td>Type</td>
+            <td>Default</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><pre>item</pre></strong></td>
+            <td>object</td>
+            <td>null</td>
+            <td>Structured data, legend object (required)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cell large-7">
+      <pre><code>&#123;{labs-ui/legend-item item=model.exampleItem}}</code></pre>
+      {{labs-ui/legend-item item=model.exampleItem}}
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="legend-icon">
+    Legend Icon
+    <small class="header-link">{{#link-to 'index' (query-params anchor='legend-icon')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/legend-icon</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>The <code>legend-icon</code> component renders a layered stack of icons. The <code>icon.type</code> can be <code>line</code>, <code>rectangle</code>, or <code>fa-icon</code>, and determines if the layers are made of SVGs or Font Awesome icons. The <code>icon.layers</code> array of objects describes each of the layers in the stack &mdash; e.g. a dark red line over a thicker transparent pink line. </p>
+      <table>
+        <thead>
+          <tr>
+            <td>Param</td>
+            <td>Type</td>
+            <td>Default</td>
+            <td>Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><pre>icon</pre></strong></td>
+            <td>object</td>
+            <td>null</td>
+            <td>Structured data,  (required)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cell large-7">
+      <pre><code>&#123;{labs-ui/legend-icon icon=model.exampleItem.icon}}</code></pre>
+      <span class="legend-item">{{labs-ui/legend-icon icon=model.exampleItem.icon}}</span>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h2 data-anchor="sass" class="header-xxlarge section-header">
+    Sass
+    <small class="header-link">{{#link-to 'index' (query-params anchor='sass')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h2>
+
+
+  <h3 class="no-margin subsection-header" data-anchor="sass-variables">
+    Sass variables
+    <small class="header-link">{{#link-to 'index' (query-params anchor='sass-variables')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/variables.scss</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>The <code>variables.scss</code> file contains a set of custom Sass variables and all of Foundation's <code>_settings.scss</code> variables (which have been modified for Labs) which the consuming app can leverage. </p>
+    </div>
+    <div class="cell large-7">
+      <pre><code>.custom-component {
+background-color: $dcp-orange; // Labs UI var
+margin-bottom: $global-margin; // Foundation var
+}</code></pre>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="sass-modules">
+    Sass modules
+    <small class="header-link">{{#link-to 'index' (query-params anchor='sass-modules')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/[module]</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>The consuming application's <code>app.scss</code> should first import Labs UI variables, then import Foundation, then include Foundation components, then import Labs UI modules before any custom app modules or styles.</p>
+      <p>Labs UI has several Sass modules:</p>
+      <ul>
+        <li><code>labs-ui/modules/_base-typography</code></li>
+        <li><code>labs-ui/modules/_m-color</code></li>
+        <li><code>labs-ui/modules/_m-ember-tooltips</code></li>
+        <li><code>labs-ui/modules/_m-layer-groups-menu</code></li>
+        <li><code>labs-ui/modules/_m-site-header</code></li>
+      </ul>
+      <p>You can either import these modules individually, or get them all by importing <code>labs-ui/all-modules</code>.</p>
+    </div>
+    <div class="cell large-7">
+      <p class="small-margin-bottom">This example <code>app.css</code> would get you everything:</p>
+      <pre><code>@import 'labs-ui/variables';
+@import 'foundation-sites/foundation'; // Foundation vars & mixins
+@include foundation-everything; // Foundation components
+@import 'labs-ui/all-modules';
+</code></pre>
+      <p class="small-margin-bottom">This one only gets you styles for specific components:</p>
+      <pre><code>@import 'labs-ui/variables';
+
+@import 'foundation-sites/foundation';
+
+// Only include specific Foundation components
+@include foundation-global-styles;
+@include foundation-forms;
+@include foundation-button;
+
+// Only include specific Labs UI modules
+@import 'modules/_base-typography';
+@import 'modules/_m-color';
+@import 'modules/_m-site-header';
+</code></pre>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h2 data-anchor="color" class="header-xxlarge section-header">
+    Color
+    <small class="header-link">{{#link-to 'index' (query-params anchor='color')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h2>
+
+
+  <h3 class="no-margin subsection-header" data-anchor="color-variables">
+    Sass color variables
+    <small class="header-link">{{#link-to 'index' (query-params anchor='color-variables')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_m-color</h4>
+
+  <h5 class="dark-gray- small-margin-bottom">Brand colors</h5>
+  <div class="swatches grid-x medium-up-4 text-center">
+    <div class="cell swatch bg-dcp-orange"><pre>$dcp-orange</pre></div>
+    <div class="cell swatch bg-a11y-orange"><pre>$a11y-orange</pre></div>
+    <div class="cell swatch bg-dcp-yellow"><pre>$dcp-yellow</pre></div>
+    <div class="cell swatch bg-a11y-yellow"><pre>$a11y-yellow</pre></div>
+  </div>
+
+  <h5 class="dark-gray- small-margin-bottom">Data viz colors</h5>
+  <div class="swatches grid-x medium-up-4 text-center">
+    <div class="cell swatch bg-aqua"><pre>$aqua</pre></div>
+    <div class="cell swatch bg-aqua-light"><pre>$aqua-light</pre></div>
+    <div class="cell swatch bg-aqua-dark"><pre>$aqua-dark</pre></div>
+    <div class="cell swatch bg-aqua-muted"><pre>$aqua-muted</pre></div>
+    <div class="cell swatch bg-teal"><pre>$teal</pre></div>
+    <div class="cell swatch bg-teal-light"><pre>$teal-light</pre></div>
+    <div class="cell swatch bg-teal-dark"><pre>$teal-dark</pre></div>
+    <div class="cell swatch bg-teal-muted"><pre>$teal-muted</pre></div>
+    <div class="cell swatch bg-green"><pre>$green</pre></div>
+    <div class="cell swatch bg-green-light"><pre>$green-light</pre></div>
+    <div class="cell swatch bg-green-dark"><pre>$green-dark</pre></div>
+    <div class="cell swatch bg-green-muted"><pre>$green-muted</pre></div>
+    <div class="cell swatch bg-chartreuse"><pre>$chartreuse</pre></div>
+    <div class="cell swatch bg-chartreuse-light"><pre>$chartreuse-light</pre></div>
+    <div class="cell swatch bg-chartreuse-dark"><pre>$chartreuse-dark</pre></div>
+    <div class="cell swatch bg-chartreuse-muted"><pre>$chartreuse-muted</pre></div>
+    <div class="cell swatch bg-yellow"><pre>$yellow</pre></div>
+    <div class="cell swatch bg-yellow-light"><pre>$yellow-light</pre></div>
+    <div class="cell swatch bg-yellow-dark"><pre>$yellow-dark</pre></div>
+    <div class="cell swatch bg-yellow-muted"><pre>$yellow-muted</pre></div>
+    <div class="cell swatch bg-gold"><pre>$gold</pre></div>
+    <div class="cell swatch bg-gold-light"><pre>$gold-light</pre></div>
+    <div class="cell swatch bg-gold-dark"><pre>$gold-dark</pre></div>
+    <div class="cell swatch bg-gold-muted"><pre>$gold-muted</pre></div>
+    <div class="cell swatch bg-orange"><pre>$orange</pre></div>
+    <div class="cell swatch bg-orange-light"><pre>$orange-light</pre></div>
+    <div class="cell swatch bg-orange-dark"><pre>$orange-dark</pre></div>
+    <div class="cell swatch bg-orange-muted"><pre>$orange-muted</pre></div>
+    <div class="cell swatch bg-red"><pre>$red</pre></div>
+    <div class="cell swatch bg-red-light"><pre>$red-light</pre></div>
+    <div class="cell swatch bg-red-dark"><pre>$red-dark</pre></div>
+    <div class="cell swatch bg-red-muted"><pre>$red-muted</pre></div>
+    <div class="cell swatch bg-fuchsia"><pre>$fuchsia</pre></div>
+    <div class="cell swatch bg-fuchsia-light"><pre>$fuchsia-light</pre></div>
+    <div class="cell swatch bg-fuchsia-dark"><pre>$fuchsia-dark</pre></div>
+    <div class="cell swatch bg-fuchsia-muted"><pre>$fuchsia-muted</pre></div>
+    <div class="cell swatch bg-purple"><pre>$purple</pre></div>
+    <div class="cell swatch bg-purple-light"><pre>$purple-light</pre></div>
+    <div class="cell swatch bg-purple-dark"><pre>$purple-dark</pre></div>
+    <div class="cell swatch bg-purple-muted"><pre>$purple-muted</pre></div>
+    <div class="cell swatch bg-indigo"><pre>$indigo</pre></div>
+    <div class="cell swatch bg-indigo-light"><pre>$indigo-light</pre></div>
+    <div class="cell swatch bg-indigo-dark"><pre>$indigo-dark</pre></div>
+    <div class="cell swatch bg-indigo-muted"><pre>$indigo-muted</pre></div>
+    <div class="cell swatch bg-blue"><pre>$blue</pre></div>
+    <div class="cell swatch bg-blue-light"><pre>$blue-light</pre></div>
+    <div class="cell swatch bg-blue-dark"><pre>$blue-dark</pre></div>
+    <div class="cell swatch bg-blue-muted"><pre>$blue-muted</pre></div>
+  </div>
+
+  <h5 class="dark-gray- small-margin-bottom">Grayscale colors</h5>
+  <div class="swatches grid-x medium-up-4 text-center">
+    <div class="cell swatch bg-black"><pre>$black</pre></div>
+    <div class="cell swatch bg-charcoal"><pre>$charcoal</pre></div>
+    <div class="cell swatch bg-dark-gray"><pre>$dark-gray</pre></div>
+    <div class="cell swatch bg-gray"><pre>$gray</pre></div>
+    <div class="cell swatch bg-light-gray"><pre>$light-gray</pre></div>
+    <div class="cell swatch bg-silver"><pre>$silver</pre></div>
+    <div class="cell swatch bg-white-smoke"><pre>$white-smoke</pre></div>
+    <div class="cell swatch bg-off-white"><pre>$off-white</pre></div>
+    <div class="cell swatch bg-white"><pre>$white</pre></div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="font-color">
+    Font color
+    <small class="header-link">{{#link-to 'index' (query-params anchor='font-color')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_m-color</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>There are <code>.[color]</code> classes for every Sass color variable. Use these to set an element's font color.</p>
+      <pre><code>&lt;p class="aqua-dark">This paragraph is aqua-dark.&lt;/p>
+&lt;p class="chartreuse">This paragraph is chartreuse.&lt;/p>
+&lt;p class="fuchsia-light">This paragraph is fuchsia-light.&lt;/p>
+&lt;p class="indigo">This paragraph is indigo.&lt;/p></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p class="aqua-dark">This paragraph is aqua-dark.</p>
+      <p class="chartreuse">This paragraph is chartreuse.</p>
+      <p class="fuchsia-light">This paragraph is fuchsia-light.</p>
+      <p class="indigo">This paragraph is indigo.</p>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="background-color">
+    Background color
+    <small class="header-link">{{#link-to 'index' (query-params anchor='background-color')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_m-color</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>There is a <code>.bg-[color]</code> class for every Sass color variable. In addition to setting an element's background color, these classes also use Foundation's <code>color-pick-contrast()</code> Sass function to set the font color to either black or white for maximum contrast. </p>
+      <p>Background color classes can be used in combination with font color classes. Since both classes have the same specificity, and <code>.[color]</code> rules follow <code>.bg-[color]</code> rules in the cascade order, font color classes will override the font color that's set by background color classes. </p>
+      <pre><code>&lt;p class="bg-teal">.bg-teal&lt;/p>
+&lt;p class="bg-teal-dark">.bg-teal-dark&lt;/p>
+&lt;p class="bg-gold">.bg-gold&lt;/p>
+&lt;p class="bg-gold gold-light">.bg-gold + .gold-light + &lt;span class="gold-dark">.gold-dark&lt;/span>&lt;/p></code></pre>
+    </div>
+    <div class="cell large-6 text-center">
+      <div class="grid-y grid-padding-y">
+        <p class="cell bg-teal">.bg-teal</p>
+        <p class="cell bg-teal-dark">.bg-teal-dark</p>
+        <p class="cell bg-gold">.bg-gold</p>
+        <p class="cell bg-gold gold-light">.bg-gold + .gold-light + <span class="gold-dark">.gold-dark</span></p>
+      </div>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h2 data-anchor="utility-classes" class="header-xxlarge section-header">
+    Utility classes
+    <small class="header-link">{{#link-to 'index' (query-params anchor='utility-classes')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h2>
+
+
+  <h3 class="no-margin subsection-header" data-anchor="headings">
+    Headings
+    <small class="header-link">{{#link-to 'index' (query-params anchor='headings')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_base-typography</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>Heading classes are used to give elements a particular heading style, regardless of their tag. This allows for both semantic page structure and versatile design. </p>
+      <p>For example, an <code>&lt;h2&gt;</code> is relatively large by default, and it may be the proper element choice, but need to be styled like a smaller <code>&lt;h4&gt;</code>.</p>
+      <pre><code>&lt;h6 class="header-xxlarge">XXL Heading&lt;/h6>
+&lt;h6 class="header-xlarge">XL Heading&lt;/h6>
+&lt;p class="header-large">Large Heading&lt;/p>
+&lt;p class="header-medium">Medium Heading&lt;/p>
+&lt;h1 class="header-small">Small Heading&lt;/h1>
+&lt;h1 class="header-tiny">Tiny Heading&lt;/h1></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p class="header-xxlarge">XXL Heading</p>
+      <p class="header-xlarge">XL Heading</p>
+      <p class="header-large">Large Heading</p>
+      <p class="header-medium">Medium Heading</p>
+      <p class="header-small">Small Heading</p>
+      <p class="header-tiny">Tiny Heading</p>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="text-size">
+    Text size
+    <small class="header-link">{{#link-to 'index' (query-params anchor='text-size')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_base-typography</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>In addition to Foundation's <code>.lead</code> class (which styles a slightly-larger-than-normal block of text), Labs UI has <code>.text-small</code> and <code>.text-tiny</code>.</p>
+      <pre><code>&lt;p class="lead">This is a lead paragraph.&lt;/p>
+&lt;p>This is a regular paragraph.&lt;/p>
+&lt;p class="text-small">This is a small paragraph.&lt;/p>
+&lt;p class="text-tiny">This is a tiny paragraph.&lt;/p></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p class="lead">This is a lead paragraph.</p>
+      <p>This is a regular paragraph.</p>
+      <p class="text-small">This is a small paragraph.</p>
+      <p class="text-tiny">This is a tiny paragraph.</p>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="text-weight">
+    Text weight
+    <small class="header-link">{{#link-to 'index' (query-params anchor='text-weight')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_base-typography</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>The <code>.text-weight-normal</code> and <code>.text-weight-bold</code> classes allow you to override an element's font weight.</p>
+      <pre><code>&lt;p>This is a regular paragraph.&lt;/p>
+&lt;p class="text-weight-bold">This is a bold paragraph.&lt;/p>
+&lt;h4>This is a regular h4.&lt;/h4>
+&lt;h4 class="text-weight-normal">This is a non-bold h4.&lt;/h4></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p>This is a regular paragraph.</p>
+      <p class="text-weight-bold">This is a bold paragraph.</p>
+      <h4>This is a regular h4.</h4>
+      <h4 class="text-weight-normal">This is a non-bold h4.</h4>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="no-wrap">
+    No wrap
+    <small class="header-link">{{#link-to 'index' (query-params anchor='no-wrap')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_base-typography</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>The <code>.no-wrap</code> class prevents elements from wrapping to multiple lines.</p>
+      <pre><code>&lt;p class="no-wrap">
+Lorem ipsum dolor sit amet, consectetur adipisicing
+elit, sed do eiusmod tempor incididunt ut labore et
+dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat.
+&lt;/p></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p class="no-wrap" style="overflow:auto;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat.
+      </p>
+    </div>
+  </div>
+
+
+  <hr />
+
+
+  <h3 class="no-margin subsection-header" data-anchor="margins">
+    Margins
+    <small class="header-link">{{#link-to 'index' (query-params anchor='margins')}}{{fa-icon 'link'}}{{/link-to}}</small>
+  </h3>
+  <h4 class="dark-gray text-weight-normal">labs-ui/modules/_base-typography</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-6">
+      <p>There are <code>.no-margin-[side]</code> classes for each side (top, right, bottom, left) which remove margins. The <code>.no-margin</code> class removes the margin from all four sides of an element.</p>
+      <p>There are <code>.[size]-margin-[side]</code> classes for each size (tiny, small, medium, large) and side &mdash; e.g. the <code>.large-margin-bottom</code> class adds generous bottom margin to an element.</p>
+      <p><strong class="red-muted">Warning:</strong> Margin classes use <code>!important</code> rules.</p>
+      <pre><code>&lt;p class="bg-silver no-margin">This paragraph has no margins.&lt;/p>
+&lt;p class="bg-silver small-margin-bottom">This paragraph has a small margin on its bottom side.&lt;/p>
+&lt;p class="bg-silver large-margin-bottom">This paragraph has a large margin on its bottom side.&lt;/p>
+&lt;p class="bg-silver">This is another regular paragraph.&lt;/p></code></pre>
+    </div>
+    <div class="cell large-6">
+      <p class="bg-silver no-margin">This paragraph has no margins.</p>
+      <p class="bg-silver small-margin-bottom">This paragraph has a small margin on its bottom side.</p>
+      <p class="bg-silver large-margin-bottom">This paragraph has a large margin on its bottom side.</p>
+      <p class="bg-silver medium-margin-left">This paragraph has a medium margin on its left side.</p>
+    </div>
+  </div>
+
+</div>
+
+{{outlet}}

@@ -10,7 +10,10 @@
   text-shadow: none;
 }
 
+
+//
 // Tooltips
+// --------------------------------------------------
 .ember-tooltip {
   background: $charcoal;
   color: $white;
@@ -29,7 +32,10 @@
   border-left-color: $charcoal;
 }
 
+
+//
 // Popovers
+// --------------------------------------------------
 .ember-popover {
   background: $white-smoke;
   color: $black;
@@ -48,12 +54,15 @@
   border-left-color: $white-smoke;
 }
 
+
+//
 // Dark Popovers
+// --------------------------------------------------
 .ember-popover.dark {
   background: $charcoal;
   color: $white;
 
-  a {
+  a:not(.button) {
     color: $dcp-yellow;
   }
 }
@@ -68,4 +77,33 @@
 }
 .ember-popover.dark[x-placement^="left"] .ember-tooltip-arrow {
   border-left-color: $charcoal;
+}
+
+
+//
+// White Popovers
+// --------------------------------------------------
+.ember-popover.white {
+  background: $white;
+}
+.ember-popover.white[x-placement^="top"] .ember-tooltip-arrow {
+  border-top-color: $white;
+}
+.ember-popover.white[x-placement^="right"] .ember-tooltip-arrow {
+  border-right-color: $white;
+}
+.ember-popover.white[x-placement^="bottom"] .ember-tooltip-arrow {
+  border-bottom-color: $white;
+}
+.ember-popover.white[x-placement^="left"] .ember-tooltip-arrow {
+  border-left-color: $white;
+}
+
+
+//
+// Popover padding
+// --------------------------------------------------
+.ember-popover.tiny-padding {
+  padding: rem-calc(4);
+  border-radius: 0;
 }

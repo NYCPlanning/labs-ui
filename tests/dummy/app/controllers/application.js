@@ -1,13 +1,8 @@
 import Controller from '@ember/controller';
-import config from '../config/environment';
+import ControllerSupport from 'ember-anchor/mixins/controller-support';
 
-const { version } = config;
-
-export default Controller.extend({
-  version,
-  actions: {
-    handleMapLoad(map) {
-      window.map = map;
-    }
-  }
+export default Controller.extend(ControllerSupport, {
+  anchorQueryParam: 'anchor',
+  queryParams: ['anchor'],
+  anchor: 'top'
 });
