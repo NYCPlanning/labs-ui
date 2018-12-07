@@ -1,0 +1,87 @@
+<div class="docs-header" data-anchor='top'>
+  <div class="grid-container">
+
+    <div class="large-text-right">
+      <a class="button" href="https://github.com/NYCPlanning/labs-ui">
+        {{fa-icon 'github' prefix='fab'}}
+        <strong class="medium-down-expanded"><span class="show-for-large">github.com/</span>NYCPlanning/labs-ui</strong>
+      </a>
+    </div>
+
+    <h1 class="no-margin">Labs UI <small>{{version}}</small></h1>
+    <h2 class="header-xlarge dark-gray text-weight-normal">NYC Planning Labs Design Patterns</h2>
+
+    <p class="lead" style="max-width:41em;">This Ember addon contains common components, styles, Sass variables, utility classes, and design patterns that <a href="https://planninglabs.nyc/">NYC Planning Labs</a> uses across its various applications.</p>
+
+    <nav class="menu align-right">
+      {{#link-to 'index' (query-params anchor='components') class='button gray'}}
+        Components {{fa-icon 'caret-down' transform='right-6' class='light-gray'}}
+        {{#ember-popover
+          event='hover'
+          side='bottom'
+          delay='200'
+          tooltipClassName='ember-popover white tiny-padding'
+          as |popover|
+        }}
+          {{link-to 'Icon Tooltip' 'index' (query-params anchor='icon-tooltip') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Ember Tooltips' 'index' (query-params anchor='ember-tooltips') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Site Header' 'index' (query-params anchor='site-header') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Layer Group Toggle' 'index' (query-params anchor='layer-group-toggle') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Layer Groups Container' 'index' (query-params anchor='layer-groups-container') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Legend Items' 'index' (query-params anchor='legend-items') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Legend Item' 'index' (query-params anchor='legend-item') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Legend Icon' 'index' (query-params anchor='legend-icon') class='button small gray expanded no-margin-bottom'}}
+        {{/ember-popover}}
+      {{/link-to}}
+
+      {{#link-to 'index' (query-params anchor='sass') class='button gray'}}
+        Sass {{fa-icon 'caret-down' transform='right-6' class='light-gray'}}
+        {{#ember-popover
+          event='hover'
+          side='bottom'
+          delay='200'
+          tooltipClassName='ember-popover white tiny-padding'
+          as |popover|
+        }}
+          {{link-to 'Variables' 'index' (query-params anchor='sass-variables') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Modules' 'index' (query-params anchor='sass-modules') class='button small gray expanded no-margin-bottom'}}
+        {{/ember-popover}}
+      {{/link-to}}
+
+      {{#link-to 'index' (query-params anchor='color') class='button gray'}}
+        Color {{fa-icon 'caret-down' transform='right-6' class='light-gray'}}
+        {{#ember-popover
+          event='hover'
+          side='bottom'
+          delay='200'
+          tooltipClassName='ember-popover white tiny-padding'
+          as |popover|
+        }}
+          {{link-to 'Color variables' 'index' (query-params anchor='color-variables') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Font color' 'index' (query-params anchor='font-color') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Background color' 'index' (query-params anchor='background-color') class='button small gray expanded no-margin-bottom'}}
+        {{/ember-popover}}
+      {{/link-to}}
+
+      {{#link-to 'index' (query-params anchor='utility-classes') class='button gray'}}
+        Classes {{fa-icon 'caret-down' transform='right-6' class='light-gray'}}
+        {{#ember-popover
+          event='hover'
+          side='bottom'
+          delay='200'
+          tooltipClassName='ember-popover white tiny-padding'
+          as |popover|
+        }}
+          {{link-to 'Headings' 'index' (query-params anchor='headings') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Text size' 'index' (query-params anchor='text-size') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Text weight' 'index' (query-params anchor='text-weight') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'No wrap' 'index' (query-params anchor='no-wrap') class='button small gray expanded tiny-margin-bottom'}}
+          {{link-to 'Margins' 'index' (query-params anchor='margins') class='button small gray expanded no-margin-bottom'}}
+        {{/ember-popover}}
+      {{/link-to}}
+    </nav>
+
+  </div>
+</div>
+
+{{yield}}

@@ -82,6 +82,11 @@ $logo-height-medium: rem-calc(36);
       }
     }
 
+    &.dropdown > li > a {
+      padding-top: 1.6875rem;
+      padding-bottom: 1.6875rem;
+    }
+
     .is-dropdown-submenu {
       box-shadow: 0 2px 0 2px rgba(0,0,0,0.1);
 

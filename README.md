@@ -60,11 +60,11 @@ The consuming app's `app.scss` should look something like this:
 }
 ```
 
-##### D) Add the Foundation options to `ember–cli-build.js`: 
+##### D) Add the Foundation options to `ember–cli-build.js`:
 
 ```
-'ember-cli-foundation-6-sass': { 
-  'foundationJs': 'all' 
+'ember-cli-foundation-6-sass': {
+  foundationJs: 'all'
 },
 ```
 
