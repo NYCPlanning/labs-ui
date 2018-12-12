@@ -1,6 +1,6 @@
 {
   "name": "labs-ui",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
@@ -30,10 +30,10 @@
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-sass": "^6.2.0",
-    "ember-cli-what-input": "^1.0.0",
     "ember-decorators": "2.3.1",
-    "ember-tooltips": "3.0.0",
-    "foundation-sites": "^6.3.1"
+    "ember-tooltips": "3.1.0",
+    "foundation-sites": "^6.3.1",
+    "mapbox-gl": "^0.48.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
@@ -41,7 +41,6 @@
     "broccoli-asset-rev": "^2.4.5",
     "broccoli-clean-css": "~1.1.0",
     "ember-ajax": "^3.0.0",
-    "ember-anchor": "^1.0.2",
     "ember-cli": "~3.3.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
@@ -65,8 +64,7 @@
     "ember-try": "^0.2.23",
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^5.2.1",
-    "loader.js": "^4.2.3",
-    "mapbox-gl": "^0.48.0"
+    "loader.js": "^4.2.3"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
