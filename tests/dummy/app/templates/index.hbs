@@ -174,9 +174,9 @@ as |banner|
 &#123;{/banner.title}}
 &#123;{#banner.nav}}
   &lt;ul class="menu vertical medium-horizontal">
-    &lt;li>&lt;a>One&lt;/a>&lt;/li>
-    &lt;li>&lt;a>Two&lt;/a>&lt;/li>
-    &lt;li>&lt;a>Three&lt;/a>&lt;/li>
+    &lt;li>&#123;{link-to 'One' 'index'}}&lt;/li>
+    &lt;li>&#123;{link-to 'Two' 'index'}}&lt;/li>
+    &lt;li class="external-nav-item">&lt;a href="mailto:email@example.org">Mailto Link&lt;/a>&lt;/li>
   &lt;/ul>
 &#123;{/banner.nav}}
 &#123;{/labs-ui/site-header}}</code></pre>
@@ -190,8 +190,9 @@ as |banner|
         {{/banner.title}}
         {{#banner.nav}}
           <ul class="menu vertical medium-horizontal">
-            <li><a>One</a></li>
-            <li><a>Two</a></li>
+            <li>{{link-to 'One' 'index'}}</li>
+            <li>{{link-to 'Two' 'index'}}</li>
+            <li class="external-nav-item"><a href="mailto:email@example.org">Email</a></li>
           </ul>
         {{/banner.nav}}
       {{/labs-ui/site-header}}
