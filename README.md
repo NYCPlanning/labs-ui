@@ -6,7 +6,7 @@ This Ember addon contains common components, styles/CSS, Sass variables, utility
 
 ### Documentation (using the addon)
 
-http://nycplanning.github.io/labs-ui
+https://ui.planninglabs.nyc/
 
 ---
 
@@ -118,6 +118,6 @@ fontawesome: {
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
-### Deploying the dummy application (docs) to GitHub Pages
+### Deploying the docs (dummy application)
 
-* Use `ember-cli-github-pages` to build the docs and deploy them to gh-pages:  https://github.com/poetic/ember-cli-github-pages#usage
+* The `master` branch is automatically deployed via Netlify. See the docs at [ui.planninglabs.nyc](https://ui.planninglabs.nyc/). 
