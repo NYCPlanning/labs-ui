@@ -1,23 +1,17 @@
 import Component from '@ember/component';
-import { argument } from '@ember-decorators/argument';
-import { attribute, tagName } from '@ember-decorators/component';
-import { classNames } from '@ember-decorators/component';
 import layout from '../../templates/components/labs-ui/site-header';
 
-@tagName('header')
-@classNames('site-header')
-export default class LabsUiSiteHeaderComponent extends Component {
-  layout = layout
+export default Component.extend({
+  tagName: 'header',
+  classNames: ['site-header'],
 
-  @attribute
-  ariaRole = 'banner';
+  layout,
 
-  @argument
-  closed = true;
+  ariaRole: 'banner',
 
-  @argument
-  responsiveNav = false;
+  closed: true,
 
-  @argument
-  responsiveSize = 'large';
-}
+  responsiveNav: false,
+
+  responsiveSize: 'large',
+});

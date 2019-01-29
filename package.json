@@ -1,6 +1,6 @@
 {
   "name": "labs-ui",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
@@ -19,8 +19,6 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "@ember-decorators/argument": "0.8.15",
-    "@ember-decorators/babel-transforms": "^2.0.0",
     "@fortawesome/ember-fontawesome": "^0.1.5",
     "@fortawesome/free-brands-svg-icons": "^5.2.0",
     "@fortawesome/free-regular-svg-icons": "^5.1.0",
@@ -31,7 +29,6 @@
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-sass": "^6.2.0",
     "ember-cli-what-input": "^1.0.0",
-    "ember-decorators": "2.3.1",
     "ember-tooltips": "3.1.0",
     "foundation-sites": "^6.3.1",
     "mapbox-gl": "^0.48.0"

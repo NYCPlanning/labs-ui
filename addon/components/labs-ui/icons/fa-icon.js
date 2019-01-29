@@ -1,19 +1,19 @@
 import Component from '@ember/component';
-import { argument } from '@ember-decorators/argument';
-import { tagName, classNames } from '@ember-decorators/component';
-import { computed } from '@ember-decorators/object';
+import { computed } from '@ember/object';
 import { htmlSafe } from '@ember/template';
 import layout from '../../../templates/components/labs-ui/icons/fa-icon';
 
-@tagName('span')
-@classNames('legend-icon-layer')
-export default class LabsLegendIconLineComponent extends Component {
-  layout = layout;
+export default Component.extend({
+  init() {
+    this._super(...arguments);
 
-  @argument options = {};
+    this.set('options', {});
+  },
+  tagName: 'span',
+  classNames: ['legend-icon-layer'],
+  layout,
 
-  @computed('options.color')
-  get spanStyle() {
+  spanStyle: computed('options.color', function() {
     return htmlSafe(this.options.color ? `color: ${this.options.color}` : '');
-  }
-}
+  }),
+});

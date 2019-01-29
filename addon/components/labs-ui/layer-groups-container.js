@@ -1,25 +1,21 @@
 import Component from '@ember/component';
-import { argument } from '@ember-decorators/argument';
-import { action, computed } from '@ember-decorators/object';
-import { type } from '@ember-decorators/argument/type';
-import { required } from '@ember-decorators/argument/validation';
+import { computed } from '@ember/object';
 import { next } from '@ember/runloop';
 import { A } from '@ember/array';
 import layout from '../../templates/components/labs-ui/layer-groups-container';
 
-export default class LayerGroupsContainerComponent extends Component {
-  constructor(...args) {
-    super(...args);
+export default Component.extend({
+  init(...args) {
+    this._super(...args);
 
     this.set('layerGroupToggleItems', A([]));
-  }
+  },
 
-  layout = layout;
+  layout,
 
-  classNames=['layer-groups-container'];
+  classNames: ['layer-groups-container'],
 
-  @computed('layerGroupToggleItems.@each.active')
-  get numberMenuItems() {
+  numberMenuItems: computed('layerGroupToggleItems.@each.active', function() {
     const items = this.get('layerGroupToggleItems');
 
     const activeStates = items.mapBy('active');
@@ -32,35 +28,28 @@ export default class LayerGroupsContainerComponent extends Component {
 
       return mutatedAcc;
     }, 0);
-  }
+  }),
 
-  @argument
-  open = true;
+  open: true,
 
-  @argument
-  mapIsLoading = false;
+  mapIsLoading: false,
 
-  @argument
-  @required
-  @type('string')
-  title;
+  title: null,
 
-  @action
-  toggleLayerGroupsContainer() {
-    this.toggleProperty('open');
-  }
+  actions: {
+    toggleLayerGroupsContainer() {
+      this.toggleProperty('open');
+    },
+    registerChild(componentContext) {
+      next(() => {
+        this.get('layerGroupToggleItems').pushObject(componentContext);
+      });
+    },
+    unregisterChild(componentContext) {
+      next(() => {
+        this.get('layerGroupToggleItems').removeObject(componentContext);
+      });
+    },
+  },
+});
 
-  @action
-  registerChild(componentContext) {
-    next(() => {
-      this.get('layerGroupToggleItems').pushObject(componentContext);
-    });
-  }
-
-  @action
-  unregisterChild(componentContext) {
-    next(() => {
-      this.get('layerGroupToggleItems').removeObject(componentContext);
-    });
-  }
-}

@@ -1,30 +1,31 @@
 import Component from '@ember/component';
-import { argument } from '@ember-decorators/argument';
-import { computed } from '@ember-decorators/object';
-import { tagName, classNames, attribute } from '@ember-decorators/component';
+import { computed } from '@ember/object';
 import layout from '../../../templates/components/labs-ui/icons/line';
 
-@tagName('svg')
-@classNames('legend-icon-layer', 'line')
-export default class LabsLegendIconLineComponent extends Component {
-  layout = layout;
+export default Component.extend({
+  init() {
+    this._super(...arguments);
 
-  @computed('options')
-  get svgOptions() {
+    this.set('options', {});
+  },
+
+  classNames: ['legend-icon-layer', 'line'],
+  tagName: 'svg',
+  layout,
+
+  svgOptions: computed('options', function() {
     const defaultOptions = {
       stroke: 'SteelBlue'
     };
     const options = this.get('options');
 
     return Object.assign(defaultOptions, options);
-  }
+  }),
 
-  @argument options = {};
-
-  @attribute height = 10;
-  @attribute width = 17;
-  @attribute viewBox = '0 0 17 10';
-  @attribute preserveAspectRatio = 'xMinYMid';
+  height: 10,
+  width: 17,
+  viewBox: '0 0 17 10',
+  preserveAspectRatio: 'xMinYMid',
 
   didInsertElement() {
     const svgPath = this.element.querySelector('path');
@@ -33,4 +34,4 @@ export default class LabsLegendIconLineComponent extends Component {
       svgPath.setAttribute(attr, value);
     });
   }
-}
+});
