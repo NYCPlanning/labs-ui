@@ -4,7 +4,7 @@ import config from '../config/environment';
 
 const { version } = config;
 
-export default class DocsHeaderComponent extends Component {
-  layout = layout;
-  version = version;
-}
+export default Component.extend({
+  layout,
+  version,
+});

@@ -1,21 +1,19 @@
 import Component from '@ember/component';
-import { argument } from '@ember-decorators/argument';
-import { computed } from '@ember-decorators/object';
-import { type } from '@ember-decorators/argument/type';
-import { classNames } from '@ember-decorators/component';
+import { computed } from '@ember/object';
 import layout from '../../templates/components/labs-ui/legend-icon';
 
-@classNames('legend-icon')
-export default class LegendIconComponent extends Component {
-  layout = layout;
+export default Component.extend({
+  init(...args) {
+    this._super(...args);
+  },
 
-  @computed
-  get iconType() {
+  icon: null,
+
+  classNames: ['legend-icon'],
+  layout,
+
+  iconType: computed(function() {
     const type = this.get('icon.type');
     return (type === 'fa-icon') ? 'fa-layers' : type;
-  }
-
-  @argument
-  @type('object')
-  icon = {};
-}
+  }),
+});

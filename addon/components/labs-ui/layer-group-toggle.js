@@ -1,56 +1,42 @@
 import Component from '@ember/component';
-import { argument } from '@ember-decorators/argument';
-import { action } from '@ember-decorators/object';
-import { type } from '@ember-decorators/argument/type';
-import { required } from '@ember-decorators/argument/validation';
-import { classNames } from '@ember-decorators/component';
 import layout from '../../templates/components/labs-ui/layer-group-toggle';
 
-@classNames('layer-group-toggle')
-export default class LabsUILayerGroupToggleComponent extends Component {
-  constructor(...args) {
-    super(...args);
+export default Component.extend({
+  init(...args) {
+    this._super(...args);
+
     this.get('didInit')(this);
-  }
 
-  layout = layout;
+    this.set('icon', []);
+  },
 
-  @required
-  @argument
-  @type('string')
-  label;
+  classNames: ['layer-group-toggle'],
 
-  @argument
-  icon = [];
+  layout,
 
-  @argument
-  tooltip = '';
+  label: null,
 
-  @argument
-  tooltipIcon = 'info-circle';
+  tooltip: '',
 
-  @argument
-  @type('boolean')
-  active = true;
+  tooltipIcon: 'info-circle',
 
-  @argument
-  activeTooltip = '';
+  active: true,
 
-  @argument
-  activeTooltipIcon = 'exclamation-triangle';
+  activeTooltip: '',
 
-  @argument
-  didInit = () => {}
+  activeTooltipIcon: 'exclamation-triangle',
 
-  @argument
-  willDestroyHook = () => {}
+  didInit() {},
+
+  willDestroyHook() {},
 
   willDestroy() {
     this.get('willDestroyHook')(this);
-  }
+  },
 
-  @action
-  toggle() {
-    this.toggleProperty('active');
-  }
-}
+  actions: {
+    toggle() {
+      this.toggleProperty('active');
+    },
+  },
+});
