@@ -11,6 +11,7 @@ export default Component.extend({
   },
 
   classNames: ['layer-group-toggle'],
+  classNameBindings: ['active'],
 
   layout,
 
