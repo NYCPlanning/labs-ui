@@ -3,13 +3,17 @@
 // --------------------------------------------------
 
 //
-// Layer Group Toggle
+// Layer Group Container
 // --------------------------------------------------
 .layer-groups-container {
   border-bottom: 1px solid $silver;
 
   &:hover {
     background-color: rgba(107,113,123,.06);
+  }
+
+  &:not(.open) .layer-groups-container-content {
+    display: none;
   }
 }
 

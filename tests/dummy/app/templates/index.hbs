@@ -328,6 +328,7 @@ yielded content goes here
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
       <p>A group of layer groups&hellip; <em>Set of groups?</em> A toggleable container, this component is always used in block form. Its <code>title</code> param renders a clickable title which toggles the visibility of its yielded content. When its title is clicked, the <code>open</code> boolean is reversed and the visibility of the component's yielded content is toggled.</p>
+      <p>For full functionality, use Layer Group Toggles as <a href="https://embermap.com/topics/contextual-components/flexible-interfaces">contextual components</a>.</p>
       <table>
         <thead>
           <tr>
@@ -352,20 +353,23 @@ yielded content goes here
           </tr>
         </tbody>
       </table>
-      <p class="text-small"><em>Note:</em> Since the yielded content can be anything, its layout is unopinionated (e.g. it needs its own padding to align text with the title text).</p>
     </div>
     <div class="cell large-7">
       <pre><code>&#123;{#labs-ui/layer-groups-container
-title='Layer Groups Container Title'
-active=true
+  title='Layer Groups Container Title'
+  active=true
+  as |container|
 }}
-yielded content goes here
+  &#123;{container.layer-group-toggle label='Layer Group One' active=true}}
+  &#123;{container.layer-group-toggle label='Layer Group Two' active=false}}
 &#123;{/labs-ui/layer-groups-container}}</code></pre>
       {{#labs-ui/layer-groups-container
         title='Layer Groups Container Title'
         open=true
+        as |container|
       }}
-      yielded content goes here
+        {{container.layer-group-toggle label='Layer Group One' active=true}}
+        {{container.layer-group-toggle label='Layer Group Two' active=false}}
       {{/labs-ui/layer-groups-container}}
     </div>
   </div>
