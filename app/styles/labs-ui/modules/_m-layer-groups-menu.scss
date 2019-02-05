@@ -44,6 +44,7 @@
 .layer-group-toggle {
   border-top: 1px solid $white;
   font-size: rem-calc(12);
+  z-index: 100;
 }
 
 .layer-group-toggle-header {
@@ -74,6 +75,11 @@
       left: 0.625rem;
     }
   }
+}
+
+.info-link {
+  z-index: 500;
+  float: right;
 }
 
 
