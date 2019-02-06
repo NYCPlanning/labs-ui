@@ -14,7 +14,7 @@ export default Component.extend({
   layout,
 
   classNames: ['layer-groups-container'],
-  classNameBindings: ['open'],
+  classNameBindings: ['open', 'numberMenuItems:has-active-layer-groups'],
 
   numberMenuItems: computed('layerGroupToggleItems.@each.active', function() {
     const items = this.get('layerGroupToggleItems');
