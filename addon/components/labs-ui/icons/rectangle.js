@@ -5,8 +5,6 @@ import layout from '../../../templates/components/labs-ui/icons/rectangle';
 export default Component.extend({
   init() {
     this._super(...arguments);
-
-    this.set('options', {});
   },
 
   tagName: 'svg',
@@ -20,7 +18,7 @@ export default Component.extend({
       fill: 'rgba(70, 130, 180, 0.5)',
       'stroke-linejoin': 'round',
     };
-    const options = this.get('options');
+    const options = this.get('options'); // options should be an object
 
     return Object.assign(defaultOptions, options);
   }),

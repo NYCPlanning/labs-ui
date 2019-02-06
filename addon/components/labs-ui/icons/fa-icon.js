@@ -6,12 +6,12 @@ import layout from '../../../templates/components/labs-ui/icons/fa-icon';
 export default Component.extend({
   init() {
     this._super(...arguments);
-
-    this.set('options', {});
   },
   tagName: 'span',
   classNames: ['legend-icon-layer'],
   layout,
+
+  options() {},
 
   spanStyle: computed('options.color', function() {
     return htmlSafe(this.options.color ? `color: ${this.options.color}` : '');
