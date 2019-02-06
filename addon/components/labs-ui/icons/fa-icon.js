@@ -11,6 +11,8 @@ export default Component.extend({
   classNames: ['legend-icon-layer'],
   layout,
 
+  options() {},
+
   spanStyle: computed('options.color', function() {
     return htmlSafe(this.options.color ? `color: ${this.options.color}` : '');
   }),
