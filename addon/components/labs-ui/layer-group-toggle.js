@@ -19,6 +19,10 @@ export default Component.extend({
 
   tooltip: '',
 
+  infoLink: '',
+
+  infoLinkIcon: 'link',
+
   tooltipIcon: 'info-circle',
 
   active: true,
