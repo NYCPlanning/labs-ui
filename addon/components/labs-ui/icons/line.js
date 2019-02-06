@@ -5,8 +5,6 @@ import layout from '../../../templates/components/labs-ui/icons/line';
 export default Component.extend({
   init() {
     this._super(...arguments);
-
-    this.set('options', {});
   },
 
   classNames: ['legend-icon-layer', 'line'],
@@ -17,7 +15,7 @@ export default Component.extend({
     const defaultOptions = {
       stroke: 'SteelBlue'
     };
-    const options = this.get('options');
+    const options = this.get('options'); // options should be an object
 
     return Object.assign(defaultOptions, options);
   }),
