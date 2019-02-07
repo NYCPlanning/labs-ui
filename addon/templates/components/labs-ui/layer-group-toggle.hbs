@@ -10,18 +10,18 @@
     {{#if tooltip}}
       {{labs-ui/icon-tooltip tip=tooltip icon=tooltipIcon side='left'}}
     {{/if}}
+    
+    {{#if active}}
+     {{#if infoLink}}
+       <span class="info-link"><a href="{{infoLink}}" target="_blank">{{fa-icon infoLinkIcon}}</a></span>
+     {{/if}}
+    {{/if}}
 
     {{#if (and activeTooltip active)}}
       {{labs-ui/icon-tooltip tip=activeTooltip icon=activeTooltipIcon side='left'}}
     {{/if}}
 
     {{label}}
-
-    {{#if active}}
-      {{#if infoLink}}
-        <span class="info-link"><a href="{{infoLink}}" target="_blank">{{fa-icon infoLinkIcon}}</a></span>
-      {{/if}}
-    {{/if}}
 
     {{#if active}}
       {{#if icon}}
