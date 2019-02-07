@@ -12,7 +12,7 @@
 
 <div class="layer-groups-container-content">
   {{yield (hash
-     layer-group-toggle=(component 'labs-ui/layer-group-toggle' willDestroyHook=(action 'unregisterChild') didInit=(action 'registerChild'))
+      layer-group-toggle=(component 'labs-ui/layer-group-toggle' willDestroyHook=(action 'unregisterChild') didInit=(action 'registerChild'))
     )
   }}
 </div>
