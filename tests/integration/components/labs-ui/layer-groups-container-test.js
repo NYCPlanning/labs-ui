@@ -17,9 +17,9 @@ module('Integration | Component | layer-groups-container', function(hooks) {
   test('it toggles open', async function(assert) {
     await render(hbs`{{labs-ui/layer-groups-container title='Foo' open=false}}`);
     await click('.layer-groups-container-title');
-    const layerGroupsContainerContent = await find('.layer-groups-container-content');
+    const layerGroupsContainer = await find('.layer-groups-container');
 
-    assert.equal(!!layerGroupsContainerContent, true);
+    assert.equal(layerGroupsContainer.classList.contains('open'), true);
   });
 
   test('it renders the title', async function(assert) {
