@@ -7,14 +7,14 @@
   </div>
   <span {{action 'toggle' preventDefault=false}} class="layer-group-toggle-label" role="button">
 
-    {{#if active}}
-      {{#if infoLink}}
-        <span class="info-link"><a href="{{infoLink}}" target="_blank">{{fa-icon infoLinkIcon}}</a></span>
-      {{/if}}
-    {{/if}}
-
     {{#if tooltip}}
       {{labs-ui/icon-tooltip tip=tooltip icon=tooltipIcon side='left'}}
+    {{/if}}
+    
+    {{#if active}}
+     {{#if infoLink}}
+       <span class="info-link"><a href="{{infoLink}}" target="_blank">{{fa-icon infoLinkIcon}}</a></span>
+     {{/if}}
     {{/if}}
 
     {{#if (and activeTooltip active)}}
