@@ -1,7 +1,11 @@
-{{labs-ui/legend-icon icon=item.icon}}
-
-{{#if item.tooltip}}
-  {{labs-ui/icon-tooltip tip=item.tooltip side='left'}}
-{{/if}}
-
-{{item.label}}
+<div class="grid-x">
+  <div class="cell auto">
+    {{labs-ui/legend-icon icon=item.icon}}
+    {{item.label}}
+  </div>
+  <div class="cell shrink">
+    {{#if item.tooltip}}
+      {{labs-ui/icon-tooltip tip=item.tooltip side='left' fixedWidth=true}}
+    {{/if}}
+  </div>
+</div>
