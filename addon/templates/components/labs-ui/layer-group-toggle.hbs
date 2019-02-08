@@ -17,14 +17,14 @@
       </span>
     </div>
     <div class="cell shrink layer-group-toggle-icons">
-      {{#if tooltip}}
-        {{labs-ui/icon-tooltip tip=tooltip icon=tooltipIcon side='left' fixedWidth=true}}
+      {{#if (and activeTooltip active)}}
+        {{labs-ui/icon-tooltip tip=activeTooltip icon=activeTooltipIcon side='left' fixedWith=true}}
       {{/if}}
       {{#if infoLink}}
         <a href="{{infoLink}}" target="_blank" class="info-link">{{fa-icon infoLinkIcon fixedWidth=true}}</a>
       {{/if}}
-      {{#if (and activeTooltip active)}}
-        {{labs-ui/icon-tooltip tip=activeTooltip icon=activeTooltipIcon side='left' fixedWith=true}}
+      {{#if tooltip}}
+        {{labs-ui/icon-tooltip tip=tooltip icon=tooltipIcon side='left' fixedWidth=true}}
       {{/if}}
     </div>
   </div>

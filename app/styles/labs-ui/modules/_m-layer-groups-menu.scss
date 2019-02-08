@@ -15,6 +15,14 @@
   &:not(.open) .layer-groups-container-content {
     display: none;
   }
+
+  .fa-info-circle {
+    color: $blue-dark;
+  }
+
+  .fa-exclamation-triangle {
+    color: $orange;
+  }
 }
 
 .layer-groups-container-title {
@@ -157,31 +165,5 @@ svg.legend-icon-layer {
   .dash {
     border-width: 2px;
     border-style: dotted;
-  }
-}
-
-
-//
-// Tooltips
-// --------------------------------------------------
-.layer-group-toggle-label,
-.legend-item {
-
-  .icon-tooltip {
-    float: right;
-    margin-right: rem-calc(3);
-    margin-left: rem-calc(6);
-  }
-
-  .icon-tooltip + .icon-tooltip {
-    margin-right: 0;
-  }
-
-  .fa-info-circle {
-    color: $blue-dark;
-  }
-
-  .fa-exclamation-triangle {
-    color: $orange;
   }
 }
