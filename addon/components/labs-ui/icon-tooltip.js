@@ -10,4 +10,5 @@ export default Component.extend({
   side: 'top',
   icon: 'info-circle',
   transform: '',
+  fixedWidth: false,
 });
