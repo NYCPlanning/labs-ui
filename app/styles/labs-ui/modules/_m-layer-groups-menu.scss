@@ -54,6 +54,9 @@
 
   &:hover {
     background-color: rgba(107,113,123,.06);
+  }
+
+  .cell:first-child:hover {
     cursor: pointer;
   }
 
@@ -78,10 +81,10 @@
       left: 0.625rem;
     }
   }
-}
 
-.info-link {
-  float: right;
+  .layer-group-toggle-icons {
+    padding: rem-calc(6);
+  }
 }
 
 
