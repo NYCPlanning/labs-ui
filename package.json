@@ -19,10 +19,10 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "@fortawesome/ember-fontawesome": "^0.1.5",
-    "@fortawesome/free-brands-svg-icons": "^5.2.0",
-    "@fortawesome/free-regular-svg-icons": "^5.1.0",
-    "@fortawesome/free-solid-svg-icons": "^5.1.0",
+    "@fortawesome/ember-fontawesome": ">=0.1.5",
+    "@fortawesome/free-brands-svg-icons": ">=5.2.0",
+    "@fortawesome/free-regular-svg-icons": ">=5.1.0",
+    "@fortawesome/free-solid-svg-icons": ">=5.1.0",
     "ember-cli-babel": "^6.17.0",
     "ember-cli-foundation-6-sass": "^0.0.25",
     "ember-cli-htmlbars": "^2.0.1",
