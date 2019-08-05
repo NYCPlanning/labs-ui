@@ -36,11 +36,11 @@ module('Integration | Component | labs-ui/site-header', function(hooks) {
     const dcpLinkIcon = await find('a.dcp-link img');
     assert.equal(!!dcpLinkIcon, true);
 
-    // The {{site-title}} contextual component renders
+    // The {{site-header-title}} contextual component renders
     const siteTitle = find('.site-title').textContent.trim();
     assert.equal(siteTitle, 'App Name Subtitle');
 
-    // The {{site-nav}} contextual component renders
+    // The {{site-header-nav}} contextual component renders
     const siteNav = find('.menu').textContent.trim();
     assert.equal(siteNav, 'Menu Item');
   });

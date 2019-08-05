@@ -14,4 +14,6 @@ export default Component.extend({
   responsiveNav: false,
 
   responsiveSize: 'large',
+
+  betaNotice: true, 
 });
