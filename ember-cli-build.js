@@ -4,8 +4,12 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
-    'ember-cli-foundation-6-sass': {
-      'foundationJs': 'all',
+    'sassOptions': {
+      'includePaths': [
+        'node_modules/',
+        'node_modules/foundation-sites/scss',
+        'node_modules/nyc-planning-style-guide/dist/assets/scss',
+      ]
     },
   });
 

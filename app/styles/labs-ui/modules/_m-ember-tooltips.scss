@@ -41,16 +41,16 @@
   color: $black;
   font-size: 1rem;
 }
-.ember-popover[x-placement^="top"] .ember-tooltip-arrow {
+.ember-popover[x-placement^="top"] .ember-popover-arrow {
   border-top-color: $white-smoke;
 }
-.ember-popover[x-placement^="right"] .ember-tooltip-arrow {
+.ember-popover[x-placement^="right"] .ember-popover-arrow {
   border-right-color: $white-smoke;
 }
-.ember-popover[x-placement^="bottom"] .ember-tooltip-arrow {
+.ember-popover[x-placement^="bottom"] .ember-popover-arrow {
   border-bottom-color: $white-smoke;
 }
-.ember-popover[x-placement^="left"] .ember-tooltip-arrow {
+.ember-popover[x-placement^="left"] .ember-popover-arrow {
   border-left-color: $white-smoke;
 }
 
@@ -66,16 +66,16 @@
     color: $dcp-yellow;
   }
 }
-.ember-popover.dark[x-placement^="top"] .ember-tooltip-arrow {
+.ember-popover.dark[x-placement^="top"] .ember-popover-arrow {
   border-top-color: $charcoal;
 }
-.ember-popover.dark[x-placement^="right"] .ember-tooltip-arrow {
+.ember-popover.dark[x-placement^="right"] .ember-popover-arrow {
   border-right-color: $charcoal;
 }
-.ember-popover.dark[x-placement^="bottom"] .ember-tooltip-arrow {
+.ember-popover.dark[x-placement^="bottom"] .ember-popover-arrow {
   border-bottom-color: $charcoal;
 }
-.ember-popover.dark[x-placement^="left"] .ember-tooltip-arrow {
+.ember-popover.dark[x-placement^="left"] .ember-popover-arrow {
   border-left-color: $charcoal;
 }
 
