@@ -15,17 +15,45 @@ https://ui.planninglabs.nyc/
 
 ### Installing the addon
 
-##### A) Requires `ember-cli-sass`
+
+##### A) Requirements:
+
+Install the NYC Digital Style Guide.
+
+```
+yarn add nyc-planning-style-guide
+```
+
+Install the Sass compiler and make sure you have an `app.scss` file.
+
 ```
 ember install ember-cli-sass
 ```
-Make sure you have an `app.scss` file
 
 
 ##### B) Install Labs UI:
+
 ```
 yarn add labs-ui
 ```
+
+
+##### C) Configure Sass load paths:
+
+Add `sassOptions` to `ember-cli-build.js` to define which directories Sass should look in when trying to import files.
+
+```
+let app = new EmberApp(defaults, {
+  'sassOptions': {
+    'includePaths': [
+      'node_modules/',
+      'node_modules/foundation-sites/scss',
+      'node_modules/nyc-planning-style-guide/dist/assets/scss',
+    ]
+  },
+});
+```
+
 
 ##### C) Edit `app.scss`:
 
@@ -51,12 +79,12 @@ Import the required files and include mixins in the right order so consuming app
 @import 'labs-ui/all-modules'; // or a subset
 
 // Custom app modules and styles
-@import 'layouts/_l-default';
-
+@import 'layouts/_my-custom-app-module';
 .peanut-butter {
   color: $orange-muted;
 }
 ```
+
 
 ##### D) Add Font Awesome and its icon sets:
 
@@ -66,6 +94,7 @@ yarn add --dev @fortawesome/free-solid-svg-icons
 yarn add --dev @fortawesome/free-regular-svg-icons
 yarn add --dev @fortawesome/free-brands-svg-icons
 ```
+
 
 ##### E) Add Font Awesome icons to your ENV:
 ```
