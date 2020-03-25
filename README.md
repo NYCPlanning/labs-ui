@@ -13,21 +13,24 @@ https://ui.planninglabs.nyc/
 
 ---
 
-### Installing the addon
+### Installation
 
 
 ##### A) Requirements:
 
 Install the NYC Digital Style Guide.
-
 ```
 yarn add nyc-planning-style-guide
 ```
 
 Install the Sass compiler and make sure you have an `app.scss` file.
-
 ```
 ember install ember-cli-sass
+```
+
+Install Ember Truth Helpers.
+```
+ember install ember-truth-helpers
 ```
 
 
@@ -41,7 +44,6 @@ yarn add labs-ui
 ##### C) Configure Sass load paths:
 
 Add `sassOptions` to `ember-cli-build.js` to define which directories Sass should look in when trying to import files.
-
 ```
 let app = new EmberApp(defaults, {
   'sassOptions': {
@@ -58,7 +60,6 @@ let app = new EmberApp(defaults, {
 ##### C) Edit `app.scss`:
 
 Import the required files and include mixins in the right order so consuming app's `app.scss` looks something like this:
-
 ```
 // Foundation utilities
 @import 'foundation-sites/scss/util/util';
