@@ -72,6 +72,11 @@
   height: 100%;
 }
 
+#sidebar {
+  height: 100vh;
+  overflow: auto;
+}
+
 pre code {
   display: block;
   overflow-x: auto;
