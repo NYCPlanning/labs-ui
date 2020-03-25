@@ -19,18 +19,12 @@
   </div>
 
 
-  <hr />
-
-
-  {{!-- <h2 data-anchor="components" class="header-xxlarge section-header">
-    Components
-    <small class="header-link">{{#link-to 'index' (query-params anchor='components')}}{{fa-icon 'link'}}{{/link-to}}</small>
-  </h2> --}}
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="site-header">
     Site Header
-    <small class="header-link">{{#link-to 'index' (query-params anchor='site-header')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link">{{#link-to "index" (query-params anchor="site-header")}}{{fa-icon "link"}}{{/link-to}}</small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/site-header</h4>
   <div class="grid-x grid-margin-x">
@@ -65,32 +59,32 @@
     <div class="cell large-7">
       <pre><code>&#123;{#labs-ui/site-header
 responsiveNav=true
-responsiveSize='medium'
+responsiveSize="medium"
 as |banner|
 }}
 &#123;{#banner.title}}
-  &lt;a class='site-title'>App Name &lt;small class="site-subtitle show-for-medium">Subtitle&lt;/small>&lt;/a>
+  &lt;a class="site-title">App Name &lt;small class="site-subtitle show-for-medium">Subtitle&lt;/small>&lt;/a>
 &#123;{/banner.title}}
 &#123;{#banner.nav}}
   &lt;ul class="menu vertical medium-horizontal">
-    &lt;li>&#123;{link-to 'One' 'index'}}&lt;/li>
-    &lt;li>&#123;{link-to 'Two' 'index'}}&lt;/li>
+    &lt;li>&#123;{link-to "One" "index"}}&lt;/li>
+    &lt;li>&#123;{link-to "Two" "index"}}&lt;/li>
     &lt;li class="external-nav-item">&lt;a href="mailto:email@example.org">Mailto Link&lt;/a>&lt;/li>
   &lt;/ul>
 &#123;{/banner.nav}}
 &#123;{/labs-ui/site-header}}</code></pre>
       {{#labs-ui/site-header
         responsiveNav=true
-        responsiveSize='medium'
+        responsiveSize="medium"
         as |banner|
       }}
         {{#banner.title}}
-          <a class='site-title'>App Name <small class="site-subtitle show-for-medium">Subtitle</small></a>
+          <a class="site-title">App Name <small class="site-subtitle show-for-medium">Subtitle</small></a>
         {{/banner.title}}
         {{#banner.nav}}
           <ul class="menu vertical medium-horizontal">
-            <li>{{link-to 'One' 'index'}}</li>
-            <li>{{link-to 'Two' 'index'}}</li>
+            <li>{{link-to "One" "index"}}</li>
+            <li>{{link-to "Two" "index"}}</li>
             <li class="external-nav-item"><a href="mailto:email@example.org">Email</a></li>
           </ul>
         {{/banner.nav}}
@@ -99,12 +93,12 @@ as |banner|
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="icon-tooltip">
     Icon Tooltip
-    <small class="header-link">{{#link-to 'index' (query-params anchor='icon-tooltip')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link">{{#link-to "index" (query-params anchor="icon-tooltip")}}{{fa-icon "link"}}{{/link-to}}</small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/icon-tooltip</h4>
   <div class="grid-x grid-margin-x">
@@ -150,29 +144,29 @@ as |banner|
     <div class="cell large-7">
       <pre><code>Here is an info tooltip on a "map-marked-alt" icon
 &#123;{labs-ui/icon-tooltip
-  tip='This is the tooltip text.'
-  icon='map-marked-alt'
-  side='bottom'
-  transform='shrink-2 up-2'
+  tip="This is the tooltip text."
+  icon="map-marked-alt"
+  side="bottom"
+  transform="shrink-2 up-2"
 }}
 in the middle of some text.
-  </code></pre>
+      </code></pre>
       Here is an info tooltip on a "map-marked-alt" icon
-        {{labs-ui/icon-tooltip
-          tip='This is the tooltip text.'
-          icon='map-marked-alt'
-          side='bottom'
-          transform='shrink-2 up-2'
-        }}
+      {{labs-ui/icon-tooltip
+        tip="This is the tooltip text."
+        icon="map-marked-alt"
+        side="bottom"
+        transform="shrink-2 up-2"
+      }}
       in the middle of some text.
     </div>
   </div>
 
-  <hr />
+  <hr>
 
   <h2 class="no-margin subsection-header" data-anchor="ember-tooltips">
     Ember Tooltips
-    <small class="header-link">{{#link-to 'index' (query-params anchor='ember-tooltips')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link">{{#link-to "index" (query-params anchor="ember-tooltips")}}{{fa-icon "link"}}{{/link-to}}</small>
   </h2>
   <h4 class="dark-gray text-weight-normal">(dependency)</h4>
   <div class="grid-x grid-margin-x">
@@ -184,38 +178,38 @@ in the middle of some text.
       <p>By default, Tooltips have a dark background and Popovers have a light background:</p>
       <button class="button">
         Hover me for a Tooltip
-        {{ember-tooltip text='This is just a regular tooltip.'}}
+        {{ember-tooltip text="This is just a regular tooltip."}}
       </button>
-      <button class="button">
+      <span class="button">
         Click me for a Popover
-        {{#ember-popover event='click' as |popover|}}
+        {{#ember-popover event="click"}}
           <h4 class="small-margin-bottom">This is a popover!</h4>
           <p>You can <a>interact</a> with elements in a popover.</p>
-          <input type="text" />
+          <input type="text">
         {{/ember-popover}}
-      </button>
+      </span>
       <p>The Popover can be given a dark background with the <code>.dark</code> class:</p>
-      <pre><code>&#123;{#ember-popover tooltipClassName='ember-popover dark' as |popover|}}
+      <pre><code>&#123;{#ember-popover tooltipClassName="ember-popover dark"}}
 ...
 &#123;{/ember-popover}}</code></pre>
-      <button class="button">
+      <span class="button">
         Click me for a Dark Popover
-        {{#ember-popover event='click' tooltipClassName='ember-popover dark' as |popover|}}
+        {{#ember-popover event="click" tooltipClassName="ember-popover dark"}}
           <h4 class="small-margin-bottom">This is a dark popover!</h4>
           <p>You can <a>interact</a> with elements in a popover.</p>
-          <input type="text" />
+          <input type="text">
         {{/ember-popover}}
-      </button>
+      </span>
     </div>
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="layer-group-toggle">
     Layer Group Toggle
-    <small class="header-link">{{#link-to 'index' (query-params anchor='layer-group-toggle')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link">{{#link-to "index" (query-params anchor="layer-group-toggle")}}{{fa-icon "link"}}{{/link-to}}</small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/layer-group-toggle</h4>
   <div class="grid-x grid-margin-x">
@@ -284,9 +278,9 @@ in the middle of some text.
     </div>
     <div class="cell large-7">
       <pre><code>&#123;{#labs-ui/layer-group-toggle
-label='Layer Group Label'
+label="Layer Group Label"
 active=true
-tooltip='This is the layer group tooltip'
+tooltip="This is the layer group tooltip"
 icon=model.exampleIcon
 activeTooltip="This is the layer group warning message"
 }}
@@ -294,19 +288,19 @@ yielded content goes here
 &#123;{/labs-ui/layer-group-toggle}}
 
 &#123;{#labs-ui/layer-group-toggle
-label='Layer Group Label'
+label="Layer Group Label"
 active=false
-tooltip='I show up regardless of the active state.'
-tooltipIcon='tree'
+tooltip="I show up regardless of the active state."
+tooltipIcon="tree"
 activeTooltip="I only show up when the layer group is active."
-activeTooltipIcon='hand-peace'
+activeTooltipIcon="hand-peace"
 }}
 yielded content goes here
 &#123;{/labs-ui/layer-group-toggle}}</code></pre>
       {{#labs-ui/layer-group-toggle
-        label='Layer Group Label'
+        label="Layer Group Label"
         active=true
-        tooltip='This is the layer group tooltip.'
+        tooltip="This is the layer group tooltip."
         icon=model.exampleIcon
         activeTooltip="This is the layer group warning message."
       }}
@@ -314,13 +308,13 @@ yielded content goes here
       {{/labs-ui/layer-group-toggle}}
 
       {{#labs-ui/layer-group-toggle
-        label='Layer Group Label'
+        label="Layer Group Label"
         active=false
-        infoLink='https://planninglabs.nyc/'
-        tooltip='I show up regardless of the active state.'
-        tooltipIcon='tree'
+        infoLink="https://planninglabs.nyc/"
+        tooltip="I show up regardless of the active state."
+        tooltipIcon="tree"
         activeTooltip="I only show up when the layer group is active."
-        activeTooltipIcon='hand-peace'
+        activeTooltipIcon="hand-peace"
       }}
         yielded content goes here
       {{/labs-ui/layer-group-toggle}}
@@ -328,12 +322,12 @@ yielded content goes here
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="layer-groups-container">
     Layer Groups Container
-    <small class="header-link">{{#link-to 'index' (query-params anchor='layer-groups-container')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link">{{#link-to "index" (query-params anchor="layer-groups-container")}}{{fa-icon "link"}}{{/link-to}}</small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/layer-groups-container</h4>
   <div class="grid-x grid-margin-x">
@@ -367,31 +361,31 @@ yielded content goes here
     </div>
     <div class="cell large-7">
       <pre><code>&#123;{#labs-ui/layer-groups-container
-  title='Layer Groups Container Title'
+  title="Layer Groups Container Title"
   active=true
   as |container|
 }}
-  &#123;{container.layer-group-toggle label='Layer Group One' active=true}}
-  &#123;{container.layer-group-toggle label='Layer Group Two' active=false}}
+  &#123;{container.layer-group-toggle label="Layer Group One" active=true}}
+  &#123;{container.layer-group-toggle label="Layer Group Two" active=false}}
 &#123;{/labs-ui/layer-groups-container}}</code></pre>
       {{#labs-ui/layer-groups-container
-        title='Layer Groups Container Title'
+        title="Layer Groups Container Title"
         open=true
         as |container|
       }}
-        {{container.layer-group-toggle label='Layer Group One' active=true}}
-        {{container.layer-group-toggle label='Layer Group Two' active=false}}
+        {{container.layer-group-toggle label="Layer Group One" active=true}}
+        {{container.layer-group-toggle label="Layer Group Two" active=false}}
       {{/labs-ui/layer-groups-container}}
     </div>
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="legend-items">
     Legend Items
-    <small class="header-link">{{#link-to 'index' (query-params anchor='legend-items')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link">{{#link-to "index" (query-params anchor="legend-items")}}{{fa-icon "link"}}{{/link-to}}</small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/legend-items</h4>
   <div class="grid-x grid-margin-x">
@@ -422,12 +416,12 @@ yielded content goes here
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="legend-item">
     Legend Item
-    <small class="header-link">{{#link-to 'index' (query-params anchor='legend-item')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link">{{#link-to "index" (query-params anchor="legend-item")}}{{fa-icon "link"}}{{/link-to}}</small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/legend-item</h4>
   <div class="grid-x grid-margin-x">
@@ -459,12 +453,12 @@ yielded content goes here
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="legend-icon">
     Legend Icon
-    <small class="header-link">{{#link-to 'index' (query-params anchor='legend-icon')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link">{{#link-to "index" (query-params anchor="legend-icon")}}{{fa-icon "link"}}{{/link-to}}</small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/legend-icon</h4>
   <div class="grid-x grid-margin-x">
