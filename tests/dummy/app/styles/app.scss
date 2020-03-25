@@ -1,16 +1,11 @@
-//
-// Labs UI variables
-// --------------------------------------------------
-
-@import 'labs-ui/variables';
+@import 'foundation-sites/scss/util/util';
+@import 'nyc-planning-variables';
+@import 'foundation-sites/scss/foundation';
 
 
 //
-// Foundation
+// Foundation components
 // --------------------------------------------------
-
-@import 'foundation-sites/foundation';
-// @include foundation-everything;
 
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
@@ -55,9 +50,10 @@
 
 
 //
-// Labs UI modules (import all or some)
+// NYC Planning Style Guide modules (import all or some)
 // --------------------------------------------------
 
+@import 'modules/nyc-planning-all-modules';
 @import 'labs-ui/all-modules';
 
 
@@ -98,14 +94,6 @@ hr, .section-header {
   &:hover .header-link {
     opacity: 1;
   }
-}
-
-.swatches {
-  margin-bottom: $global-margin;
-}
-
-.swatch {
-  padding: rem-calc(10);
 }
 
 table {
