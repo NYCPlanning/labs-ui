@@ -4,6 +4,10 @@
 
 Labs UI is an Ember.js addon containing common components and design patterns used across [NYC Planning Labs](https://planninglabs.nyc/) digital products, incorporating styles from our [Digital Style Guide](https://nyc-planning-style-guide.netlify.com/).
 
+### Compatibility
+
+* Ember.js v2.18 or above
+* Ember CLI v2.13 or above
 
 ---
 
