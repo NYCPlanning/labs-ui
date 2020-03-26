@@ -189,12 +189,12 @@ in the middle of some text.
         {{/ember-popover}}
       </span>
       <p>The Popover can be given a dark background with the <code>.dark</code> class:</p>
-      <pre><code>&#123;{#ember-popover tooltipClassName="ember-popover dark"}}
+      <pre><code>&#123;{#ember-popover _tooltipVariantClass="ember-popover dark"}}
 ...
 &#123;{/ember-popover}}</code></pre>
       <span class="button">
         Click me for a Dark Popover
-        {{#ember-popover event="click" tooltipClassName="ember-popover dark"}}
+        {{#ember-popover event="click" _tooltipVariantClass="ember-popover dark"}}
           <h4 class="small-margin-bottom">This is a dark popover!</h4>
           <p>You can <a>interact</a> with elements in a popover.</p>
           <input type="text">
