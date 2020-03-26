@@ -1,5 +1,10 @@
 'use strict';
 
 module.exports = {
-  extends: 'recommended'
+  extends: 'octane',
+  rules: {
+    'no-curly-component-invocation': {
+      allow: ['version']
+    }
+  }
 };

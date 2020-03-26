@@ -1,4 +1,4 @@
-{{docs-header}}
+<DocsHeader/>
 
 <div class="grid-container large-margin-bottom">
 
@@ -24,7 +24,7 @@
 
   <h2 class="no-margin subsection-header" data-anchor="site-header">
     Site Header
-    <small class="header-link">{{#link-to "index" (query-params anchor="site-header")}}{{fa-icon "link"}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="site-header"}}>{{fa-icon "link"}}</LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/site-header</h4>
   <div class="grid-x grid-margin-x">
@@ -63,12 +63,12 @@ responsiveSize="medium"
 as |banner|
 }}
 &#123;{#banner.title}}
-  &lt;a class="site-title">App Name &lt;small class="site-subtitle show-for-medium">Subtitle&lt;/small>&lt;/a>
+  &lt;a href="" class="site-title">App Name &lt;small class="site-subtitle show-for-medium">Subtitle&lt;/small>&lt;/a>
 &#123;{/banner.title}}
 &#123;{#banner.nav}}
   &lt;ul class="menu vertical medium-horizontal">
-    &lt;li>&#123;{link-to "One" "index"}}&lt;/li>
-    &lt;li>&#123;{link-to "Two" "index"}}&lt;/li>
+    &lt;li>&lt;LinkTo @route="index">One&lt;/LinkTo>&lt;/li>
+    &lt;li>&lt;LinkTo @route="index">Two&lt;/LinkTo>&lt;/li>
     &lt;li class="external-nav-item">&lt;a href="mailto:email@example.org">Mailto Link&lt;/a>&lt;/li>
   &lt;/ul>
 &#123;{/banner.nav}}
@@ -79,12 +79,12 @@ as |banner|
         as |banner|
       }}
         {{#banner.title}}
-          <a class="site-title">App Name <small class="site-subtitle show-for-medium">Subtitle</small></a>
+          <a href="#" class="site-title">App Name <small class="site-subtitle show-for-medium">Subtitle</small></a>
         {{/banner.title}}
         {{#banner.nav}}
           <ul class="menu vertical medium-horizontal">
-            <li>{{link-to "One" "index"}}</li>
-            <li>{{link-to "Two" "index"}}</li>
+            <li><LinkTo @route="index">One</LinkTo></li>
+            <li><LinkTo @route="index">Two</LinkTo></li>
             <li class="external-nav-item"><a href="mailto:email@example.org">Email</a></li>
           </ul>
         {{/banner.nav}}
@@ -98,7 +98,7 @@ as |banner|
 
   <h2 class="no-margin subsection-header" data-anchor="icon-tooltip">
     Icon Tooltip
-    <small class="header-link">{{#link-to "index" (query-params anchor="icon-tooltip")}}{{fa-icon "link"}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="icon-tooltip"}}>{{fa-icon "link"}}</LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/icon-tooltip</h4>
   <div class="grid-x grid-margin-x">
@@ -166,7 +166,7 @@ in the middle of some text.
 
   <h2 class="no-margin subsection-header" data-anchor="ember-tooltips">
     Ember Tooltips
-    <small class="header-link">{{#link-to "index" (query-params anchor="ember-tooltips")}}{{fa-icon "link"}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="ember-tooltips"}}>{{fa-icon "link"}}</LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">(dependency)</h4>
   <div class="grid-x grid-margin-x">
@@ -184,7 +184,7 @@ in the middle of some text.
         Click me for a Popover
         {{#ember-popover event="click"}}
           <h4 class="small-margin-bottom">This is a popover!</h4>
-          <p>You can <a>interact</a> with elements in a popover.</p>
+          <p>You can <a href="#">interact</a> with elements in a popover.</p>
           <input type="text">
         {{/ember-popover}}
       </span>
@@ -196,7 +196,7 @@ in the middle of some text.
         Click me for a Dark Popover
         {{#ember-popover event="click" _tooltipVariantClass="ember-popover dark"}}
           <h4 class="small-margin-bottom">This is a dark popover!</h4>
-          <p>You can <a>interact</a> with elements in a popover.</p>
+          <p>You can <a href="#">interact</a> with elements in a popover.</p>
           <input type="text">
         {{/ember-popover}}
       </span>
@@ -209,7 +209,7 @@ in the middle of some text.
 
   <h2 class="no-margin subsection-header" data-anchor="layer-group-toggle">
     Layer Group Toggle
-    <small class="header-link">{{#link-to "index" (query-params anchor="layer-group-toggle")}}{{fa-icon "link"}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="layer-group-toggle"}}>{{fa-icon "link"}}</LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/layer-group-toggle</h4>
   <div class="grid-x grid-margin-x">
@@ -327,7 +327,7 @@ yielded content goes here
 
   <h2 class="no-margin subsection-header" data-anchor="layer-groups-container">
     Layer Groups Container
-    <small class="header-link">{{#link-to "index" (query-params anchor="layer-groups-container")}}{{fa-icon "link"}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="layer-groups-container"}}>{{fa-icon "link"}}</LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/layer-groups-container</h4>
   <div class="grid-x grid-margin-x">
@@ -385,7 +385,7 @@ yielded content goes here
 
   <h2 class="no-margin subsection-header" data-anchor="legend-items">
     Legend Items
-    <small class="header-link">{{#link-to "index" (query-params anchor="legend-items")}}{{fa-icon "link"}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="legend-items"}}>{{fa-icon "link"}}</LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/legend-items</h4>
   <div class="grid-x grid-margin-x">
@@ -421,7 +421,7 @@ yielded content goes here
 
   <h2 class="no-margin subsection-header" data-anchor="legend-item">
     Legend Item
-    <small class="header-link">{{#link-to "index" (query-params anchor="legend-item")}}{{fa-icon "link"}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="legend-item"}}>{{fa-icon "link"}}</LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/legend-item</h4>
   <div class="grid-x grid-margin-x">
@@ -458,7 +458,7 @@ yielded content goes here
 
   <h2 class="no-margin subsection-header" data-anchor="legend-icon">
     Legend Icon
-    <small class="header-link">{{#link-to "index" (query-params anchor="legend-icon")}}{{fa-icon "link"}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="legend-icon"}}>{{fa-icon "link"}}</LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/legend-icon</h4>
   <div class="grid-x grid-margin-x">
