@@ -20,13 +20,6 @@ module.exports = function(environment) {
 
     version: require('../../../package').version,
 
-    'mapbox-gl': {
-      accessToken: '',
-      map: {
-        style: '/v1/base/style.json',
-      },
-    },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -57,7 +50,6 @@ module.exports = function(environment) {
     ENV.locationType = 'hash';
     ENV.rootURL = '/labs-ui/';
     ENV.host = '/labs-ui/';
-    ENV['mapbox-gl'].map.style = '/labs-ui/v1/base/style.json';
   }
 
   return ENV;
