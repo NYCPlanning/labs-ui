@@ -21,8 +21,6 @@ export default Component.extend({
 
   infoLink: '',
 
-  infoLinkIcon: 'external-link-alt',
-
   tooltipIcon: 'info-circle',
 
   active: true,

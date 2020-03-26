@@ -11,7 +11,7 @@
 
     <div {{action (mut closed) true preventDefault=false}} class="branding cell {{if responsiveNav (concat responsiveSize "-auto shrink") "auto"}}">
       <a class="dcp-link" href="http://www1.nyc.gov/site/planning/index.page"><img class="dcp-logo" src="https://raw.githubusercontent.com/NYCPlanning/logo/master/dcp_logo_772.png" alt="NYC Planning"></a>
-      {{yield (hash title = (component "labs-ui/site-header-title"))}}
+      {{yield (hash title=(component "labs-ui/site-header-title"))}}
     </div>
 
     {{#if responsiveNav}}
@@ -21,7 +21,7 @@
     {{/if}}
 
     <nav {{action (mut closed) (not closed) preventDefault=false}} role="navigation" class="cell {{if responsiveNav (concat responsiveSize "-shrink responsive") "shrink"}} {{if (and responsiveNav closed) (concat "show-for-" responsiveSize)}} hide-for-print">
-      {{yield (hash nav = (component "labs-ui/site-header-nav"))}}
+      {{yield (hash nav=(component "labs-ui/site-header-nav"))}}
     </nav>
 
   </div>

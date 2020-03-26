@@ -6,7 +6,10 @@
     <span class="badge bg-a11y-yellow">{{numberMenuItems}}</span>
   {{/if}}
   {{#if (and mapIsLoading open numberMenuItems)}}
-    {{fa-icon "spinner" class="fa-spin medium-gray"}}
+    <FaIcon
+      @icon="spinner"
+      class="fa-spin medium-gray"
+    />
   {{/if}}
 </div>
 <div class="layer-groups-container-content">
