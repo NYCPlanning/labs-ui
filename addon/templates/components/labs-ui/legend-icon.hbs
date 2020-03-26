@@ -2,15 +2,15 @@
   {{#each icon.layers as |icon-layer|}}
 
     {{#if (eq icon.type "line")}}
-      {{labs-ui/icons/line options=icon-layer}}
+      <LabsUi::Icons::Line @options={{icon-layer}} />
     {{/if}}
 
     {{#if (eq icon.type "rectangle")}}
-      {{labs-ui/icons/rectangle options=icon-layer}}
+      <LabsUi::Icons::rectangle @options={{icon-layer}} />
     {{/if}}
 
     {{#if (eq icon.type "fa-icon")}}
-      {{labs-ui/icons/fa-icon options=icon-layer}}
+      <LabsUi::Icons::fa-icon @options={{icon-layer}} />
     {{/if}}
 
   {{/each}}

@@ -2,20 +2,6 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   async model() {
-    // const layerGroups = await this.store.query('layer-group', {
-    //   'layer-groups': [
-    //     { id: 'amendments-pending', visible: true },
-    //     { id: 'boroughs', visible: true },
-    //     { id: 'citymap', visible: true },
-    //     { id: 'floodplain-efirm2007', visible: true },
-    //     { id: 'name-changes', visible: true },
-    //     { id: 'pierhead-bulkhead-lines', visible: true },
-    //     { id: 'stair-streets', visible: true },
-    //   ],
-    // });
-    //
-    // const layerGroupsArray = layerGroups.toArray().map(d => d.serialize());
-
     const exampleIcon = {
       "type": "rectangle",
       "layers": [{
@@ -44,11 +30,48 @@ export default Route.extend({
       }
     };
 
+    const exampleLine = {
+      "type": "line",
+      "layers": [
+        {
+          "fill":"none",
+          "stroke":"rgba(230, 50, 50, 0.3)",
+          "stroke-width": 4
+        },
+        {
+          "fill":"none",
+          "stroke":"rgba(150, 50, 50, 1)"
+        }
+      ]
+    };
+
+    const exampleRectangle = {
+      "type": "rectangle",
+      "layers": [
+        {
+          "fill":"none",
+          "stroke":"rgba(50, 150, 50, 1)",
+          "stroke-width": 3
+        }
+      ]
+    };
+
+    const exampleCircle = {
+      "type": "fa-icon",
+      "layers": [
+        {
+          "fa-icon": "circle",
+          "color": "rgba(100, 80, 255, 0.5)"
+        }
+      ]
+    };
+
     return {
-      // layerGroups,
-      // layerGroupsArray,
       exampleIcon,
       exampleItem,
+      exampleLine,
+      exampleRectangle,
+      exampleCircle,
     }
   }
 });
