@@ -1,45 +1,20 @@
-import Component from '@ember/component';
-import layout from '../../templates/components/labs-ui/layer-group-toggle';
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 
-export default Component.extend({
-  init(...args) {
-    this._super(...args);
+export default class LayerGroupToggleComponent extends Component {
+  @tracked active =  true;
 
-    this.get('didInit')(this);
+  get tooltipIcon() {
+    return this.args.tooltipIcon || 'info-circle';
+  }
 
-    this.set('icon', []);
-  },
+  get activeTooltipIcon() {
+    return this.args.activeTooltipIcon || 'exclamation-triangle';
+  }
 
-  classNames: ['layer-group-toggle'],
-  classNameBindings: ['active'],
-
-  layout,
-
-  label: null,
-
-  tooltip: '',
-
-  infoLink: '',
-
-  tooltipIcon: 'info-circle',
-
-  active: true,
-
-  activeTooltip: '',
-
-  activeTooltipIcon: 'exclamation-triangle',
-
-  didInit() {},
-
-  willDestroyHook() {},
-
-  willDestroy() {
-    this.get('willDestroyHook')(this);
-  },
-
-  actions: {
-    toggle() {
-      this.toggleProperty('active');
-    },
-  },
-});
+  @action
+  toggle() {
+    this.active = !this.active;
+  }
+}
