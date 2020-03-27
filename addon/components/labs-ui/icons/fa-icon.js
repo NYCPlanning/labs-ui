@@ -1,19 +1,12 @@
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import Component from '@glimmer/component';
 import { htmlSafe } from '@ember/template';
-import layout from '../../../templates/components/labs-ui/icons/fa-icon';
 
-export default Component.extend({
-  init() {
-    this._super(...arguments);
-  },
-  tagName: 'span',
-  classNames: ['legend-icon-layer'],
-  layout,
+export default class FaIconComponent extends Component {
+  get options() {
+    return this.args.options || {};
+  }
 
-  options() {},
-
-  spanStyle: computed('options.color', function() {
+  get spanStyle() {
     return htmlSafe(this.options.color ? `color: ${this.options.color}` : '');
-  }),
-});
+  }
+}
