@@ -6,13 +6,13 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | labs-ui/legend-item', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('it renders a label', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
     this.set('item', {
-      "label":"Legend Item Label",
-      "tooltip": "This is the legend item tooltip.",
+      "label":"Foo",
+      "tooltip": "Bar",
       "icon": {
         "type": "line",
         "layers": [
@@ -31,11 +31,6 @@ module('Integration | Component | labs-ui/legend-item', function(hooks) {
 
     await render(hbs`{{labs-ui/legend-item item=item}}`);
 
-    assert.equal(this.element.textContent.trim(), `This is the legend item tooltip.
-  
-
-
-
-Legend Item Label`);
+    assert.equal(this.element.textContent.trim(), "Foo");
   });
 });
