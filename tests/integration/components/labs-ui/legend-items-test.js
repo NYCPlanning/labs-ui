@@ -12,7 +12,7 @@ module('Integration | Component | labs-ui/legend-items', function(hooks) {
 
     this.set('items', [
       {
-        "label":"Legend Item Label",
+        "label":"Foo Bar",
         "tooltip": "This is the legend item tooltip.",
         "icon": {
           "type": "line",
@@ -27,11 +27,6 @@ module('Integration | Component | labs-ui/legend-items', function(hooks) {
 
     await render(hbs`{{labs-ui/legend-items items=items}}`);
 
-    assert.equal(this.element.textContent.trim(), `This is the legend item tooltip.
-  
-
-
-
-Legend Item Label`);
+    assert.equal(this.element.textContent.trim(), "Foo Bar");
   });
 });
