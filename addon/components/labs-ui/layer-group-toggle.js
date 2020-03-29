@@ -3,7 +3,11 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class LayerGroupToggleComponent extends Component {
-  @tracked active =  true;
+  @tracked isActive = false;
+
+  get active() {
+    return this.args.active;
+  }
 
   get tooltipIcon() {
     return this.args.tooltipIcon || 'info-circle';
@@ -15,6 +19,11 @@ export default class LayerGroupToggleComponent extends Component {
 
   @action
   toggle() {
-    this.active = !this.active;
+    this.isActive = !this.isActive;
+  }
+
+  @action
+  activate() {
+    this.isActive = this.active;
   }
 }
