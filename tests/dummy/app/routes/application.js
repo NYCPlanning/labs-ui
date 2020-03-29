@@ -30,6 +30,8 @@ export default Route.extend({
       }
     };
 
+    const exampleItems = [ exampleItem, exampleItem ]
+
     const exampleLine = {
       "type": "line",
       "layers": [
@@ -69,6 +71,7 @@ export default Route.extend({
     return {
       exampleIcon,
       exampleItem,
+      exampleItems,
       exampleLine,
       exampleRectangle,
       exampleCircle,

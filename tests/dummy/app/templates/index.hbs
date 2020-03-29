@@ -281,7 +281,7 @@ in the middle of some text.
   @label="Layer Group Label"
   @active=&#123;{true}}
   @tooltip="This is the layer group tooltip."
-  @icon=model.exampleIcon
+  @icon=&#123;{exampleIcon}}
   @activeTooltip="This is the layer group warning message."
 >
   yielded content goes here
@@ -303,7 +303,7 @@ in the middle of some text.
         @label="Layer Group Label"
         @active={{true}}
         @tooltip="This is the layer group tooltip."
-        @icon=model.exampleIcon
+        @icon={{model.exampleIcon}}
         @activeTooltip="This is the layer group warning message."
       >
         yielded content goes here
@@ -413,7 +413,8 @@ in the middle of some text.
       </table>
     </div>
     <div class="cell large-7">
-      <pre><code>&lt;LabsUi::LegendItems @items=&#123;{layerGroup.legend.items}} /></code></pre>
+      <pre><code>&lt;LabsUi::LegendItems @items=&#123;{exampleItems}} /></code></pre>
+      <LabsUi::LegendItems @items={{model.exampleItems}} />
     </div>
   </div>
 
@@ -449,7 +450,7 @@ in the middle of some text.
       </table>
     </div>
     <div class="cell large-7">
-      <pre><code>&lt;LabsUi::LegendItem @item=&#123;{model.exampleItem}} /></code></pre>
+      <pre><code>&lt;LabsUi::LegendItem @item=&#123;{exampleItem}} /></code></pre>
       <LabsUi::LegendItem @item={{model.exampleItem}} />
     </div>
   </div>
@@ -486,9 +487,9 @@ in the middle of some text.
       </table>
     </div>
     <div class="cell large-7">
-      <pre><code>&lt;LabsUi::LegendIcon @icon=&#123;{model.exampleLine}} />
-&lt;LabsUi::LegendIcon @icon=&#123;{model.exampleRectangle}} />
-&lt;LabsUi::LegendIcon @icon=&#123;{model.exampleCircle}} /></code></pre>
+      <pre><code>&lt;LabsUi::LegendIcon @icon=&#123;{exampleLine}} />
+&lt;LabsUi::LegendIcon @icon=&#123;{exampleRectangle}} />
+&lt;LabsUi::LegendIcon @icon=&#123;{exampleCircle}} /></code></pre>
       <p><span class="legend-item"><LabsUi::LegendIcon @icon={{model.exampleLine}} /></span></p>
       <p><span class="legend-item"><LabsUi::LegendIcon @icon={{model.exampleRectangle}} /></span></p>
       <p><span class="legend-item"><LabsUi::LegendIcon @icon={{model.exampleCircle}} /></span></p>
