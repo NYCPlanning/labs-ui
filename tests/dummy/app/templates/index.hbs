@@ -146,6 +146,12 @@
             <td><pre>null</pre></td>
             <td>Font Awesome "Power Transforms"</td>
           </tr>
+          <tr>
+            <td><strong><pre>fixedWith</pre></strong></td>
+            <td>boolean</td>
+            <td><pre>null</pre></td>
+            <td>Makes icon occupy same width as other fixed-width icons</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -156,6 +162,7 @@
   @icon="map-marked-alt"
   @side="bottom"
   @transform="shrink-2 up-2"
+  @fixedWidth=&#123;{true}}
 />
 in the middle of some text.
       </code></pre>
@@ -165,6 +172,7 @@ in the middle of some text.
         @icon="map-marked-alt"
         @side="bottom"
         @transform="shrink-2 up-2"
+        @fixedWidth={{true}}
       />
       in the middle of some text.
     </div>
