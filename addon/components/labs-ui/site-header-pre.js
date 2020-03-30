@@ -1,6 +1,4 @@
-import Component from '@ember/component';
-import layout from '../../templates/components/labs-ui/site-header-pre';
+import Component from '@glimmer/component';
 
-export default Component.extend({
-  layout,
-});
+export default class SiteHeaderPreComponent extends Component {
+}

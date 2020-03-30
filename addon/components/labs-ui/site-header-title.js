@@ -1,7 +1,4 @@
-import Component from '@ember/component';
-import layout from '../../templates/components/labs-ui/site-header-title';
+import Component from '@glimmer/component';
 
-export default Component.extend({
-  tagName: 'span',
-  layout,
-});
+export default class SiteHeaderTitleComponent extends Component {
+}

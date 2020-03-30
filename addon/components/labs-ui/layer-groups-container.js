@@ -1,55 +1,40 @@
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 import { next } from '@ember/runloop';
 import { A } from '@ember/array';
-import layout from '../../templates/components/labs-ui/layer-groups-container';
+import { guidFor } from '@ember/object/internals';
 
-export default Component.extend({
-  init(...args) {
-    this._super(...args);
+export default class LayerGroupsContainerComponent extends Component {
+  elementId = guidFor(this);
+  mapIsLoading = false;
 
-    this.set('layerGroupToggleItems', A([]));
-  },
+  @tracked isOpen = false;
+  @tracked numberMenuItems;
 
-  layout,
+  get title() {
+    return this.args.title || '';
+  }
 
-  classNames: ['layer-groups-container'],
-  classNameBindings: ['open', 'numberMenuItems:has-active-layer-groups'],
+  get open() {
+    return this.args.open;
+  }
 
-  numberMenuItems: computed('layerGroupToggleItems.@each.active', function() {
-    const items = this.get('layerGroupToggleItems');
+  @action
+  setDefaultIsOpen() {
+    this.isOpen = this.open;
+  }
 
-    const activeStates = items.mapBy('active');
+  @action
+  setNumberMenuItems() {
+    const groups = document.getElementById(this.elementId).getElementsByClassName('active');
+    console.log(groups.length);
+    this.numberMenuItems = groups.length;
+  }
 
-    return activeStates.reduce((acc, curr) => {
-      let mutatedAcc = acc;
-      if (curr) {
-        mutatedAcc += 1;
-      }
-
-      return mutatedAcc;
-    }, 0);
-  }),
-
-  open: true,
-
-  mapIsLoading: false,
-
-  title: null,
-
-  actions: {
-    toggleLayerGroupsContainer() {
-      this.toggleProperty('open');
-    },
-    registerChild(componentContext) {
-      next(() => {
-        this.get('layerGroupToggleItems').pushObject(componentContext);
-      });
-    },
-    unregisterChild(componentContext) {
-      next(() => {
-        this.get('layerGroupToggleItems').removeObject(componentContext);
-      });
-    },
-  },
-});
+  @action
+  toggleLayerGroupsContainer() {
+    this.isOpen = !this.isOpen;
+    this.setNumberMenuItems();
+  }
+}

@@ -1,0 +1,30 @@
+{{!-- template-lint-disable no-invalid-interactive  --}}
+
+{{!-- NOTE: The setNumberMenuItems() function is called when the component is clicked, since {{did-update}} will not rerun whenever the contents or attributes change. For {{did-update}} to rerun whenever a value changes, the value would have to be passed as a parameter to the modifier. Calling setNumberMenuItems() on {{did-insert}} will not work. --}}
+
+{{!-- TODO: Refactor this component so that if it's passed an array of Layer Groups, those are passed to the contextual component, which would allow us to use {{did-update}} to watch for changes that need to call setNumberMenuItems(). --}}
+
+<div
+  id="{{this.elementId}}"
+  class="layer-groups-container {{if isOpen "open"}} {{if this.numberMenuItems "has-active-layer-groups"}}"
+  {{did-insert this.setDefaultIsOpen}}
+  {{action this.setNumberMenuItems preventDefault=false}}
+>
+  <div {{action "toggleLayerGroupsContainer"}}
+    class="layer-groups-container-title {{unless this.open "closed"}} layer-groups-container--{{dasherize @title}}"
+    role="button">
+    {{@title}}
+    {{#if this.numberMenuItems}}
+      <span class="badge bg-a11y-yellow">{{this.numberMenuItems}}</span>
+    {{/if}}
+    {{#if (and this.mapIsLoading this.open this.numberMenuItems)}}
+      <FaIcon
+        @icon="spinner"
+        class="fa-spin medium-gray"
+      />
+    {{/if}}
+  </div>
+  <div class="layer-groups-container-content">
+    {{yield (hash layer-group-toggle=(component "labs-ui/layer-group-toggle"))}}
+  </div>
+</div>

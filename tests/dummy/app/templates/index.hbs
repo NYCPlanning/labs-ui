@@ -1,4 +1,4 @@
-{{docs-header}}
+<DocsHeader/>
 
 <div class="grid-container large-margin-bottom">
 
@@ -19,18 +19,12 @@
   </div>
 
 
-  <hr />
-
-
-  {{!-- <h2 data-anchor="components" class="header-xxlarge section-header">
-    Components
-    <small class="header-link">{{#link-to 'index' (query-params anchor='components')}}{{fa-icon 'link'}}{{/link-to}}</small>
-  </h2> --}}
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="site-header">
     Site Header
-    <small class="header-link">{{#link-to 'index' (query-params anchor='site-header')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="site-header"}}><FaIcon @icon="link" /></LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/site-header</h4>
   <div class="grid-x grid-margin-x">
@@ -38,12 +32,12 @@
       <p>Use the <code>site-header</code> component to add a branded banner at the top of apps. It includes Planning Labs' beta notice and a logo that links to NYC Planning's main site. Its optional responsive parameters automatically add a menu button to toggle the navigation on smaller screens, and define the screen size at which that happens.</p>
       <p>To add an app name and menu items to the header, include the <code>site-title</code> and <code>site-nav</code> contextual components, using the <code>.site-title</code> and <code>.site-subtitle</code> Labs UI classes and Foundation's menu classes.</p>
       <table>
-        <thead>
+        <thead class="text-dark-gray">
           <tr>
-            <td>Param</td>
-            <td>Type</td>
-            <td>Default</td>
-            <td>Description</td>
+            <td>arg</td>
+            <td>type</td>
+            <td>default</td>
+            <td>description</td>
           </tr>
         </thead>
         <tbody>
@@ -59,64 +53,72 @@
             <td><pre>large</pre></td>
             <td>Screen size at which nav is always visible</td>
           </tr>
+          <tr>
+            <td><strong><pre>betaNotice</pre></strong></td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Adds a beta notice above header</td>
+          </tr>
         </tbody>
       </table>
     </div>
     <div class="cell large-7">
-      <pre><code>&#123;{#labs-ui/site-header
-responsiveNav=true
-responsiveSize='medium'
-as |banner|
-}}
-&#123;{#banner.title}}
-  &lt;a class='site-title'>App Name &lt;small class="site-subtitle show-for-medium">Subtitle&lt;/small>&lt;/a>
-&#123;{/banner.title}}
-&#123;{#banner.nav}}
-  &lt;ul class="menu vertical medium-horizontal">
-    &lt;li>&#123;{link-to 'One' 'index'}}&lt;/li>
-    &lt;li>&#123;{link-to 'Two' 'index'}}&lt;/li>
-    &lt;li class="external-nav-item">&lt;a href="mailto:email@example.org">Mailto Link&lt;/a>&lt;/li>
-  &lt;/ul>
-&#123;{/banner.nav}}
-&#123;{/labs-ui/site-header}}</code></pre>
-      {{#labs-ui/site-header
-        responsiveNav=true
-        responsiveSize='medium'
+      <pre><code>&lt;LabsUi::SiteHeader
+  @responsiveNav=&#123;{true}}
+  @responsiveSize="medium"
+  @betaNotice=&#123;{true}}
+  as |banner|
+>
+  &lt;banner.title>
+    &lt;a href="#" class="site-title">App Name &lt;small class="site-subtitle show-for-medium">Subtitle&lt;/small>&lt;/a>
+  &lt;/banner.title>
+  &lt;banner.nav>
+    &lt;ul class="menu vertical medium-horizontal">
+      &lt;li>&lt;LinkTo @route="index">One&lt;/LinkTo>&lt;/li>
+      &lt;li>&lt;LinkTo @route="index">Two&lt;/LinkTo>&lt;/li>
+      &lt;li class="external-nav-item">&lt;a href="mailto:email@example.org">Email&lt;/a>&lt;/li>
+    &lt;/ul>
+  &lt;/banner.nav>
+&lt;/LabsUi::SiteHeader></code></pre>
+      <LabsUi::SiteHeader
+        @responsiveNav={{true}}
+        @responsiveSize="medium"
+        @betaNotice={{true}}
         as |banner|
-      }}
-        {{#banner.title}}
-          <a class='site-title'>App Name <small class="site-subtitle show-for-medium">Subtitle</small></a>
-        {{/banner.title}}
-        {{#banner.nav}}
+      >
+        <banner.title>
+          <a href="#" class="site-title">App Name <small class="site-subtitle show-for-medium">Subtitle</small></a>
+        </banner.title>
+        <banner.nav>
           <ul class="menu vertical medium-horizontal">
-            <li>{{link-to 'One' 'index'}}</li>
-            <li>{{link-to 'Two' 'index'}}</li>
+            <li><LinkTo @route="index">One</LinkTo></li>
+            <li><LinkTo @route="index">Two</LinkTo></li>
             <li class="external-nav-item"><a href="mailto:email@example.org">Email</a></li>
           </ul>
-        {{/banner.nav}}
-      {{/labs-ui/site-header}}
+        </banner.nav>
+      </LabsUi::SiteHeader>
     </div>
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="icon-tooltip">
     Icon Tooltip
-    <small class="header-link">{{#link-to 'index' (query-params anchor='icon-tooltip')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="icon-tooltip"}}><FaIcon @icon="link" /></LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/icon-tooltip</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
       <p>Renders a Font Awesome icon with <a href="http://sir-dunxalot.github.io/ember-tooltips/">Ember Tooltips</a>.</p>
       <table>
-        <thead>
+        <thead class="text-dark-gray">
           <tr>
-            <td>Param</td>
-            <td>Type</td>
-            <td>Default</td>
-            <td>Description</td>
+            <td>arg</td>
+            <td>type</td>
+            <td>default</td>
+            <td>description</td>
           </tr>
         </thead>
         <tbody>
@@ -149,30 +151,30 @@ as |banner|
     </div>
     <div class="cell large-7">
       <pre><code>Here is an info tooltip on a "map-marked-alt" icon
-&#123;{labs-ui/icon-tooltip
-  tip='This is the tooltip text.'
-  icon='map-marked-alt'
-  side='bottom'
-  transform='shrink-2 up-2'
-}}
+&lt;LabsUi::IconTooltip
+  @tip="This is the tooltip text."
+  @icon="map-marked-alt"
+  @side="bottom"
+  @transform="shrink-2 up-2"
+/>
 in the middle of some text.
-  </code></pre>
+      </code></pre>
       Here is an info tooltip on a "map-marked-alt" icon
-        {{labs-ui/icon-tooltip
-          tip='This is the tooltip text.'
-          icon='map-marked-alt'
-          side='bottom'
-          transform='shrink-2 up-2'
-        }}
+      <LabsUi::IconTooltip
+        @tip="This is the tooltip text."
+        @icon="map-marked-alt"
+        @side="bottom"
+        @transform="shrink-2 up-2"
+      />
       in the middle of some text.
     </div>
   </div>
 
-  <hr />
+  <hr>
 
   <h2 class="no-margin subsection-header" data-anchor="ember-tooltips">
     Ember Tooltips
-    <small class="header-link">{{#link-to 'index' (query-params anchor='ember-tooltips')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="ember-tooltips"}}><FaIcon @icon="link" /></LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">(dependency)</h4>
   <div class="grid-x grid-margin-x">
@@ -184,38 +186,38 @@ in the middle of some text.
       <p>By default, Tooltips have a dark background and Popovers have a light background:</p>
       <button class="button">
         Hover me for a Tooltip
-        {{ember-tooltip text='This is just a regular tooltip.'}}
+        <EmberTooltip @text="This is just a regular tooltip." />
       </button>
-      <button class="button">
+      <span class="button">
         Click me for a Popover
-        {{#ember-popover event='click' as |popover|}}
+        <EmberPopover @event="click">
           <h4 class="small-margin-bottom">This is a popover!</h4>
-          <p>You can <a>interact</a> with elements in a popover.</p>
-          <input type="text" />
-        {{/ember-popover}}
-      </button>
+          <p>You can <a href="#">interact</a> with elements in a popover.</p>
+          <input type="text">
+        </EmberPopover>
+      </span>
       <p>The Popover can be given a dark background with the <code>.dark</code> class:</p>
-      <pre><code>&#123;{#ember-popover tooltipClassName='ember-popover dark' as |popover|}}
+      <pre><code>&lt;EmberPopover @_tooltipVariantClass="ember-popover dark">
 ...
-&#123;{/ember-popover}}</code></pre>
-      <button class="button">
+&lt;/EmberPopover></code></pre>
+      <span class="button">
         Click me for a Dark Popover
-        {{#ember-popover event='click' tooltipClassName='ember-popover dark' as |popover|}}
+        <EmberPopover @event="click" @_tooltipVariantClass="ember-popover dark">
           <h4 class="small-margin-bottom">This is a dark popover!</h4>
-          <p>You can <a>interact</a> with elements in a popover.</p>
-          <input type="text" />
-        {{/ember-popover}}
-      </button>
+          <p>You can <a href="#">interact</a> with elements in a popover.</p>
+          <input type="text">
+        </EmberPopover>
+      </span>
     </div>
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="layer-group-toggle">
     Layer Group Toggle
-    <small class="header-link">{{#link-to 'index' (query-params anchor='layer-group-toggle')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="layer-group-toggle"}}><FaIcon @icon="link" /></LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/layer-group-toggle</h4>
   <div class="grid-x grid-margin-x">
@@ -227,12 +229,12 @@ in the middle of some text.
         <li><p>Typically used to indicate a warning, <code>activeTooltip</code> renders an orange exclamation triangle icon that is only visible when the active state is true. Override the icon with <code>activeTooltipIcon</code>. </p></li>
       </ul>
       <table>
-        <thead>
+        <thead class="text-dark-gray">
           <tr>
-            <td>Param</td>
-            <td>Type</td>
-            <td>Default</td>
-            <td>Description</td>
+            <td>arg</td>
+            <td>type</td>
+            <td>default</td>
+            <td>description</td>
           </tr>
         </thead>
         <tbody>
@@ -283,57 +285,59 @@ in the middle of some text.
       <p class="text-small"><em>Note:</em> Since the yielded content can be anything, its layout is unopinionated (e.g. it needs its own padding to align text with the label/switch).</p>
     </div>
     <div class="cell large-7">
-      <pre><code>&#123;{#labs-ui/layer-group-toggle
-label='Layer Group Label'
-active=true
-tooltip='This is the layer group tooltip'
-icon=model.exampleIcon
-activeTooltip="This is the layer group warning message"
-}}
-yielded content goes here
-&#123;{/labs-ui/layer-group-toggle}}
+      <pre><code>&lt;LabsUi::LayerGroupToggle
+  @label="Layer Group Label"
+  @active=&#123;{true}}
+  @tooltip="This is the layer group tooltip."
+  @icon=&#123;{exampleIcon}}
+  @activeTooltip="This is the layer group warning message."
+>
+  yielded content goes here
+&lt;/LabsUi::LayerGroupToggle>
 
-&#123;{#labs-ui/layer-group-toggle
-label='Layer Group Label'
-active=false
-tooltip='I show up regardless of the active state.'
-tooltipIcon='tree'
-activeTooltip="I only show up when the layer group is active."
-activeTooltipIcon='hand-peace'
-}}
-yielded content goes here
-&#123;{/labs-ui/layer-group-toggle}}</code></pre>
-      {{#labs-ui/layer-group-toggle
-        label='Layer Group Label'
-        active=true
-        tooltip='This is the layer group tooltip.'
-        icon=model.exampleIcon
-        activeTooltip="This is the layer group warning message."
-      }}
-        yielded content goes here
-      {{/labs-ui/layer-group-toggle}}
+&lt;LabsUi::LayerGroupToggle
+  @label="Layer Group Label"
+  @active=&#123;{false}}
+  @infoLink="https://planninglabs.nyc/"
+  @tooltip="I show up regardless of the active state."
+  @tooltipIcon="tree"
+  @activeTooltip="I only show up when the layer group is active."
+  @activeTooltipIcon="hand-peace"
+>
+  yielded content goes here
+&lt;/LabsUi::LayerGroupToggle></code></pre>
 
-      {{#labs-ui/layer-group-toggle
-        label='Layer Group Label'
-        active=false
-        infoLink='https://planninglabs.nyc/'
-        tooltip='I show up regardless of the active state.'
-        tooltipIcon='tree'
-        activeTooltip="I only show up when the layer group is active."
-        activeTooltipIcon='hand-peace'
-      }}
+      <LabsUi::LayerGroupToggle
+        @label="Layer Group Label"
+        @active={{true}}
+        @tooltip="This is the layer group tooltip."
+        @icon={{model.exampleIcon}}
+        @activeTooltip="This is the layer group warning message."
+      >
         yielded content goes here
-      {{/labs-ui/layer-group-toggle}}
+      </LabsUi::LayerGroupToggle>
+
+      <LabsUi::LayerGroupToggle
+        @label="Layer Group Label"
+        @active={{false}}
+        @infoLink="https://planninglabs.nyc/"
+        @tooltip="I show up regardless of the active state."
+        @tooltipIcon="tree"
+        @activeTooltip="I only show up when the layer group is active."
+        @activeTooltipIcon="hand-peace"
+      >
+        yielded content goes here
+      </LabsUi::LayerGroupToggle>
     </div>
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="layer-groups-container">
     Layer Groups Container
-    <small class="header-link">{{#link-to 'index' (query-params anchor='layer-groups-container')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="layer-groups-container"}}><FaIcon @icon="link" /></LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/layer-groups-container</h4>
   <div class="grid-x grid-margin-x">
@@ -341,12 +345,12 @@ yielded content goes here
       <p>A group of layer groups&hellip; <em>Set of groups?</em> A toggleable container, this component is always used in block form. Its <code>title</code> param renders a clickable title which toggles the visibility of its yielded content. When its title is clicked, the <code>open</code> boolean is reversed and the visibility of the component's yielded content is toggled.</p>
       <p>For full functionality, use Layer Group Toggles as <a href="https://embermap.com/topics/contextual-components/flexible-interfaces">contextual components</a>.</p>
       <table>
-        <thead>
+        <thead class="text-dark-gray">
           <tr>
-            <td>Param</td>
-            <td>Type</td>
-            <td>Default</td>
-            <td>Description</td>
+            <td>arg</td>
+            <td>type</td>
+            <td>default</td>
+            <td>description</td>
           </tr>
         </thead>
         <tbody>
@@ -366,44 +370,44 @@ yielded content goes here
       </table>
     </div>
     <div class="cell large-7">
-      <pre><code>&#123;{#labs-ui/layer-groups-container
-  title='Layer Groups Container Title'
-  active=true
+      <pre><code>&lt;LabsUi::LayerGroupsContainer
+  @title="Layer Groups Container Title"
+  @open=&#123;{true}}
   as |container|
-}}
-  &#123;{container.layer-group-toggle label='Layer Group One' active=true}}
-  &#123;{container.layer-group-toggle label='Layer Group Two' active=false}}
-&#123;{/labs-ui/layer-groups-container}}</code></pre>
-      {{#labs-ui/layer-groups-container
-        title='Layer Groups Container Title'
-        open=true
+>
+  &lt;container.layer-group-toggle @label="Layer Group One" @active=&#123;{true}} />
+  &lt;container.layer-group-toggle @label="Layer Group Two" @active=&#123;{false}} />
+&lt;/LabsUi::LayerGroupsContainer></code></pre>
+      <LabsUi::LayerGroupsContainer
+        @title="Layer Groups Container Title"
+        @open={{true}}
         as |container|
-      }}
-        {{container.layer-group-toggle label='Layer Group One' active=true}}
-        {{container.layer-group-toggle label='Layer Group Two' active=false}}
-      {{/labs-ui/layer-groups-container}}
+      >
+        <container.layer-group-toggle @label="Layer Group One" @active={{true}} />
+        <container.layer-group-toggle @label="Layer Group Two" @active={{false}} />
+      </LabsUi::LayerGroupsContainer>
     </div>
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="legend-items">
     Legend Items
-    <small class="header-link">{{#link-to 'index' (query-params anchor='legend-items')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="legend-items"}}><FaIcon @icon="link" /></LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/legend-items</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
       <p>The <code>legend-items</code> component does not yield any content directly. It simply loops through the array of legend objects and passes each one to the <code>labs-ui/legend-item</code> component.</p>
       <table>
-        <thead>
+        <thead class="text-dark-gray">
           <tr>
-            <td>Param</td>
-            <td>Type</td>
-            <td>Default</td>
-            <td>Description</td>
+            <td>arg</td>
+            <td>type</td>
+            <td>default</td>
+            <td>description</td>
           </tr>
         </thead>
         <tbody>
@@ -417,29 +421,30 @@ yielded content goes here
       </table>
     </div>
     <div class="cell large-7">
-      <pre><code>&#123;{labs-ui/legend-items items=layerGroup.legend.items}}</code></pre>
+      <pre><code>&lt;LabsUi::LegendItems @items=&#123;{exampleItems}} /></code></pre>
+      <LabsUi::LegendItems @items={{model.exampleItems}} />
     </div>
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="legend-item">
     Legend Item
-    <small class="header-link">{{#link-to 'index' (query-params anchor='legend-item')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="legend-item"}}><FaIcon @icon="link" /></LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/legend-item</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
       <p>The <code>legend-item</code> component is called by the <code>each</code> loop in the <code>legend-items</code> component. It renders a label (required), tooltip, and icon.</p>
       <table>
-        <thead>
+        <thead class="text-dark-gray">
           <tr>
-            <td>Param</td>
-            <td>Type</td>
-            <td>Default</td>
-            <td>Description</td>
+            <td>arg</td>
+            <td>type</td>
+            <td>default</td>
+            <td>description</td>
           </tr>
         </thead>
         <tbody>
@@ -453,30 +458,30 @@ yielded content goes here
       </table>
     </div>
     <div class="cell large-7">
-      <pre><code>&#123;{labs-ui/legend-item item=model.exampleItem}}</code></pre>
-      {{labs-ui/legend-item item=model.exampleItem}}
+      <pre><code>&lt;LabsUi::LegendItem @item=&#123;{exampleItem}} /></code></pre>
+      <LabsUi::LegendItem @item={{model.exampleItem}} />
     </div>
   </div>
 
 
-  <hr />
+  <hr>
 
 
   <h2 class="no-margin subsection-header" data-anchor="legend-icon">
     Legend Icon
-    <small class="header-link">{{#link-to 'index' (query-params anchor='legend-icon')}}{{fa-icon 'link'}}{{/link-to}}</small>
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="legend-icon"}}><FaIcon @icon="link" /></LinkTo></small>
   </h2>
   <h4 class="dark-gray text-weight-normal">labs-ui/legend-icon</h4>
   <div class="grid-x grid-margin-x">
     <div class="cell large-5">
       <p>The <code>legend-icon</code> component renders a layered stack of icons. The <code>icon.type</code> can be <code>line</code>, <code>rectangle</code>, or <code>fa-icon</code>, and determines if the layers are made of SVGs or Font Awesome icons. The <code>icon.layers</code> array of objects describes each of the layers in the stack &mdash; e.g. a dark red line over a thicker transparent pink line. </p>
       <table>
-        <thead>
+        <thead class="text-dark-gray">
           <tr>
-            <td>Param</td>
-            <td>Type</td>
-            <td>Default</td>
-            <td>Description</td>
+            <td>arg</td>
+            <td>type</td>
+            <td>default</td>
+            <td>description</td>
           </tr>
         </thead>
         <tbody>
@@ -490,8 +495,12 @@ yielded content goes here
       </table>
     </div>
     <div class="cell large-7">
-      <pre><code>&#123;{labs-ui/legend-icon icon=model.exampleItem.icon}}</code></pre>
-      <span class="legend-item">{{labs-ui/legend-icon icon=model.exampleItem.icon}}</span>
+      <pre><code>&lt;LabsUi::LegendIcon @icon=&#123;{exampleLine}} />
+&lt;LabsUi::LegendIcon @icon=&#123;{exampleRectangle}} />
+&lt;LabsUi::LegendIcon @icon=&#123;{exampleCircle}} /></code></pre>
+      <p><span class="legend-item"><LabsUi::LegendIcon @icon={{model.exampleLine}} /></span></p>
+      <p><span class="legend-item"><LabsUi::LegendIcon @icon={{model.exampleRectangle}} /></span></p>
+      <p><span class="legend-item"><LabsUi::LegendIcon @icon={{model.exampleCircle}} /></span></p>
     </div>
   </div>
 

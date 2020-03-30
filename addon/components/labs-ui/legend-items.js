@@ -1,8 +1,4 @@
-import Component from '@ember/component';
-import layout from '../../templates/components/labs-ui/legend-items';
+import Component from '@glimmer/component';
 
-export default Component.extend({
-  classNames: ['legend-items'],
-  items: null,
-  layout,
-});
+export default class LegendItemsComponent extends Component {
+}

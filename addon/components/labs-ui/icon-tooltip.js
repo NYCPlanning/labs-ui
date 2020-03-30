@@ -1,14 +1,15 @@
-import Component from '@ember/component';
-import layout from '../../templates/components/labs-ui/icon-tooltip';
+import Component from '@glimmer/component';
 
-export default Component.extend({
-  tagName: 'span',
-  classNames: 'icon-tooltip',
+export default class IconTooltipComponent extends Component {
+  get icon() {
+    return this.args.icon || 'info-circle';
+  }
 
-  layout,
-  tip: '',
-  side: 'top',
-  icon: 'info-circle',
-  transform: '',
-  fixedWidth: false,
-});
+  get fixedWidth() {
+    return this.args.fixedWidth || false;
+  }
+
+  get side() {
+    return this.args.side || 'top';
+  }
+}
