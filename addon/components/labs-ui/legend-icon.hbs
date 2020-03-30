@@ -1,0 +1,19 @@
+<span class="legend-icon">
+<span class={{this.iconType}}>
+  {{#each @icon.layers as |icon-layer|}}
+
+    {{#if (eq @icon.type "line")}}
+      <LabsUi::Icons::Line @options={{icon-layer}} />
+    {{/if}}
+
+    {{#if (eq @icon.type "rectangle")}}
+      <LabsUi::Icons::rectangle @options={{icon-layer}} />
+    {{/if}}
+
+    {{#if (eq @icon.type "fa-icon")}}
+      <LabsUi::Icons::fa-icon @options={{icon-layer}} />
+    {{/if}}
+
+  {{/each}}
+</span>
+</span>

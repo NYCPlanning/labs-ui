@@ -10,7 +10,7 @@ module.exports = function(environment) {
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
+        // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
@@ -19,13 +19,6 @@ module.exports = function(environment) {
     },
 
     version: require('../../../package').version,
-
-    'mapbox-gl': {
-      accessToken: '',
-      map: {
-        style: '/v1/base/style.json',
-      },
-    },
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -57,7 +50,6 @@ module.exports = function(environment) {
     ENV.locationType = 'hash';
     ENV.rootURL = '/labs-ui/';
     ENV.host = '/labs-ui/';
-    ENV['mapbox-gl'].map.style = '/labs-ui/v1/base/style.json';
   }
 
   return ENV;

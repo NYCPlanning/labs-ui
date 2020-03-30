@@ -1,0 +1,38 @@
+<div class="layer-group-toggle {{if this.isActive 'active'}}" {{did-insert this.activate}}>
+  <div class="layer-group-toggle-header layer-{{dasherize @label}}">
+    <div class="grid-x">
+      <div class="cell auto">
+        <div class="switch tiny float-left">
+          <input class="switch-input" type="checkbox" checked={{if this.isActive "checked"}}>
+          <label {{action "toggle"}} class="switch-paddle">
+            <span class="show-for-sr">Toggle Layer Group</span>
+          </label>
+        </div>
+        <span {{action "toggle" preventDefault=false}} class="layer-group-toggle-label" role="button">
+          {{@label}}
+          {{#if this.isActive}}
+            {{#if @icon}}
+              <LabsUi::LegendIcon @icon={{@icon}} />
+            {{/if}}
+          {{/if}}
+        </span>
+      </div>
+      <div class="cell shrink layer-group-toggle-icons">
+        {{#if (and @activeTooltip this.isActive)}}
+          <LabsUi::IconTooltip @tip={{@activeTooltip}} @icon={{this.activeTooltipIcon}} @side="left" @fixedWith={{true}} />
+        {{/if}}
+        {{#if @infoLink}}
+          <a href={{@infoLink}} target="_blank" rel="noopener" class="info-link"><FaIcon @icon="external-link-alt" /></a>
+        {{/if}}
+        {{#if @tooltip}}
+          <LabsUi::IconTooltip @tip={{@tooltip}} @icon={{this.tooltipIcon}} @side="left" @fixedWidth={{true}} />
+        {{/if}}
+      </div>
+    </div>
+  </div>
+  {{#if this.isActive}}
+    <div class="layer-group-toggle-content">
+      {{yield}}
+    </div>
+  {{/if}}
+</div>
