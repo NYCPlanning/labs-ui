@@ -1,0 +1,25 @@
+<div
+  id="{{this.elementId}}"
+  class="layer-groups-container {{if isOpen "open"}} {{if this.numberMenuItems "has-active-layer-groups"}}"
+  {{did-insert this.setDefaultIsOpen}}
+  {{did-update this.setNumberMenuItems}}
+>
+{{!-- Note: {{did-update}} will not rerun whenever the contents or attributes change. For {{did-update}} to rerun whenever a value changes, the value should be passed as a parameter to the modifier. --}}
+  <div {{action "toggleLayerGroupsContainer"}}
+    class="layer-groups-container-title {{unless this.open "closed"}} layer-groups-container--{{dasherize @title}}"
+    role="button">
+    {{@title}}
+    {{#if this.numberMenuItems}}
+      <span class="badge bg-a11y-yellow">{{this.numberMenuItems}}</span>
+    {{/if}}
+    {{#if (and this.mapIsLoading this.open this.numberMenuItems)}}
+      <FaIcon
+        @icon="spinner"
+        class="fa-spin medium-gray"
+      />
+    {{/if}}
+  </div>
+  <div class="layer-groups-container-content">
+    {{yield (hash layer-group-toggle=(component "labs-ui/layer-group-toggle"))}}
+  </div>
+</div>
