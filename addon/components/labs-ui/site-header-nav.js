@@ -1,6 +1,4 @@
-import Component from '@ember/component';
-import layout from '../../templates/components/labs-ui/site-header-nav';
+import Component from '@glimmer/component';
 
-export default Component.extend({
-  layout,
-});
+export default class SiteHeaderNavsComponent extends Component {
+}

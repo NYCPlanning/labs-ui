@@ -53,6 +53,12 @@
             <td><pre>large</pre></td>
             <td>Screen size at which nav is always visible</td>
           </tr>
+          <tr>
+            <td><strong><pre>betaNotice</pre></strong></td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Adds a beta notice above header</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -60,6 +66,7 @@
       <pre><code>&lt;LabsUi::SiteHeader
   @responsiveNav=&#123;{true}}
   @responsiveSize="medium"
+  @betaNotice=&#123;{true}}
   as |banner|
 >
   &lt;banner.title>
@@ -76,6 +83,7 @@
       <LabsUi::SiteHeader
         @responsiveNav={{true}}
         @responsiveSize="medium"
+        @betaNotice={{true}}
         as |banner|
       >
         <banner.title>

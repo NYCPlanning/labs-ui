@@ -1,19 +1,17 @@
-import Component from '@ember/component';
-import layout from '../../templates/components/labs-ui/site-header';
+import Component from '@glimmer/component';
 
-export default Component.extend({
-  tagName: 'header',
-  classNames: ['site-header'],
+export default class SiteHeaderComponent extends Component {
+  closed = true;
 
-  layout,
+  get responsiveNav() {
+    return this.args.responsiveNav || false;
+  }
 
-  ariaRole: 'banner',
+  get responsiveSize() {
+    return this.args.responsiveSize || 'large';
+  }
 
-  closed: true,
-
-  responsiveNav: false,
-
-  responsiveSize: 'large',
-
-  betaNotice: true, 
-});
+  get betaNotice() {
+    return this.args.betaNotice || false;
+  }
+}
