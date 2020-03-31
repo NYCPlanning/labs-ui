@@ -12,36 +12,35 @@ module('Integration | Component | labs-ui/site-header', function(hooks) {
 
     // Template block usage:
     await render(hbs`
-      {{#labs-ui/site-header
-        responsiveNav=true
-        responsiveSize='medium'
+      <LabsUi::SiteHeader
+        @responsiveNav={{true}}
+        @responsiveSize="medium"
+        @betaNotice={{true}}
         as |banner|
-      }}
-        {{#banner.title}}
-          <a class='site-title'>App Name <small class="site-subtitle show-for-medium">Subtitle</small></a>
-        {{/banner.title}}
-        {{#banner.nav}}
-          <ul class="menu vertical medium-horizontal">
-            <li><a>Menu Item</a></li>
-          </ul>
-        {{/banner.nav}}
-      {{/labs-ui/site-header}}
+      >
+        <banner.title>
+          <a href="#" class="site-title">Foo</a>
+        </banner.title>
+        <banner.nav>
+          <span class="bar">Bar</span>
+        </banner.nav>
+      </LabsUi::SiteHeader>
     `);
 
     // The beta notice renders
     const betaNotice = find('.labs-beta-notice').textContent.trim();
     assert.equal(betaNotice, 'A beta project of NYC Planning Labs');
 
-    // The beta notice renders
+    // The DCP logo renders
     const dcpLinkIcon = await find('a.dcp-link img');
     assert.equal(!!dcpLinkIcon, true);
 
     // The {{site-header-title}} contextual component renders
     const siteTitle = find('.site-title').textContent.trim();
-    assert.equal(siteTitle, 'App Name Subtitle');
+    assert.equal(siteTitle, 'Foo');
 
     // The {{site-header-nav}} contextual component renders
-    const siteNav = find('.menu').textContent.trim();
-    assert.equal(siteNav, 'Menu Item');
+    const siteNav = find('.bar').textContent.trim();
+    assert.equal(siteNav, 'Bar');
   });
 });

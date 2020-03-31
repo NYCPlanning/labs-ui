@@ -1,8 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { next } from '@ember/runloop';
-import { A } from '@ember/array';
 import { guidFor } from '@ember/object/internals';
 
 export default class LayerGroupsContainerComponent extends Component {

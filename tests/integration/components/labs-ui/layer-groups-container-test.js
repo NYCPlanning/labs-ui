@@ -7,7 +7,7 @@ module('Integration | Component | layer-groups-container', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it toggles closed', async function(assert) {
-    await render(hbs`{{labs-ui/layer-groups-container title='Foo'}}`);
+    await render(hbs`<LabsUi::LayerGroupsContainer @title="Foo" @open={{true}}>Bar</LabsUi::LayerGroupsContainer>`);
     await click('.layer-groups-container-title');
     const layerGroupsContainer = await find('.layer-groups-container');
 
@@ -15,7 +15,7 @@ module('Integration | Component | layer-groups-container', function(hooks) {
   });
 
   test('it toggles open', async function(assert) {
-    await render(hbs`{{labs-ui/layer-groups-container title='Foo' open=false}}`);
+    await render(hbs`<LabsUi::LayerGroupsContainer @title="Foo" @open={{false}}>Bar</LabsUi::LayerGroupsContainer>`);
     await click('.layer-groups-container-title');
     const layerGroupsContainer = await find('.layer-groups-container');
 
