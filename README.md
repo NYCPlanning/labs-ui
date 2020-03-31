@@ -42,7 +42,7 @@ ember install ember-truth-helpers
 ##### B) Install Labs UI:
 
 ```
-yarn add labs-ui
+ember install labs-ui
 ```
 
 
