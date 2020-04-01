@@ -23,16 +23,6 @@ https://ui.planninglabs.nyc/
 
 ##### A) Requirements:
 
-Install the NYC Digital Style Guide.
-```
-yarn add nyc-planning-style-guide
-```
-
-Install the Sass compiler and make sure you have an `app.scss` file.
-```
-ember install ember-cli-sass
-```
-
 Install Ember Truth Helpers.
 ```
 ember install ember-truth-helpers
@@ -96,9 +86,6 @@ Import the required files and include mixins in the right order so consuming app
 
 ```
 ember install @fortawesome/ember-fontawesome
-yarn add --dev @fortawesome/free-solid-svg-icons
-yarn add --dev @fortawesome/free-regular-svg-icons
-yarn add --dev @fortawesome/free-brands-svg-icons
 ```
 
 
