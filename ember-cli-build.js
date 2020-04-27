@@ -9,7 +9,13 @@ module.exports = function(defaults) {
         'node_modules/',
         'node_modules/foundation-sites/scss',
         'node_modules/nyc-planning-style-guide/dist/assets/scss',
-      ]
+      ],
+      'sourceMapEmbed': true,
+    },
+    'autoprefixer': {
+      'enabled': true,
+      'cascade': true,
+      'sourcemap': true,
     },
   });
 

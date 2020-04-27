@@ -1,6 +1,6 @@
 <DocsHeader/>
 
-<div class="grid-container large-margin-bottom">
+<div class="grid-container xlarge-margin-bottom xlarge-padding-bottom">
 
   <div class="grid-x grid-margin-x">
     <div class="cell large-8">
@@ -175,80 +175,6 @@ in the middle of some text.
         @fixedWidth={{true}}
       />
       in the middle of some text.
-    </div>
-  </div>
-
-
-  <hr>
-
-
-  <h2 class="no-margin subsection-header" data-anchor="ember-tooltips">
-    Ember Tooltips
-    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="ember-tooltips"}}><FaIcon @icon="link" /></LinkTo></small>
-  </h2>
-  <h4 class="dark-gray text-weight-normal">(dependency)</h4>
-  <div class="grid-x grid-margin-x">
-    <div class="cell large-5">
-      <p>Labs UI depends the <a href="https://github.com/sir-dunxalot/ember-tooltips/">Ember Tooltips</a> addon for its tooltips. This addon also has Popovers. What's the difference? Tooltips are for read-only purposes, whereas Popovers can contain interactive elements. See <a href="http://sir-dunxalot.github.io/ember-tooltips/">the docs</a> for how to use Ember Tooltips.</p>
-      <p>Labs UI also has a custom Sass module which helps Ember Tooltips more closely match our styles.</p>
-    </div>
-    <div class="cell large-7">
-      <p>By default, Tooltips have a dark background and Popovers have a light background:</p>
-      <button class="button">
-        Hover me for a Tooltip
-        <EmberTooltip @text="This is just a regular tooltip." />
-      </button>
-      <span class="button">
-        Click me for a Popover
-        <EmberPopover @event="click">
-          <h4 class="small-margin-bottom">This is a popover!</h4>
-          <p>You can <a href="#">interact</a> with elements in a popover.</p>
-          <input type="text">
-        </EmberPopover>
-      </span>
-      <p>The Popover can be given a dark background with the <code>.dark</code> class:</p>
-      <pre><code>&lt;EmberPopover @_tooltipVariantClass="ember-popover dark">
-...
-&lt;/EmberPopover></code></pre>
-      <span class="button">
-        Click me for a Dark Popover
-        <EmberPopover @event="click" @_tooltipVariantClass="ember-popover dark">
-          <h4 class="small-margin-bottom">This is a dark popover!</h4>
-          <p>You can <a href="#">interact</a> with elements in a popover.</p>
-          <input type="text">
-        </EmberPopover>
-      </span>
-    </div>
-  </div>
-
-
-  <hr>
-
-
-  <h2 class="no-margin subsection-header" data-anchor="date-picker">
-    Date Picker
-    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="date-picker"}}><FaIcon @icon="link" /></LinkTo></small>
-  </h2>
-  <h4 class="dark-gray text-weight-normal">(dependency)</h4>
-  <div class="grid-x grid-margin-x">
-    <div class="cell large-5">
-      <p>Labs UI depends the <a href="https://github.com/shipshapecode/ember-flatpickr">Ember Flatpicker</a> addon for its date picker. See <a href="https://shipshapecode.github.io/ember-flatpickr/">the docs</a> for how to use Ember Flatpicker.</p>
-      <p>Labs UI also has a custom Sass module which helps Ember Flatpicker more closely match our styles.</p>
-      <p>Note: The <code>@date</code> and <code>@onChange</code> arguments are required.</p>
-    </div>
-    <div class="cell large-7">
-      <pre><code>&lt;EmberFlatpickr
-  @date=&#123;{this.dateValue}}
-  @onChange&#123;{this.onDateChange}}
-  @enableTime&#123;{true}}
-  placeholder="Choose a date and time..."
-&gt;</code></pre>
-      <EmberFlatpickr
-        @date={{null}}
-        @onChange={{null}}
-        @enableTime={{true}}
-        placeholder="Choose a date and time..."
-      />
     </div>
   </div>
 
@@ -542,6 +468,114 @@ in the middle of some text.
       <p><span class="legend-item"><LabsUi::LegendIcon @icon={{model.exampleLine}} /></span></p>
       <p><span class="legend-item"><LabsUi::LegendIcon @icon={{model.exampleRectangle}} /></span></p>
       <p><span class="legend-item"><LabsUi::LegendIcon @icon={{model.exampleCircle}} /></span></p>
+    </div>
+  </div>
+
+
+  <hr>
+
+
+  <h2 class="no-margin subsection-header" data-anchor="ember-power-select">
+    Ember Power Select
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="ember-power-select"}}><FaIcon @icon="link" /></LinkTo></small>
+  </h2>
+  <h4 class="dark-gray text-weight-normal">(dependency)</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>Labs UI depends on the <a href="https://ember-power-select.com/">Ember Power Select</a> addon in place of  <code>&lt;select&gt;</code> elements, often to allow for typeahead results. See <a href="https://ember-power-select.com/docs/how-to-use-it">the docs</a> for how to use Ember Power Select.</p>
+    </div>
+    <div class="cell large-7">
+      <PowerSelect
+        @selected={{this.selectedOption}}
+        @options={{this.options}}
+        @onChange={{this.chooseOption}}
+        as |option|
+      >
+        {{option}}
+      </PowerSelect>
+      <PowerSelect
+        @searchEnabled={{true}}
+        @options={{this.landUses}}
+        @placeholder="Select a land use"
+        @selected={{this.selected}}
+        @searchField="name"
+        @onChange={{fn (mut this.selected)}} as |use|>
+        {{use.name}}
+      </PowerSelect>
+    </div>
+  </div>
+
+
+  <hr>
+
+
+  <h2 class="no-margin subsection-header" data-anchor="ember-tooltips">
+    Ember Tooltips
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="ember-tooltips"}}><FaIcon @icon="link" /></LinkTo></small>
+  </h2>
+  <h4 class="dark-gray text-weight-normal">(dependency)</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>Labs UI depends on the <a href="https://github.com/sir-dunxalot/ember-tooltips/">Ember Tooltips</a> addon for its tooltips. This addon also has Popovers. What's the difference? Tooltips are for read-only purposes, whereas Popovers can contain interactive elements. See <a href="http://sir-dunxalot.github.io/ember-tooltips/">the docs</a> for how to use Ember Tooltips.</p>
+      <p>Labs UI also has a custom Sass module which helps Ember Tooltips more closely match our styles.</p>
+    </div>
+    <div class="cell large-7">
+      <p>By default, Tooltips have a dark background and Popovers have a light background:</p>
+      <button class="button">
+        Hover me for a Tooltip
+        <EmberTooltip @text="This is just a regular tooltip." />
+      </button>
+      <span class="button">
+        Click me for a Popover
+        <EmberPopover @event="click">
+          <h4 class="small-margin-bottom">This is a popover!</h4>
+          <p>You can <a href="#">interact</a> with elements in a popover.</p>
+          <input type="text">
+        </EmberPopover>
+      </span>
+      <p>The Popover can be given a dark background with the <code>.dark</code> class:</p>
+      <pre><code>&lt;EmberPopover @_tooltipVariantClass="ember-popover dark">
+...
+&lt;/EmberPopover></code></pre>
+      <span class="button">
+        Click me for a Dark Popover
+        <EmberPopover @event="click" @_tooltipVariantClass="ember-popover dark">
+          <h4 class="small-margin-bottom">This is a dark popover!</h4>
+          <p>You can <a href="#">interact</a> with elements in a popover.</p>
+          <input type="text">
+        </EmberPopover>
+      </span>
+    </div>
+  </div>
+
+
+  <hr>
+
+
+  <h2 class="no-margin subsection-header" data-anchor="date-picker">
+    Date Picker
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="date-picker"}}><FaIcon @icon="link" /></LinkTo></small>
+  </h2>
+  <h4 class="dark-gray text-weight-normal">(dependency)</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>Labs UI depends the <a href="https://github.com/shipshapecode/ember-flatpickr">Ember Flatpicker</a> addon for its date picker. See <a href="https://shipshapecode.github.io/ember-flatpickr/">the docs</a> for how to use Ember Flatpicker.</p>
+      <p>Labs UI also has a custom Sass module which helps Ember Flatpicker more closely match our styles.</p>
+      <p>Note: The <code>@date</code> and <code>@onChange</code> arguments are required.</p>
+    </div>
+    <div class="cell large-7">
+      <pre><code>&lt;EmberFlatpickr
+  @date=&#123;{this.dateValue}}
+  @onChange&#123;{this.onDateChange}}
+  @enableTime&#123;{true}}
+  placeholder="Choose a date and time..."
+&gt;</code></pre>
+      <EmberFlatpickr
+        @date={{null}}
+        @onChange={{null}}
+        @enableTime={{true}}
+        placeholder="Choose a date and time..."
+      />
     </div>
   </div>
 
