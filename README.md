@@ -74,14 +74,17 @@ Import the required files and include mixins in the right order so consuming app
 // Foundation mixins
 @import 'foundation-sites/scss/foundation';
 
-// Foundation components
-@include foundation-everything; // or a subset
+// Foundation components (include all or some)
+@include foundation-everything;
 
-// Style Guide components
-@import 'modules/nyc-planning-all-modules'; // or a subset
+// NYC Planning Style Guide modules (import all or some)
+@import 'modules/nyc-planning-all-modules';
 
-// Labs UI components
-@import 'labs-ui/all-modules'; // or a subset
+// Labs UI modules (import all or some)
+@import 'labs-ui/all-modules';
+
+// Ember Power Select
+@import "ember-power-select";
 
 // Custom app modules and styles
 @import 'layouts/_my-custom-app-module';
