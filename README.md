@@ -36,9 +36,12 @@ ember install labs-ui
 ```
 
 
-##### C) Configure Sass load paths:
+##### C) Configure build options:
 
 Add `sassOptions` to `ember-cli-build.js` to define which directories Sass should look in when trying to import files.
+
+Enable `autoprefixer` to add vendor prefixes in the compiled CSS.
+
 ```
 let app = new EmberApp(defaults, {
   'sassOptions': {
@@ -46,7 +49,13 @@ let app = new EmberApp(defaults, {
       'node_modules/',
       'node_modules/foundation-sites/scss',
       'node_modules/nyc-planning-style-guide/dist/assets/scss',
-    ]
+    ],
+    'sourceMapEmbed': true,
+  },
+  'autoprefixer': {
+    'enabled': true,
+    'cascade': true,
+    'sourcemap': true,
   },
 });
 ```
