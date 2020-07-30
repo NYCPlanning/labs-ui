@@ -1,6 +1,6 @@
 {
   "name": "labs-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NYC Planning Labs Ember.js Components",
   "keywords": [
     "ember-addon"
