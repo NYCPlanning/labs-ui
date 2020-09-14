@@ -32,6 +32,7 @@
     "ember-cli-htmlbars": "^4.2.3",
     "ember-cli-sass": "^6.2.0",
     "ember-cli-what-input": "^1.0.0",
+    "ember-flatpickr": "^3.0.1",
     "ember-tooltips": "^3.1.0",
     "foundation-sites": "^6.6.1",
     "nyc-planning-style-guide": "^1.0.5"

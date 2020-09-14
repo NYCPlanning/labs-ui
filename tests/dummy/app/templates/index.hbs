@@ -178,7 +178,9 @@ in the middle of some text.
     </div>
   </div>
 
+
   <hr>
+
 
   <h2 class="no-margin subsection-header" data-anchor="ember-tooltips">
     Ember Tooltips
@@ -216,6 +218,37 @@ in the middle of some text.
           <input type="text">
         </EmberPopover>
       </span>
+    </div>
+  </div>
+
+
+  <hr>
+
+
+  <h2 class="no-margin subsection-header" data-anchor="date-picker">
+    Date Picker
+    <small class="header-link"><LinkTo @route="index" @query={{hash anchor="date-picker"}}><FaIcon @icon="link" /></LinkTo></small>
+  </h2>
+  <h4 class="dark-gray text-weight-normal">(dependency)</h4>
+  <div class="grid-x grid-margin-x">
+    <div class="cell large-5">
+      <p>Labs UI depends the <a href="https://github.com/shipshapecode/ember-flatpickr">Ember Flatpicker</a> addon for its date picker. See <a href="https://shipshapecode.github.io/ember-flatpickr/">the docs</a> for how to use Ember Flatpicker.</p>
+      <p>Labs UI also has a custom Sass module which helps Ember Flatpicker more closely match our styles.</p>
+      <p>Note: The <code>@date</code> and <code>@onChange</code> arguments are required.</p>
+    </div>
+    <div class="cell large-7">
+      <pre><code>&lt;EmberFlatpickr
+  @date=&#123;{this.dateValue}}
+  @onChange&#123;{this.onDateChange}}
+  @enableTime&#123;{true}}
+  placeholder="Choose a date and time..."
+&gt;</code></pre>
+      <EmberFlatpickr
+        @date={{null}}
+        @onChange={{null}}
+        @enableTime={{true}}
+        placeholder="Choose a date and time..."
+      />
     </div>
   </div>
 
