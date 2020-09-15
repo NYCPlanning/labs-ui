@@ -44,18 +44,17 @@ Enable `autoprefixer` to add vendor prefixes in the compiled CSS.
 
 ```
 let app = new EmberApp(defaults, {
-  'sassOptions': {
-    'includePaths': [
-      'node_modules/',
+  sassOptions: {
+    includePaths: [
       'node_modules/foundation-sites/scss',
       'node_modules/nyc-planning-style-guide/dist/assets/scss',
     ],
-    'sourceMapEmbed': true,
+    sourceMapEmbed: true,
   },
-  'autoprefixer': {
-    'enabled': true,
-    'cascade': true,
-    'sourcemap': true,
+  autoprefixer: {
+    enabled: true,
+    cascade: true,
+    sourcemap: true,
   },
 });
 ```
@@ -66,13 +65,13 @@ let app = new EmberApp(defaults, {
 Import the required files and include mixins in the right order so consuming app's `app.scss` looks something like this:
 ```
 // Foundation utilities
-@import 'foundation-sites/scss/util/util';
+@import 'util/util';
 
 // Labs UI variables
 @import 'nyc-planning-variables';
 
 // Foundation mixins
-@import 'foundation-sites/scss/foundation';
+@import 'foundation';
 
 // Foundation components (include all or some)
 @include foundation-everything;
@@ -83,7 +82,7 @@ Import the required files and include mixins in the right order so consuming app
 // Labs UI modules (import all or some)
 @import 'labs-ui/all-modules';
 
-// Ember Power Select
+// Ember Power Select (if needed)
 @import "ember-power-select";
 
 // Custom app modules and styles

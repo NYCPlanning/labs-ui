@@ -1,6 +1,11 @@
-@import 'foundation-sites/scss/util/util';
+// Foundation utilities
+@import 'util/util';
+
+// Labs UI variables
 @import 'nyc-planning-variables';
-@import 'foundation-sites/scss/foundation';
+
+// Foundation mixins
+@import 'foundation';
 
 
 //
