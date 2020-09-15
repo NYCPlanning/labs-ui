@@ -4,18 +4,17 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
-    'sassOptions': {
-      'includePaths': [
-        'node_modules/',
+    sassOptions: {
+      includePaths: [
         'node_modules/foundation-sites/scss',
         'node_modules/nyc-planning-style-guide/dist/assets/scss',
       ],
-      'sourceMapEmbed': true,
+      sourceMapEmbed: true,
     },
-    'autoprefixer': {
-      'enabled': true,
-      'cascade': true,
-      'sourcemap': true,
+    autoprefixer: {
+      enabled: true,
+      cascade: true,
+      sourcemap: true,
     },
   });
 
