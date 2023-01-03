@@ -19,18 +19,18 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "@fortawesome/ember-fontawesome": ">=0.1.5",
-    "@fortawesome/free-brands-svg-icons": ">=5.2.0",
-    "@fortawesome/free-regular-svg-icons": ">=5.1.0",
-    "@fortawesome/free-solid-svg-icons": ">=5.1.0",
+    "@fortawesome/ember-fontawesome": "0.1.8",
+    "@fortawesome/free-brands-svg-icons": "5.4.1",
+    "@fortawesome/free-regular-svg-icons": "5.4.1",
+    "@fortawesome/free-solid-svg-icons": "5.4.1",
     "ember-cli-babel": "^6.17.0",
     "ember-cli-foundation-6-sass": "^0.0.25",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-sass": "^6.2.0",
     "ember-cli-what-input": "^1.0.0",
-    "ember-tooltips": "^3.1.0",
-    "foundation-sites": "^6.3.1",
+    "ember-tooltips": "3.1.0",
+    "foundation-sites": "6.3.1",
     "mapbox-gl": "^0.48.0"
   },
   "devDependencies": {
@@ -40,7 +40,7 @@
     "broccoli-clean-css": "~1.1.0",
     "ember-ajax": "^3.0.0",
     "ember-anchor": "^1.0.2",
-    "ember-cli": "~3.3.0",
+    "ember-cli": "3.3.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
     "ember-cli-github-pages": "^0.2.0",
@@ -49,7 +49,7 @@
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
-    "ember-data": "^3.3.1",
+    "ember-data": "3.3.1",
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
     "ember-fetch": "^5.1.3",
@@ -71,5 +71,8 @@
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "demoURL": "https://nycplanning.github.io/labs-ui/"
+  },
+  "resolutions": {
+    "foundation-sites": "6.3.1"
   }
 }
