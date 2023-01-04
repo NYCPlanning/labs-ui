@@ -31,7 +31,7 @@
     "ember-cli-autoprefixer": "^1.0.0",
     "ember-cli-babel": "^7.18.0",
     "ember-cli-htmlbars": "^4.2.3",
-    "ember-cli-sass": "^6.2.0",
+    "ember-cli-sass": "^11.0.1",
     "ember-cli-what-input": "^1.0.0",
     "ember-flatpickr": "^3.0.1",
     "ember-power-select": "^4.0.0",
@@ -74,7 +74,8 @@
     "eslint-plugin-ember": "^7.10.1",
     "eslint-plugin-node": "^11.0.0",
     "loader.js": "^4.7.0",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.53.0"
   },
   "engines": {
     "node": "10.* || >= 12"
